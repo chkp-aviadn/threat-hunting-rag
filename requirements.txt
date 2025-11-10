@@ -1,0 +1,36 @@
+# Core dependencies
+pandas>=1.5.0
+faker>=19.0.0
+tldextract>=3.4.0
+sentence-transformers>=2.2.0
+chromadb>=0.4.0
+python-dotenv>=1.0.0
+
+# API Framework (Primary Interface)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+pydantic-settings>=2.0.0
+
+# API Features & Middleware
+slowapi>=0.1.9          # Rate limiting
+python-multipart>=0.0.6 # Form data support
+httpx>=0.25.0           # HTTP client for testing
+
+# Testing & Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0  # Async test support
+pytest-httpx>=0.26.0    # API testing
+
+# Security dependencies
+cryptography>=41.0.0    # Data encryption and secure hashing
+
+# Code quality tools
+black>=23.0.0           # Code formatting
+flake8>=6.0.0           # Linting
+mypy>=1.5.0             # Type checking
+pytest-cov>=4.1.0      # Coverage reporting
+bandit>=1.7.0          # Security vulnerability scanner
+
+# Performance & Caching
+psutil>=5.9.0           # System monitoring

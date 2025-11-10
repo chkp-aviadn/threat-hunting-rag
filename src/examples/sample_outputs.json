@@ -1,0 +1,10 @@
+{
+  "note": "Sample query outputs will be documented here in Task 8.1",
+  "status": "Task 8.1 implementation pending",
+  "example_structure": {
+    "query": "urgent payment requests",
+    "results": [],
+    "processing_time_ms": 0,
+    "explanation": "Coming soon..."
+  }
+}
