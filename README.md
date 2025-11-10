@@ -19,30 +19,49 @@ cp .env.example .env
 # Edit .env with your settings
 
 # Generate dataset and build index
-python src/generate_dataset.py
-python src/index_builder.py
+python -m infrastructure.data.generate_dataset
+python -m infrastructure.ml.index_builder
 
 # Start API server
-uvicorn src.api:app --reload --port 8000
+uvicorn interfaces.api.app:app --reload --port 8000
 
-# Or use CLI for development
-python src/cli.py --query "urgent payment requests"
+# Or use CLI for development  
+python -m interfaces.cli.app --query "urgent payment requests"
 ```
 
 ## 📚 Documentation
 
-- [Implementation Plan](../plan.md) - Complete development roadmap
+- [Implementation Plan](plan.md) - Complete development roadmap  
 - [API Documentation](http://localhost:8000/docs) - Interactive Swagger UI
-- [Example Queries](src/examples/queries_examples.md) - Sample usage
+- [Example Queries](examples/queries_examples.md) - Sample usage
+- [Architecture Diagrams](diagrams/) - System design and flow
 
-## 🏗️ Architecture
+## 🏗️ Clean Modular Architecture
 
-See [Architecture Diagram](diagrams/architecture.mmd) for system design.
+```
+src/
+├── 🧠 core/              # Business Logic (Framework-independent)
+│   ├── models/          # Domain entities (Email, ThreatFeatures)
+│   ├── ports/           # Interface contracts
+│   └── services/        # Business services
+├── 🔧 infrastructure/   # External Dependencies  
+│   ├── data/           # Data generation
+│   ├── ml/             # ML models & vector DB
+│   └── cache/          # Performance caches
+├── 🌐 interfaces/      # User Interfaces
+│   ├── api/            # REST API
+│   └── cli/            # Command line
+└── 🔄 shared/          # Common utilities
+```
 
 ## ✅ Status
 
-🔄 **In Development** - Following implementation plan step by step.
+✅ **Architecture Completed** - Clean modular design implemented
 
-**Current Phase:** Task 1.1 - Project Structure Initialization ✅
+**Completed:** Clean Architecture with Domain-Driven Design
+- Core domain models with business logic
+- Port/Adapter pattern for infrastructure  
+- Separation of concerns across layers
+- Professional, maintainable, and testable codebase
 
-**Next:** Task 1.2 - Dependencies & Configuration
+**Next:** Implement infrastructure and service layers

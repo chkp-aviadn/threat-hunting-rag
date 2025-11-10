@@ -1,0 +1,64 @@
+```mermaid
+graph TD
+    %% User Input
+    A[User Query] --> B[Query Parser]
+    
+    %% Search Processing
+    B --> C[Keyword Search]
+    B --> D[Semantic Search]
+    
+    %% Result Fusion
+    C --> E[Result Fusion]
+    D --> E
+    E --> F[Feature Extraction]
+    
+    %% Threat Analysis
+    F --> G[Threat Scoring]
+    G --> H[Explanation Generation]
+    H --> I[Ranked Results]
+    
+    %% Data Layer
+    subgraph "Offline Processing"
+        J[Dataset Generator] --> K[Email Corpus]
+        K --> L[Embeddings Generator]
+        L --> M[Vector Index]
+    end
+    
+    %% Infrastructure
+    D -.-> M
+    C -.-> K
+    
+    %% Architecture Layers
+    subgraph "🌐 Interface Layer"
+        A
+        I
+        N[REST API]
+        O[CLI Interface]
+    end
+    
+    subgraph "🧠 Core Business Logic"
+        B
+        E
+        F
+        G
+        H
+    end
+    
+    subgraph "🔧 Infrastructure Layer"
+        C
+        D
+        J
+        K
+        L
+        M
+    end
+    
+    %% Styling
+    classDef interface fill:#e1f5fe
+    classDef core fill:#f3e5f5
+    classDef infra fill:#e8f5e8
+    
+    class A,I,N,O interface
+    class B,E,F,G,H core
+    class C,D,J,K,L,M infra
+```

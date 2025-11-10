@@ -1,9 +1,28 @@
 """
-Configuration management for the threat hunting RAG system.
+Configuration management for threat hunting RAG system.
 
-This module handles loading and validation of configuration from environment 
-variables with secure defaults and validation.
+Centralized configuration loading with environment variable support,
+validation, and type safety.
 """
+
+import os
+import logging
+from pathlib import Path
+from typing import Optional, Dict, Any, List
+from dataclasses import field
+from pydantic import validator
+from pydantic_settings import BaseSettings
+
+from shared.exceptions import ConfigurationError
+
+
+# Configure basic logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+logger = logging.getLogger(__name__)
 
 import os
 from dataclasses import dataclass
@@ -13,17 +32,20 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-@dataclass
-class Config:
+class Config(BaseSettings):
     """Configuration class for the threat hunting RAG system."""
     
     # Model Configuration
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
-    model_cache_dir: str = "models/"
+    model_cache_dir: str = "src/infrastructure/cache/models/"
     
     # Data Paths
     vector_db_path: str = "data/chroma"
     email_dataset_path: str = "data/emails.csv"
+    
+    # Cache Configuration
+    embedding_cache_dir: str = "src/infrastructure/cache/embeddings/"
+    query_cache_dir: str = "src/infrastructure/cache/query_results/"
     
     # Performance Settings
     phishing_threshold: float = 0.7
