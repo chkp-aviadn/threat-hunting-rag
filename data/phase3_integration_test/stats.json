@@ -1,0 +1,6 @@
+{
+  "document_count": 100,
+  "last_updated": "2025-11-10T20:55:35.214174",
+  "embedding_dimension": 384,
+  "db_path": "data/phase3_integration_test"
+}

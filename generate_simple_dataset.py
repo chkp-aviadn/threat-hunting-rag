@@ -7,13 +7,33 @@ Creates realistic phishing and legitimate email samples.
 import random
 import csv
 import uuid
+import os
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
 import json
+import logging
 from pathlib import Path
 
 from faker import Faker
 import pandas as pd
+
+# Get logger for this module
+logger = logging.getLogger(__name__)
+
+# For standalone execution, setup basic logging
+if __name__ == "__main__":
+    # Ensure logs directory exists
+    Path("logs").mkdir(exist_ok=True)
+    
+    # Setup logging with both console and file output
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(),  # Console output
+            logging.FileHandler('logs/dataset.log', mode='w')  # File output
+        ]
+    )
 
 
 class SimpleEmailGenerator:
@@ -234,14 +254,14 @@ class SimpleEmailGenerator:
         num_phishing = int(total_emails * phishing_ratio)
         num_legitimate = total_emails - num_phishing
         
-        print(f"Generating {total_emails} emails ({num_legitimate} legitimate, {num_phishing} phishing)...")
+        logger.info(f"Generating {total_emails} emails ({num_legitimate} legitimate, {num_phishing} phishing)...")
         
         # Generate legitimate emails
         for i in range(num_legitimate):
             email = self.generate_legitimate_email()
             emails.append(email)
             if (i + 1) % 20 == 0:
-                print(f"Generated {i + 1}/{num_legitimate} legitimate emails")
+                logger.info(f"Generated {i + 1}/{num_legitimate} legitimate emails")
         
         # Generate phishing emails with balanced types
         phishing_types = ["urgent_payment", "executive_impersonation", "account_suspension", "credential_harvest"]
@@ -250,12 +270,12 @@ class SimpleEmailGenerator:
             email = self.generate_phishing_email(phishing_type)
             emails.append(email)
             if (i + 1) % 10 == 0:
-                print(f"Generated {i + 1}/{num_phishing} phishing emails")
+                logger.info(f"Generated {i + 1}/{num_phishing} phishing emails")
         
         # Shuffle to randomize order
         random.shuffle(emails)
         
-        print(f"✅ Dataset generation complete: {len(emails)} total emails")
+        logger.info(f"✅ Dataset generation complete: {len(emails)} total emails")
         return emails
 
     def save_to_csv(self, emails: List[Dict[str, Any]], output_path: str = "data/emails.csv") -> str:
@@ -268,34 +288,39 @@ class SimpleEmailGenerator:
         df = pd.DataFrame(emails)
         df.to_csv(output_path, index=False)
         
-        print(f"✅ Dataset saved to {output_path}")
-        print(f"📊 Statistics:")
-        print(f"   Total emails: {len(df)}")
-        print(f"   Legitimate: {len(df[df['is_phishing'] == False])} ({len(df[df['is_phishing'] == False])/len(df)*100:.1f}%)")
-        print(f"   Phishing: {len(df[df['is_phishing'] == True])} ({len(df[df['is_phishing'] == True])/len(df)*100:.1f}%)")
+        logger.info(f"✅ Dataset saved to {output_path}")
+        logger.info(f"📊 Statistics:")
+        logger.info(f"   Total emails: {len(df)}")
+        logger.info(f"   Legitimate: {len(df[df['is_phishing'] == False])} ({len(df[df['is_phishing'] == False])/len(df)*100:.1f}%)")
+        logger.info(f"   Phishing: {len(df[df['is_phishing'] == True])} ({len(df[df['is_phishing'] == True])/len(df)*100:.1f}%)")
         
         if len(df[df['is_phishing'] == True]) > 0:
-            print(f"   Phishing types:")
+            logger.info(f"   Phishing types:")
             for ptype in df[df['is_phishing'] == True]['phishing_type'].value_counts().items():
-                print(f"     {ptype[0]}: {ptype[1]}")
+                logger.info(f"     {ptype[0]}: {ptype[1]}")
         
         return output_path
 
 
 def main():
     """Main function to generate the dataset."""
-    print("🚀 Starting threat hunting email dataset generation...")
+    logger.info("🚀 Starting threat hunting email dataset generation...")
     
-    generator = SimpleEmailGenerator()
-    
-    # Generate dataset (200 emails as per plan)
-    emails = generator.generate_dataset(total_emails=200, phishing_ratio=0.3)
-    
-    # Save to CSV
-    output_path = generator.save_to_csv(emails)
-    
-    print(f"🎉 Email dataset generation completed successfully!")
-    print(f"📁 Output file: {output_path}")
+    try:
+        generator = SimpleEmailGenerator()
+        
+        # Generate dataset (200 emails as per plan)
+        emails = generator.generate_dataset(total_emails=200, phishing_ratio=0.3)
+        
+        # Save to CSV
+        output_path = generator.save_to_csv(emails)
+        
+        logger.info(f"🎉 Email dataset generation completed successfully!")
+        logger.info(f"📁 Output file: {output_path}")
+        
+    except Exception as e:
+        logger.error(f"❌ Dataset generation failed: {e}")
+        raise
     
 
 if __name__ == "__main__":

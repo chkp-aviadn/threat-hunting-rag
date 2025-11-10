@@ -9,30 +9,16 @@ import os
 import logging
 from pathlib import Path
 from typing import Optional, Dict, Any, List
-from dataclasses import field
-from pydantic import validator
-from pydantic_settings import BaseSettings
+from dataclasses import dataclass
 
 from shared.exceptions import ConfigurationError
 
-
-# Configure basic logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-
+# Get logger for this module
 logger = logging.getLogger(__name__)
 
-import os
-from dataclasses import dataclass
-from typing import Optional
-from pathlib import Path
-import logging
 
-logger = logging.getLogger(__name__)
-
-class Config(BaseSettings):
+@dataclass
+class Config:
     """Configuration class for the threat hunting RAG system."""
     
     # Model Configuration
@@ -91,66 +77,72 @@ class Config(BaseSettings):
     max_query_length: int = 500
     allowed_data_dirs: str = "data/,cache/,models/"
     
+    def __post_init__(self):
+        """Initialize config after creation."""
+        # Load from environment variables
+        pass
+    
     @classmethod
     def from_env(cls) -> 'Config':
         """Load configuration from environment variables."""
         try:
-            config = cls(
-                # Model settings
-                embedding_model=os.getenv('EMBEDDING_MODEL', cls.embedding_model),
-                model_cache_dir=os.getenv('MODEL_CACHE_DIR', cls.model_cache_dir),
-                
-                # Paths
-                vector_db_path=os.getenv('VECTOR_DB_PATH', cls.vector_db_path),
-                email_dataset_path=os.getenv('EMAIL_DATASET_PATH', cls.email_dataset_path),
-                
-                # Performance
-                phishing_threshold=float(os.getenv('PHISHING_THRESHOLD', cls.phishing_threshold)),
-                max_results=int(os.getenv('MAX_RESULTS', cls.max_results)),
-                batch_size=int(os.getenv('BATCH_SIZE', cls.batch_size)),
-                cache_ttl_seconds=int(os.getenv('CACHE_TTL_SECONDS', cls.cache_ttl_seconds)),
-                
-                # API keys
-                openai_api_key=os.getenv('OPENAI_API_KEY'),
-                openai_model=os.getenv('OPENAI_MODEL', cls.openai_model),
-                
-                # API Server
-                api_host=os.getenv('API_HOST', cls.api_host),
-                api_port=int(os.getenv('API_PORT', cls.api_port)),
-                api_workers=int(os.getenv('API_WORKERS', cls.api_workers)),
-                api_key=os.getenv('API_KEY'),
-                
-                # Rate Limiting
-                rate_limit_per_minute=int(os.getenv('RATE_LIMIT_PER_MINUTE', cls.rate_limit_per_minute)),
-                rate_limit_burst=int(os.getenv('RATE_LIMIT_BURST', cls.rate_limit_burst)),
-                enable_api_auth=os.getenv('ENABLE_API_AUTH', 'true').lower() == 'true',
-                cors_origins=os.getenv('CORS_ORIGINS', cls.cors_origins),
-                
-                # Logging
-                log_level=os.getenv('LOG_LEVEL', cls.log_level),
-                log_file=os.getenv('LOG_FILE'),
-                
-                # Caching
-                enable_query_cache=os.getenv('ENABLE_QUERY_CACHE', 'true').lower() == 'true',
-                enable_embedding_cache=os.getenv('ENABLE_EMBEDDING_CACHE', 'true').lower() == 'true',
-                max_cache_size=int(os.getenv('MAX_CACHE_SIZE', cls.max_cache_size)),
-                
-                # Development
-                debug=os.getenv('DEBUG', 'false').lower() == 'true',
-                verbose_logging=os.getenv('VERBOSE_LOGGING', 'false').lower() == 'true',
-                
-                # Security
-                cli_rate_limit_per_minute=int(os.getenv('CLI_RATE_LIMIT_PER_MINUTE', cls.cli_rate_limit_per_minute)),
-                require_admin_confirmation=os.getenv('REQUIRE_ADMIN_CONFIRMATION', 'false').lower() == 'true',
-                enable_audit_logging=os.getenv('ENABLE_AUDIT_LOGGING', 'true').lower() == 'true',
-                audit_log_path=os.getenv('AUDIT_LOG_PATH', cls.audit_log_path),
-                enable_input_sanitization=os.getenv('ENABLE_INPUT_SANITIZATION', 'true').lower() == 'true',
-                max_query_length=int(os.getenv('MAX_QUERY_LENGTH', cls.max_query_length)),
-                allowed_data_dirs=os.getenv('ALLOWED_DATA_DIRS', cls.allowed_data_dirs)
-            )
+            # Create instance with defaults then override with env vars
+            instance = cls()
+            
+            # Model settings
+            instance.embedding_model = os.getenv('EMBEDDING_MODEL', instance.embedding_model)
+            instance.model_cache_dir = os.getenv('MODEL_CACHE_DIR', instance.model_cache_dir)
+            
+            # Paths
+            instance.vector_db_path = os.getenv('VECTOR_DB_PATH', instance.vector_db_path)
+            instance.email_dataset_path = os.getenv('EMAIL_DATASET_PATH', instance.email_dataset_path)
+            
+            # Performance
+            instance.phishing_threshold = float(os.getenv('PHISHING_THRESHOLD', str(instance.phishing_threshold)))
+            instance.max_results = int(os.getenv('MAX_RESULTS', str(instance.max_results)))
+            instance.batch_size = int(os.getenv('BATCH_SIZE', str(instance.batch_size)))
+            instance.cache_ttl_seconds = int(os.getenv('CACHE_TTL_SECONDS', str(instance.cache_ttl_seconds)))
+            
+            # API keys
+            instance.openai_api_key = os.getenv('OPENAI_API_KEY')
+            instance.openai_model = os.getenv('OPENAI_MODEL', instance.openai_model)
+            
+            # API Server
+            instance.api_host = os.getenv('API_HOST', instance.api_host)
+            instance.api_port = int(os.getenv('API_PORT', str(instance.api_port)))
+            instance.api_workers = int(os.getenv('API_WORKERS', str(instance.api_workers)))
+            instance.api_key = os.getenv('API_KEY')
+            
+            # Rate Limiting
+            instance.rate_limit_per_minute = int(os.getenv('RATE_LIMIT_PER_MINUTE', str(instance.rate_limit_per_minute)))
+            instance.rate_limit_burst = int(os.getenv('RATE_LIMIT_BURST', str(instance.rate_limit_burst)))
+            instance.enable_api_auth = os.getenv('ENABLE_API_AUTH', 'true').lower() == 'true'
+            instance.cors_origins = os.getenv('CORS_ORIGINS', instance.cors_origins)
+            
+            # Logging
+            instance.log_level = os.getenv('LOG_LEVEL', instance.log_level)
+            instance.log_file = os.getenv('LOG_FILE')
+            
+            # Caching
+            instance.enable_query_cache = os.getenv('ENABLE_QUERY_CACHE', 'true').lower() == 'true'
+            instance.enable_embedding_cache = os.getenv('ENABLE_EMBEDDING_CACHE', 'true').lower() == 'true'
+            instance.max_cache_size = int(os.getenv('MAX_CACHE_SIZE', str(instance.max_cache_size)))
+            
+            # Development
+            instance.debug = os.getenv('DEBUG', 'false').lower() == 'true'
+            instance.verbose_logging = os.getenv('VERBOSE_LOGGING', 'false').lower() == 'true'
+            
+            # Security
+            instance.cli_rate_limit_per_minute = int(os.getenv('CLI_RATE_LIMIT_PER_MINUTE', str(instance.cli_rate_limit_per_minute)))
+            instance.require_admin_confirmation = os.getenv('REQUIRE_ADMIN_CONFIRMATION', 'false').lower() == 'true'
+            instance.enable_audit_logging = os.getenv('ENABLE_AUDIT_LOGGING', 'true').lower() == 'true'
+            instance.audit_log_path = os.getenv('AUDIT_LOG_PATH', instance.audit_log_path)
+            instance.enable_input_sanitization = os.getenv('ENABLE_INPUT_SANITIZATION', 'true').lower() == 'true'
+            instance.max_query_length = int(os.getenv('MAX_QUERY_LENGTH', str(instance.max_query_length)))
+            instance.allowed_data_dirs = os.getenv('ALLOWED_DATA_DIRS', instance.allowed_data_dirs)
             
             logger.info("Configuration loaded successfully from environment")
-            return config
+            return instance
             
         except (ValueError, TypeError) as e:
             logger.error(f"Configuration error: {e}")
@@ -271,14 +263,19 @@ def reload_config() -> Config:
 
 if __name__ == "__main__":
     # Test configuration loading
-    print("Testing configuration system...")
+    logger.info("Testing configuration system...")
     
-    # Load configuration
-    config = get_config()
-    print(f"Loaded config: {config}")
-    
-    # Test validation
-    is_valid = config.validate()
-    print(f"Configuration valid: {is_valid}")
-    
-    print("Configuration system test complete!")
+    try:
+        # Load configuration
+        config = get_config()
+        logger.info(f"Loaded config: {config}")
+        
+        # Test validation
+        is_valid = config.validate()
+        logger.info(f"Configuration valid: {is_valid}")
+        
+        logger.info("Configuration system test complete!")
+        
+    except Exception as e:
+        logger.error(f"Configuration test failed: {e}")
+        raise

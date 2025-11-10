@@ -1,0 +1,42 @@
+# Docker Compose for Threat Hunting RAG Development
+version: '3.8'
+
+services:
+  threat-hunting-rag:
+    build: .
+    container_name: threat-hunting-rag-dev
+    volumes:
+      # Mount source code for development
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./cache:/app/cache
+      # Mount environment files
+      - ./.env:/app/.env
+    environment:
+      - PYTHONPATH=/app/src
+      - LOG_LEVEL=DEBUG
+      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      - MODEL_CACHE_DIR=/app/cache/models
+      - EMBEDDING_CACHE_DIR=/app/cache/embeddings
+    ports:
+      - "8000:8000"
+    command: python main.py
+    
+  # Optional: Interactive development shell
+  dev-shell:
+    build: .
+    container_name: threat-hunting-rag-shell
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./cache:/app/cache
+      - ./.env:/app/.env
+    environment:
+      - PYTHONPATH=/app/src
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    profiles:
+      - dev

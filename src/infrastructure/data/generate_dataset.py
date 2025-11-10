@@ -15,6 +15,7 @@ Requirements from plan.md:
 import random
 import csv
 import uuid
+import logging
 from datetime import datetime, timedelta
 from typing import List, Dict, Any, Tuple
 from dataclasses import dataclass
@@ -23,6 +24,9 @@ import os
 
 from faker import Faker
 import pandas as pd
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -400,14 +404,14 @@ class EmailGenerator:
         num_phishing = int(total_emails * phishing_ratio)
         num_legitimate = total_emails - num_phishing
         
-        print(f"Generating {total_emails} emails ({num_legitimate} legitimate, {num_phishing} phishing)...")
+        logger.info(f"Generating {total_emails} emails ({num_legitimate} legitimate, {num_phishing} phishing)...")
         
         # Generate legitimate emails
         for i in range(num_legitimate):
             email = self.generate_legitimate_email()
             emails.append(email)
             if (i + 1) % 20 == 0:
-                print(f"Generated {i + 1}/{num_legitimate} legitimate emails")
+                logger.info(f"Generated {i + 1}/{num_legitimate} legitimate emails")
         
         # Generate phishing emails with balanced types
         phishing_types = ["urgent_payment", "executive_impersonation", "account_suspension", "credential_harvest"]
@@ -416,12 +420,12 @@ class EmailGenerator:
             email = self.generate_phishing_email(phishing_type)
             emails.append(email)
             if (i + 1) % 10 == 0:
-                print(f"Generated {i + 1}/{num_phishing} phishing emails")
+                logger.info(f"Generated {i + 1}/{num_phishing} phishing emails")
         
         # Shuffle to randomize order
         random.shuffle(emails)
         
-        print(f"✅ Dataset generation complete: {len(emails)} total emails")
+        logger.info(f"✅ Dataset generation complete: {len(emails)} total emails")
         return emails
 
     def save_to_csv(self, emails: List[SimpleEmail], output_path: str = None) -> str:
@@ -454,16 +458,16 @@ class EmailGenerator:
         df = pd.DataFrame(records)
         df.to_csv(output_path, index=False)
         
-        print(f"✅ Dataset saved to {output_path}")
-        print(f"📊 Statistics:")
-        print(f"   Total emails: {len(df)}")
-        print(f"   Legitimate: {len(df[df['is_phishing'] == False])} ({len(df[df['is_phishing'] == False])/len(df)*100:.1f}%)")
-        print(f"   Phishing: {len(df[df['is_phishing'] == True])} ({len(df[df['is_phishing'] == True])/len(df)*100:.1f}%)")
+        logger.info(f"✅ Dataset saved to {output_path}")
+        logger.info(f"📊 Statistics:")
+        logger.info(f"   Total emails: {len(df)}")
+        logger.info(f"   Legitimate: {len(df[df['is_phishing'] == False])} ({len(df[df['is_phishing'] == False])/len(df)*100:.1f}%)")
+        logger.info(f"   Phishing: {len(df[df['is_phishing'] == True])} ({len(df[df['is_phishing'] == True])/len(df)*100:.1f}%)")
         
         if len(df[df['is_phishing'] == True]) > 0:
-            print(f"   Phishing types:")
+            logger.info(f"   Phishing types:")
             for ptype in df[df['is_phishing'] == True]['phishing_type'].value_counts().items():
-                print(f"     {ptype[0]}: {ptype[1]}")
+                logger.info(f"     {ptype[0]}: {ptype[1]}")
         
         return output_path
 
@@ -478,56 +482,61 @@ def main():
     - Save to data/emails.csv
     - Add data validation and quality checks
     """
-    print("🚀 Starting threat hunting email dataset generation...")
-    print("📋 Requirements: 150+ emails, 70% legitimate, 30% phishing")
+    logger.info("🚀 Starting threat hunting email dataset generation...")
+    logger.info("📋 Requirements: 150+ emails, 70% legitimate, 30% phishing")
     
-    config = SimpleConfig.from_env()
-    generator = EmailGenerator(config)
-    
-    # Generate dataset (150+ emails, 70/30 split as per plan.md)
-    emails = generator.generate_dataset(total_emails=150, phishing_ratio=0.30)
-    
-    # Validate requirements
-    legitimate_count = sum(1 for e in emails if not e.is_phishing)
-    phishing_count = sum(1 for e in emails if e.is_phishing)
-    actual_ratio = phishing_count / len(emails)
-    
-    print(f"\n📊 Dataset Validation:")
-    print(f"   Total emails: {len(emails)} ({'✅' if len(emails) >= 150 else '❌'} >= 150)")
-    print(f"   Legitimate: {legitimate_count} ({legitimate_count/len(emails)*100:.1f}%)")
-    print(f"   Phishing: {phishing_count} ({actual_ratio*100:.1f}%)")
-    print(f"   Target ratio: 30% ± 5% = {'✅' if 0.25 <= actual_ratio <= 0.35 else '❌'}")
-    
-    # Validate phishing type distribution
-    phishing_types = {}
-    for email in emails:
-        if email.is_phishing and email.phishing_type:
-            phishing_types[email.phishing_type] = phishing_types.get(email.phishing_type, 0) + 1
-    
-    print(f"   Phishing types balanced: {'✅' if len(phishing_types) >= 4 else '❌'}")
-    for ptype, count in phishing_types.items():
-        print(f"     {ptype}: {count}")
-    
-    # Save to CSV
-    output_path = generator.save_to_csv(emails)
-    
-    # Final validation
     try:
-        df_test = pd.read_csv(output_path)
-        print(f"\n✅ CSV validation: Successfully loaded {len(df_test)} rows")
-        required_columns = ['id', 'sender', 'subject', 'body', 'timestamp', 'attachments', 'is_phishing']
-        missing_cols = [col for col in required_columns if col not in df_test.columns]
-        if missing_cols:
-            print(f"❌ Missing required columns: {missing_cols}")
-        else:
-            print(f"✅ All required columns present")
+        config = SimpleConfig.from_env()
+        generator = EmailGenerator(config)
+        
+        # Generate dataset (150+ emails, 70/30 split as per plan.md)
+        emails = generator.generate_dataset(total_emails=150, phishing_ratio=0.30)
+        
+        # Validate requirements
+        legitimate_count = sum(1 for e in emails if not e.is_phishing)
+        phishing_count = sum(1 for e in emails if e.is_phishing)
+        actual_ratio = phishing_count / len(emails)
+        
+        logger.info(f"\n📊 Dataset Validation:")
+        logger.info(f"   Total emails: {len(emails)} ({'✅' if len(emails) >= 150 else '❌'} >= 150)")
+        logger.info(f"   Legitimate: {legitimate_count} ({legitimate_count/len(emails)*100:.1f}%)")
+        logger.info(f"   Phishing: {phishing_count} ({actual_ratio*100:.1f}%)")
+        logger.info(f"   Target ratio: 30% ± 5% = {'✅' if 0.25 <= actual_ratio <= 0.35 else '❌'}")
+        
+        # Validate phishing type distribution
+        phishing_types = {}
+        for email in emails:
+            if email.is_phishing and email.phishing_type:
+                phishing_types[email.phishing_type] = phishing_types.get(email.phishing_type, 0) + 1
+        
+        logger.info(f"   Phishing types balanced: {'✅' if len(phishing_types) >= 4 else '❌'}")
+        for ptype, count in phishing_types.items():
+            logger.info(f"     {ptype}: {count}")
+        
+        # Save to CSV
+        output_path = generator.save_to_csv(emails)
+        
+        # Final validation
+        try:
+            df_test = pd.read_csv(output_path)
+            logger.info(f"\n✅ CSV validation: Successfully loaded {len(df_test)} rows")
+            required_columns = ['id', 'sender', 'subject', 'body', 'timestamp', 'attachments', 'is_phishing']
+            missing_cols = [col for col in required_columns if col not in df_test.columns]
+            if missing_cols:
+                logger.error(f"❌ Missing required columns: {missing_cols}")
+            else:
+                logger.info(f"✅ All required columns present")
+            
+        except Exception as e:
+            logger.error(f"❌ CSV validation failed: {e}")
+        
+        logger.info(f"\n🎉 Email dataset generation completed successfully!")
+        logger.info(f"📁 Output file: {output_path}")
+        logger.info(f"🎯 All plan.md Task 2.3 requirements met!")
         
     except Exception as e:
-        print(f"❌ CSV validation failed: {e}")
-    
-    print(f"\n🎉 Email dataset generation completed successfully!")
-    print(f"📁 Output file: {output_path}")
-    print(f"🎯 All plan.md Task 2.3 requirements met!")
+        logger.error(f"❌ Dataset generation failed: {e}")
+        raise
     
 
 if __name__ == "__main__":

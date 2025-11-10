@@ -1,0 +1,6 @@
+{
+  "document_count": 4,
+  "last_updated": "2025-11-10T20:51:16.472301",
+  "embedding_dimension": 384,
+  "db_path": "test_data/simple_vector_db"
+}
