@@ -67,3 +67,10 @@ markers = [
     "integration: Integration tests",
     "slow: Slow tests"
 ]
+filterwarnings = [
+    "ignore::pydantic.PydanticDeprecatedSince20",
+    "ignore:.*json_encoders.*:pydantic.PydanticDeprecatedSince20",
+    "ignore:.*SwigPyPacked has no __module__ attribute:DeprecationWarning",
+    "ignore:.*SwigPyObject has no __module__ attribute:DeprecationWarning",
+    "ignore:.*swigvarlink has no __module__ attribute:DeprecationWarning"
+]

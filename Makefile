@@ -1,55 +1,109 @@
-# Threat Hunting RAG System - Quality Automation
+## Minimal Makefile: essential development and runtime commands
 
-.PHONY: help install dev-install format lint type-check test security quality clean
+PYTHON ?= python
+VENV ?= .venv
+VENV_PY := $(VENV)/bin/python
+IMAGE ?= threat-hunting-rag
 
-help:  ## Show this help
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+.PHONY: help install setup api cli cli-interactive query demo demo-interactive bootstrap env test coverage index qa docker-build docker-build-distroless docker-run docker-run-detached clean rebuild-index full-reset env-%
 
-install:  ## Install production dependencies
-	pip install -r requirements.txt
+help:
+	@echo "Targets:"
+	@echo "  install      Install dependencies"
+	@echo "  setup        Initialize data / environment"
+	@echo "  api          Run API server"
+	@echo "  cli          Run CLI interface"
+	@echo "  cli-interactive Full interactive CLI (src.interfaces.cli.app)"
+	@echo "  query        Prompt for one query"
+	@echo "  demo         Run example queries script (structured outputs)"
+	@echo "  demo-interactive Run automated interactive session capture"
+	@echo "  bootstrap    Create venv, install deps, build index"
+	@echo "  quick-api    One-step: ensure venv + deps + dataset then start API"
+	@echo "  quick-cli    One-step: ensure venv + deps + dataset then start interactive CLI"
+	@echo "  env          Create .env from .env.example (FORCE=1 to overwrite)"
+	@echo "  (format/lint/type-check removed for minimal core workflow)"
+	@echo "  test         Run test suite (quick)"
+	@echo "  coverage     Run tests with coverage report"
+	@echo "  clean        Safe repository cleanup (caches, logs, temp artifacts)"
+	@echo "  rebuild-index Regenerate dataset (if missing) and rebuild Chroma index"
+	@echo "  full-reset   Clean caches + remove index, regenerate dataset & validate schema, rebuild index"
 
-dev-install: install  ## Install development dependencies
-	pip install pre-commit
-	pre-commit install
+install:
+	$(PYTHON) -m pip install -r requirements.txt
 
-format:  ## Format code with black
-	black src/ tests/
-	@echo "✅ Code formatted"
+setup:
+	$(PYTHON) app.py --setup
 
-lint:  ## Run flake8 linting
-	flake8 src/ tests/
-	@echo "✅ Linting passed"
+api:
+	$(PYTHON) app.py --api
 
-type-check:  ## Run mypy type checking
-	mypy src/
-	@echo "✅ Type checking passed"
+cli:
+	$(PYTHON) app.py --cli
 
-test:  ## Run pytest with coverage
+cli-interactive:
+	$(PYTHON) -m src.interfaces.cli.app --interactive
+
+query:
+	@read -p "Query: " q; $(PYTHON) app.py --query "$$q"
+
+demo:
+	$(PYTHON) examples/implement_queries.py
+
+demo-interactive:
+	$(PYTHON) examples/run_interactive_queries.py
+
+bootstrap:
+	@if [ ! -d $(VENV) ]; then echo "[bootstrap] Creating venv $(VENV)"; python -m venv $(VENV); fi
+	@echo "[bootstrap] Installing dependencies"; $(VENV_PY) -m pip install --upgrade pip >/dev/null 2>&1 || true; $(VENV_PY) -m pip install -r requirements.txt
+	@echo "[bootstrap] Building index (regenerate + validate)"; $(VENV_PY) scripts/regenerate_all.py || true
+	@echo "[bootstrap] Done. Activate with: source $(VENV)/bin/activate"
+
+env:
+	@if [ ! -f .env ] || [ "$(FORCE)" = "1" ]; then cp .env.example .env && echo "[env] .env created"; else echo "[env] .env already exists (use FORCE=1 to overwrite)"; fi
+
+
+test:
+	pytest -q
+
+coverage:
 	pytest --cov=src --cov-report=term-missing
-	@echo "✅ Tests completed"
 
-security:  ## Run bandit security scan
-	bandit -r src/ -f json -o security_report.json
-	bandit -r src/
-	@echo "✅ Security scan completed"
+env-%:  ## Print value of an environment variable, e.g. `make env-PYTHONPATH`
+	@echo "$*=$(${*})"
 
-quality: format lint type-check  ## Run all quality checks
-	@echo "🎉 All quality checks passed!"
+clean:
+	@echo "[clean] Running cleanup script"
+	bash scripts/clean_repo.sh
+	@echo "[clean] Done"
 
-test-full: quality test security  ## Run complete test suite
-	@echo "🚀 Full test suite completed!"
+rebuild-index:
+	@echo "[rebuild-index] Rebuilding semantic index (will generate dataset if missing)"
+	$(PYTHON) scripts/rebuild_index.py
+	@echo "[rebuild-index] Complete"
 
-clean:  ## Clean up cache and temporary files
-	find . -type d -name "__pycache__" -exec rm -rf {} +
-	find . -type f -name "*.pyc" -delete
-	find . -type f -name "*.pyo" -delete
-	find . -type f -name "*~" -delete
-	rm -rf .coverage htmlcov/ .pytest_cache/ .mypy_cache/
-	@echo "🧹 Cleanup completed"
+full-reset:
+	@echo "[full-reset] Cleaning repository (including index)"
+	bash scripts/clean_repo.sh --with-index
+	@echo "[full-reset] Regenerating dataset + validating schema + rebuilding index"
+	$(PYTHON) scripts/regenerate_all.py
+	@echo "[full-reset] Done"
 
-# Development workflow
-dev-setup: dev-install  ## Complete development setup
-	@echo "🔧 Development environment ready!"
+quick-api:
+	@echo "[quick-api] Ensuring virtual environment"
+	@if [ ! -d $(VENV) ]; then python -m venv $(VENV); fi
+	@echo "[quick-api] Installing dependencies (idempotent)"
+	@$(VENV_PY) -m pip install -r requirements.txt >/dev/null 2>&1 || true
+	@echo "[quick-api] Checking dataset/index"
+	@if [ ! -f data/emails.csv ]; then echo "[quick-api] Dataset missing -> running setup"; $(VENV_PY) app.py --setup; else echo "[quick-api] Dataset present"; fi
+	@echo "[quick-api] Starting API server"
+	$(VENV_PY) app.py --api
 
-check: quality test  ## Quick development checks (no security scan)
-	@echo "✅ Development checks passed!"
+quick-cli:
+	@echo "[quick-cli] Ensuring virtual environment"
+	@if [ ! -d $(VENV) ]; then python -m venv $(VENV); fi
+	@echo "[quick-cli] Installing dependencies (idempotent)"
+	@$(VENV_PY) -m pip install -r requirements.txt >/dev/null 2>&1 || true
+	@echo "[quick-cli] Checking dataset/index"
+	@if [ ! -f data/emails.csv ]; then echo "[quick-cli] Dataset missing -> running setup"; $(VENV_PY) app.py --setup; else echo "[quick-cli] Dataset present"; fi
+	@echo "[quick-cli] Launching interactive CLI"
+	$(VENV_PY) -m src.interfaces.cli.app --interactive

@@ -9,14 +9,17 @@ from enum import Enum
 
 class ThreatLevel(str, Enum):
     """Threat level classification."""
+
     LOW = "LOW"
-    MEDIUM = "MEDIUM" 
+    MEDIUM = "MEDIUM"
     HIGH = "HIGH"
     CRITICAL = "CRITICAL"
+    NEGLIGIBLE = "NEGLIGIBLE"
 
 
 class SearchMethod(str, Enum):
     """Available search methods."""
+
     KEYWORD = "keyword"
     SEMANTIC = "semantic"
     HYBRID = "hybrid"
@@ -24,6 +27,7 @@ class SearchMethod(str, Enum):
 
 class JobStatus(str, Enum):
     """Job processing status."""
+
     PENDING = "pending"
     PROCESSING = "processing"
     COMPLETED = "completed"
@@ -33,6 +37,7 @@ class JobStatus(str, Enum):
 
 class HealthStatus(str, Enum):
     """System health status."""
+
     HEALTHY = "healthy"
-    DEGRADED = "degraded" 
+    DEGRADED = "degraded"
     UNHEALTHY = "unhealthy"

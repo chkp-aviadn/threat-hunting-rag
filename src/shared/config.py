@@ -10,6 +10,22 @@ import logging
 from pathlib import Path
 from typing import Optional, Dict, Any, List
 from dataclasses import dataclass
+import sys
+import os
+
+# SQLite compatibility fix for ChromaDB
+import sqlite3
+
+try:
+    import pysqlite3.dbapi2 as sqlite3
+
+    sys.modules["sqlite3"] = sqlite3
+    print("✅ Using pysqlite3-binary for ChromaDB compatibility")
+except ImportError:
+    print(f"⚠️ Using system SQLite {sqlite3.sqlite_version} - may cause ChromaDB issues if < 3.35.0")
+
+# Add src to path for imports
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from shared.exceptions import ConfigurationError
 
@@ -20,54 +36,64 @@ logger = logging.getLogger(__name__)
 @dataclass
 class Config:
     """Configuration class for the threat hunting RAG system."""
-    
+
     # Model Configuration
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
-    model_cache_dir: str = "src/infrastructure/cache/models/"
-    
+
     # Data Paths
     vector_db_path: str = "data/chroma"
     email_dataset_path: str = "data/emails.csv"
-    
-    # Cache Configuration
-    embedding_cache_dir: str = "src/infrastructure/cache/embeddings/"
-    query_cache_dir: str = "src/infrastructure/cache/query_results/"
-    
+
+    # Cache Configuration - New organized structure
+    # Infrastructure caches (persistent, system-wide)
+    embedding_cache_dir: str = "src/shared/cache/embeddings_cache/"
+    query_cache_dir: str = "src/shared/cache/query_cache/"
+    model_cache_dir: str = "src/shared/cache/models_cache/"
+
+    # Application caches (TTL-based, business logic)
+    domain_cache_dir: str = "cache/application/domain_analysis/"
+    threat_features_cache_dir: str = "cache/application/threat_features/"
+    similarity_cache_dir: str = "cache/application/similarity_scores/"
+
+    # Temporary caches (session-scoped, safe to clear)
+    temp_cache_dir: str = "cache/temp/"
+    session_cache_dir: str = "cache/temp/user_sessions/"
+
     # Performance Settings
     phishing_threshold: float = 0.7
     max_results: int = 10
     batch_size: int = 32
     cache_ttl_seconds: int = 3600  # 1 hour cache
-    
+
     # API Configuration (Optional)
     openai_api_key: Optional[str] = None
     openai_model: str = "gpt-4o-mini"
-    
+
     # API Server Settings
     api_host: str = "0.0.0.0"
     api_port: int = 8000
     api_workers: int = 4
     api_key: Optional[str] = None
-    
+
     # Rate Limiting & Security
     rate_limit_per_minute: int = 100
     rate_limit_burst: int = 20
     enable_api_auth: bool = True
     cors_origins: str = "http://localhost:3000,https://your-domain.com"
-    
+
     # Logging
     log_level: str = "INFO"
     log_file: Optional[str] = None
-    
+
     # Performance Tuning
     enable_query_cache: bool = True
     enable_embedding_cache: bool = True
     max_cache_size: int = 1000
-    
+
     # Development Settings
     debug: bool = False
     verbose_logging: bool = False
-    
+
     # Security Settings
     cli_rate_limit_per_minute: int = 60
     require_admin_confirmation: bool = False
@@ -76,140 +102,199 @@ class Config:
     enable_input_sanitization: bool = True
     max_query_length: int = 500
     allowed_data_dirs: str = "data/,cache/,models/"
-    
+
+    # Redis / external cache settings
+    redis_enabled: bool = False
+    redis_url: Optional[str] = None
+
     def __post_init__(self):
         """Initialize config after creation."""
         # Load from environment variables
         pass
-    
+
     @classmethod
-    def from_env(cls) -> 'Config':
+    def from_env(cls) -> "Config":
         """Load configuration from environment variables."""
         try:
             # Create instance with defaults then override with env vars
             instance = cls()
-            
+
             # Model settings
-            instance.embedding_model = os.getenv('EMBEDDING_MODEL', instance.embedding_model)
-            instance.model_cache_dir = os.getenv('MODEL_CACHE_DIR', instance.model_cache_dir)
-            
+            instance.embedding_model = os.getenv("EMBEDDING_MODEL", instance.embedding_model)
+            instance.model_cache_dir = os.getenv("MODEL_CACHE_DIR", instance.model_cache_dir)
+
             # Paths
-            instance.vector_db_path = os.getenv('VECTOR_DB_PATH', instance.vector_db_path)
-            instance.email_dataset_path = os.getenv('EMAIL_DATASET_PATH', instance.email_dataset_path)
-            
+            instance.vector_db_path = os.getenv("VECTOR_DB_PATH", instance.vector_db_path)
+            instance.email_dataset_path = os.getenv(
+                "EMAIL_DATASET_PATH", instance.email_dataset_path
+            )
+
             # Performance
-            instance.phishing_threshold = float(os.getenv('PHISHING_THRESHOLD', str(instance.phishing_threshold)))
-            instance.max_results = int(os.getenv('MAX_RESULTS', str(instance.max_results)))
-            instance.batch_size = int(os.getenv('BATCH_SIZE', str(instance.batch_size)))
-            instance.cache_ttl_seconds = int(os.getenv('CACHE_TTL_SECONDS', str(instance.cache_ttl_seconds)))
-            
+            instance.phishing_threshold = float(
+                os.getenv("PHISHING_THRESHOLD", str(instance.phishing_threshold))
+            )
+            instance.max_results = int(os.getenv("MAX_RESULTS", str(instance.max_results)))
+            instance.batch_size = int(os.getenv("BATCH_SIZE", str(instance.batch_size)))
+            instance.cache_ttl_seconds = int(
+                os.getenv("CACHE_TTL_SECONDS", str(instance.cache_ttl_seconds))
+            )
+
             # API keys
-            instance.openai_api_key = os.getenv('OPENAI_API_KEY')
-            instance.openai_model = os.getenv('OPENAI_MODEL', instance.openai_model)
-            
+            instance.openai_api_key = os.getenv("OPENAI_API_KEY")
+            instance.openai_model = os.getenv("OPENAI_MODEL", instance.openai_model)
+
             # API Server
-            instance.api_host = os.getenv('API_HOST', instance.api_host)
-            instance.api_port = int(os.getenv('API_PORT', str(instance.api_port)))
-            instance.api_workers = int(os.getenv('API_WORKERS', str(instance.api_workers)))
-            instance.api_key = os.getenv('API_KEY')
-            
+            instance.api_host = os.getenv("API_HOST", instance.api_host)
+            instance.api_port = int(os.getenv("API_PORT", str(instance.api_port)))
+            instance.api_workers = int(os.getenv("API_WORKERS", str(instance.api_workers)))
+            instance.api_key = os.getenv("API_KEY")
+
             # Rate Limiting
-            instance.rate_limit_per_minute = int(os.getenv('RATE_LIMIT_PER_MINUTE', str(instance.rate_limit_per_minute)))
-            instance.rate_limit_burst = int(os.getenv('RATE_LIMIT_BURST', str(instance.rate_limit_burst)))
-            instance.enable_api_auth = os.getenv('ENABLE_API_AUTH', 'true').lower() == 'true'
-            instance.cors_origins = os.getenv('CORS_ORIGINS', instance.cors_origins)
-            
+            instance.rate_limit_per_minute = int(
+                os.getenv("RATE_LIMIT_PER_MINUTE", str(instance.rate_limit_per_minute))
+            )
+            instance.rate_limit_burst = int(
+                os.getenv("RATE_LIMIT_BURST", str(instance.rate_limit_burst))
+            )
+            instance.enable_api_auth = os.getenv("ENABLE_API_AUTH", "true").lower() == "true"
+            instance.cors_origins = os.getenv("CORS_ORIGINS", instance.cors_origins)
+
             # Logging
-            instance.log_level = os.getenv('LOG_LEVEL', instance.log_level)
-            instance.log_file = os.getenv('LOG_FILE')
-            
-            # Caching
-            instance.enable_query_cache = os.getenv('ENABLE_QUERY_CACHE', 'true').lower() == 'true'
-            instance.enable_embedding_cache = os.getenv('ENABLE_EMBEDDING_CACHE', 'true').lower() == 'true'
-            instance.max_cache_size = int(os.getenv('MAX_CACHE_SIZE', str(instance.max_cache_size)))
-            
+            instance.log_level = os.getenv("LOG_LEVEL", instance.log_level)
+            instance.log_file = os.getenv("LOG_FILE")
+
+            # Cache directories
+            instance.embedding_cache_dir = os.getenv(
+                "EMBEDDING_CACHE_DIR", instance.embedding_cache_dir
+            )
+            instance.query_cache_dir = os.getenv("QUERY_CACHE_DIR", instance.query_cache_dir)
+            instance.model_cache_dir = os.getenv("MODEL_CACHE_DIR", instance.model_cache_dir)
+            instance.domain_cache_dir = os.getenv("DOMAIN_CACHE_DIR", instance.domain_cache_dir)
+            instance.threat_features_cache_dir = os.getenv(
+                "THREAT_FEATURES_CACHE_DIR", instance.threat_features_cache_dir
+            )
+            instance.similarity_cache_dir = os.getenv(
+                "SIMILARITY_CACHE_DIR", instance.similarity_cache_dir
+            )
+            instance.temp_cache_dir = os.getenv("TEMP_CACHE_DIR", instance.temp_cache_dir)
+            instance.session_cache_dir = os.getenv("SESSION_CACHE_DIR", instance.session_cache_dir)
+
+            # Caching behavior
+            instance.enable_query_cache = os.getenv("ENABLE_QUERY_CACHE", "true").lower() == "true"
+            instance.enable_embedding_cache = (
+                os.getenv("ENABLE_EMBEDDING_CACHE", "true").lower() == "true"
+            )
+            instance.max_cache_size = int(os.getenv("MAX_CACHE_SIZE", str(instance.max_cache_size)))
+
             # Development
-            instance.debug = os.getenv('DEBUG', 'false').lower() == 'true'
-            instance.verbose_logging = os.getenv('VERBOSE_LOGGING', 'false').lower() == 'true'
-            
+            instance.debug = os.getenv("DEBUG", "false").lower() == "true"
+            instance.verbose_logging = os.getenv("VERBOSE_LOGGING", "false").lower() == "true"
+
             # Security
-            instance.cli_rate_limit_per_minute = int(os.getenv('CLI_RATE_LIMIT_PER_MINUTE', str(instance.cli_rate_limit_per_minute)))
-            instance.require_admin_confirmation = os.getenv('REQUIRE_ADMIN_CONFIRMATION', 'false').lower() == 'true'
-            instance.enable_audit_logging = os.getenv('ENABLE_AUDIT_LOGGING', 'true').lower() == 'true'
-            instance.audit_log_path = os.getenv('AUDIT_LOG_PATH', instance.audit_log_path)
-            instance.enable_input_sanitization = os.getenv('ENABLE_INPUT_SANITIZATION', 'true').lower() == 'true'
-            instance.max_query_length = int(os.getenv('MAX_QUERY_LENGTH', str(instance.max_query_length)))
-            instance.allowed_data_dirs = os.getenv('ALLOWED_DATA_DIRS', instance.allowed_data_dirs)
-            
+            instance.cli_rate_limit_per_minute = int(
+                os.getenv("CLI_RATE_LIMIT_PER_MINUTE", str(instance.cli_rate_limit_per_minute))
+            )
+            instance.require_admin_confirmation = (
+                os.getenv("REQUIRE_ADMIN_CONFIRMATION", "false").lower() == "true"
+            )
+            instance.enable_audit_logging = (
+                os.getenv("ENABLE_AUDIT_LOGGING", "true").lower() == "true"
+            )
+            instance.audit_log_path = os.getenv("AUDIT_LOG_PATH", instance.audit_log_path)
+            instance.enable_input_sanitization = (
+                os.getenv("ENABLE_INPUT_SANITIZATION", "true").lower() == "true"
+            )
+            instance.max_query_length = int(
+                os.getenv("MAX_QUERY_LENGTH", str(instance.max_query_length))
+            )
+            instance.allowed_data_dirs = os.getenv("ALLOWED_DATA_DIRS", instance.allowed_data_dirs)
+            # Redis settings
+            instance.redis_enabled = os.getenv("REDIS_ENABLED", "false").lower() == "true"
+            instance.redis_url = os.getenv("REDIS_URL")
+
             logger.info("Configuration loaded successfully from environment")
             return instance
-            
+
         except (ValueError, TypeError) as e:
             logger.error(f"Configuration error: {e}")
             logger.info("Using default configuration")
             return cls()
-    
+
     def validate(self) -> bool:
         """Validate configuration values."""
         try:
             # Validate paths exist or can be created
-            for path_attr in ['vector_db_path', 'email_dataset_path', 'model_cache_dir']:
+            for path_attr in [
+                "vector_db_path",
+                "email_dataset_path",
+                "model_cache_dir",
+                "embedding_cache_dir",
+                "query_cache_dir",
+                "domain_cache_dir",
+                "threat_features_cache_dir",
+                "similarity_cache_dir",
+                "temp_cache_dir",
+                "session_cache_dir",
+            ]:
                 path_value = getattr(self, path_attr)
-                path_obj = Path(path_value).parent
+                if path_attr in ["vector_db_path", "email_dataset_path"]:
+                    # For data files, create parent directory
+                    path_obj = Path(path_value).parent
+                else:
+                    # For cache directories, create the directory itself
+                    path_obj = Path(path_value)
                 path_obj.mkdir(parents=True, exist_ok=True)
-            
+
             # Validate numeric ranges
             if not 0.0 <= self.phishing_threshold <= 1.0:
                 raise ValueError("phishing_threshold must be between 0.0 and 1.0")
-            
+
             if self.max_results <= 0:
                 raise ValueError("max_results must be positive")
-            
+
             if self.batch_size <= 0:
                 raise ValueError("batch_size must be positive")
-            
+
             # Validate log level
-            valid_levels = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']
+            valid_levels = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
             if self.log_level.upper() not in valid_levels:
                 raise ValueError(f"log_level must be one of: {valid_levels}")
-            
+
             # Validate API configuration
             if self.enable_api_auth and not self.api_key:
                 logger.warning("API authentication enabled but no API key provided")
-            
+
             # Validate rate limiting
             if self.rate_limit_per_minute <= 0:
                 raise ValueError("rate_limit_per_minute must be positive")
-            
+
             logger.info("Configuration validation passed")
             return True
-            
+
         except ValueError as e:
             logger.error(f"Configuration validation failed: {e}")
             return False
-    
+
     def setup_logging(self) -> None:
         """Set up logging based on configuration."""
         # Configure logging level
         log_level = getattr(logging, self.log_level.upper())
-        
+
         # Create formatters
-        formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        )
-        
+        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+
         # Setup root logger
         root_logger = logging.getLogger()
         root_logger.setLevel(log_level)
-        
+
         # Clear existing handlers
         root_logger.handlers.clear()
-        
+
         # Console handler
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         root_logger.addHandler(console_handler)
-        
+
         # File handler (optional)
         if self.log_file:
             log_path = Path(self.log_file)
@@ -217,26 +302,26 @@ class Config:
             file_handler = logging.FileHandler(log_path)
             file_handler.setFormatter(formatter)
             root_logger.addHandler(file_handler)
-        
+
         logger.info(f"Logging configured: level={self.log_level}, file={self.log_file}")
-    
+
     def get_cors_origins_list(self) -> list[str]:
         """Get CORS origins as a list."""
-        return [origin.strip() for origin in self.cors_origins.split(',')]
-    
+        return [origin.strip() for origin in self.cors_origins.split(",")]
+
     def get_allowed_data_dirs_list(self) -> list[str]:
         """Get allowed data directories as a list."""
-        return [dir_path.strip() for dir_path in self.allowed_data_dirs.split(',')]
-    
+        return [dir_path.strip() for dir_path in self.allowed_data_dirs.split(",")]
+
     def __repr__(self) -> str:
         """String representation with sensitive data masked."""
         config_dict = {}
         for key, value in self.__dict__.items():
-            if 'key' in key.lower() or 'password' in key.lower():
-                config_dict[key] = '***masked***' if value else None
+            if "key" in key.lower() or "password" in key.lower():
+                config_dict[key] = "***masked***" if value else None
             else:
                 config_dict[key] = value
-        
+
         return f"Config({config_dict})"
 
 
@@ -264,18 +349,18 @@ def reload_config() -> Config:
 if __name__ == "__main__":
     # Test configuration loading
     logger.info("Testing configuration system...")
-    
+
     try:
         # Load configuration
         config = get_config()
         logger.info(f"Loaded config: {config}")
-        
+
         # Test validation
         is_valid = config.validate()
         logger.info(f"Configuration valid: {is_valid}")
-        
+
         logger.info("Configuration system test complete!")
-        
+
     except Exception as e:
         logger.error(f"Configuration test failed: {e}")
         raise

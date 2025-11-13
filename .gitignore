@@ -1,4 +1,6 @@
-# Python
+############################################
+# Core Python build / bytecode artifacts   #
+############################################
 __pycache__/
 *.py[cod]
 *$py.class
@@ -21,23 +23,33 @@ wheels/
 *.egg
 MANIFEST
 
-# Virtual Environment
-.env
-.venv
+############################################
+# Virtual environments & local env files   #
+############################################
+.venv/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+# Keep committed example; ignore actual runtime .env (generated / secrets)
+.env
+.env.local
+.env.production
+.env.*.bak
 
-# IDE
+############################################
+# Editor / IDE                             #
+############################################
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+############################################
+# OS cruft                                 #
+############################################
 .DS_Store
 .DS_Store?
 ._*
@@ -46,23 +58,34 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Project specific
-data/emails.csv
+############################################
+# Project-specific generated artifacts     #
+############################################
+# Keep synthetic dataset under version control (explicit deliverable)
+!data/emails.csv
+# Ignore vector index & persistence (rebuildable)
 data/chroma/
+data/chroma.sqlite3
+# Caches & runtime logs
 cache/
-models/
 logs/
 *.log
+models/  # downloaded model weights (if any local copies)
 
-# Security
-.env.local
-.env.production
+htmlcov/
+.coverage
+
+############################################
+# Security / keys                          #
+############################################
 *.key
 *.pem
+*.crt
+*.der
 
-# Testing
-.coverage
-htmlcov/
+############################################
+# Testing / tooling caches                 #
+############################################
 .tox/
 .nox/
 .cache
@@ -71,6 +94,20 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+.mypy_cache/
+coverage.json
+pytestdebug.log
 
-# Jupyter
-.ipynb_checkpoints
+############################################
+# Jupyter                                  #
+############################################
+.ipynb_checkpoints/
+
+############################################
+# Temporary & misc                         #
+############################################
+tmp/
+*.tmp
+*.bak
+*.orig
+*.patch
