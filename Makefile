@@ -11,6 +11,7 @@ help:
 	@echo "Targets:"
 	@echo "  install      Install dependencies"
 	@echo "  setup        Initialize data / environment"
+	@echo "  generate-dataset  Generate synthetic email dataset (data/emails.csv)"
 	@echo "  api          Run API server"
 	@echo "  cli          Run CLI interface"
 	@echo "  cli-interactive Full interactive CLI (src.interfaces.cli.app)"
@@ -87,6 +88,11 @@ full-reset:
 	@echo "[full-reset] Regenerating dataset + validating schema + rebuilding index"
 	$(PYTHON) scripts/regenerate_all.py
 	@echo "[full-reset] Done"
+
+generate-dataset dataset:
+	@echo "[generate-dataset] Generating synthetic email dataset -> data/emails.csv"
+	$(PYTHON) src/data_preparation/generators/generate_dataset.py >/dev/null 2>&1 || true
+	@echo "[generate-dataset] Complete (see data/emails.csv)"
 
 quick-api:
 	@echo "[quick-api] Ensuring virtual environment"
