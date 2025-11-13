@@ -1,64 +1,102 @@
 ```mermaid
+%% Threat Hunting RAG System – Updated Architecture Diagram
 graph TD
-    %% User Input
-    A[User Query] --> B[Query Parser]
-    
-    %% Search Processing
-    B --> C[Keyword Search]
-    B --> D[Semantic Search]
-    
-    %% Result Fusion
-    C --> E[Result Fusion]
-    D --> E
-    E --> F[Feature Extraction]
-    
-    %% Threat Analysis
-    F --> G[Threat Scoring]
-    G --> H[Explanation Generation]
-    H --> I[Ranked Results]
-    
-    %% Data Layer
-    subgraph "Offline Processing"
-        J[Dataset Generator] --> K[Email Corpus]
-        K --> L[Embeddings Generator]
-        L --> M[Vector Index]
+
+    %% ───────────────────────── USER & ENTRYPOINTS ─────────────────────────
+    UQ([User Query / Chat Message]) --> CLI[CLI Interface]
+    UQ --> API[FastAPI REST / Chat API]
+    CLI --> PIPE[ThreatHuntingPipeline]
+    API --> PIPE
+
+    %% Session Handling
+    API --> SESS[(SessionStore\n(memory / Redis))]
+
+    %% ───────────────────────── ORCHESTRATION ──────────────────────────────
+    PIPE --> QP[UnifiedSearchService]
+    PIPE --> FE[FeatureExtractor]
+    PIPE --> TS[ThreatScorer]
+    PIPE --> EXPL[Explanation Service\n(RuleBasedExplainer)]
+
+    %% Explanation Output
+    EXPL --> RANK[Ranked & Explained Results]
+    TS --> EXPL
+    FE --> TS
+
+    %% ───────────────────────── SEARCH PIPELINE ────────────────────────────
+    QP --> KW[Keyword Logic]
+    QP --> SEM[Semantic Similarity]
+    KW --> FUSE[Result Fusion & Normalization]
+    SEM --> FUSE
+    FUSE --> FE
+
+    %% Query Result Cache
+    QP --> QRC[(QueryResultsCache\nTTL + LRU)]
+    QRC --> QP
+
+    %% Feature / Similarity / Domain Caches (simplified aggregate)
+    FE --> FC[(Feature / Similarity / Domain Caches)]
+    FC --> FE
+
+    %% ───────────────────────── VECTOR BACKEND ─────────────────────────────
+    subgraph VectorBackend
+        VBPROV[provider.py\n(get_vector_backend)] --> VBCONF[Chroma Compatibility\n(chroma_compatibility.py)]
+        VBCONF --> CHR[(Chroma Collection\n"threat_hunting_emails")]
     end
-    
-    %% Infrastructure
-    D -.-> M
-    C -.-> K
-    
-    %% Architecture Layers
-    subgraph "🌐 Interface Layer"
-        A
-        I
-        N[REST API]
-        O[CLI Interface]
+    SEM --> CHR
+    CHR --> SEM
+
+    %% ───────────────────────── OFFLINE / DATA PREP ────────────────────────
+    subgraph DataPreparation
+        GEN[Dataset Generator\n(generate_dataset.py)] --> CORP[(emails.csv)]
+        CORP --> EMBGEN[EmbeddingGenerator\n(embeddings.py)]
+        EMBGEN --> INDEX[IndexBuilder\n(index_builder.py)]
+        INDEX --> CHR
     end
-    
-    subgraph "🧠 Core Business Logic"
-        B
-        E
-        F
-        G
-        H
+
+    %% Backfill / Initialization
+    INIT[chroma_init.py\n(init_chroma_collection)] --> CHR
+    INIT --> VBPROV
+    INDEX --> VBPROV
+
+    %% ───────────────────────── THREAT ANALYSIS DOMAIN ─────────────────────
+    subgraph ThreatAnalysis
+        FE
+        TS
+        EXPL
+        DVAL[DomainValidator]
+        FE --> DVAL
     end
-    
-    subgraph "🔧 Infrastructure Layer"
-        C
-        D
-        J
-        K
-        L
-        M
+
+    %% ───────────────────────── OUTPUT FLOWS ──────────────────────────────
+    RANK --> CLI
+    RANK --> API
+    API --> JSON[JSON / Structured Explanations]
+    CLI --> HUMAN[Console Rendering / JSON]
+
+    %% ───────────────────────── STYLING ────────────────────────────────────
+    classDef iface fill:#e1f5fe,stroke:#0288d1,stroke-width:1px
+    classDef orchestrate fill:#ede7f6,stroke:#6a1b9a,stroke-width:1px
+    classDef search fill:#f3e5f5,stroke:#8e24aa,stroke-width:1px
+    classDef analysis fill:#fff3e0,stroke:#ef6c00,stroke-width:1px
+    classDef data fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px
+    classDef vector fill:#e0f7fa,stroke:#006064,stroke-width:1px
+    classDef cache fill:#f1f8e9,stroke:#558b2f,stroke-width:1px
+    classDef storage fill:#eeeeee,stroke:#616161,stroke-width:1px
+
+    class UQ,CLI,API,RANK,JSON,HUMAN iface
+    class PIPE orchestrate
+    class QP,KW,SEM,FUSE search
+    class FE,TS,EXPL,DVAL analysis
+    class GEN,CORP,EMBGEN,INDEX,INIT data
+    class CHR,VBCONF,VBPROV vector
+    class QRC,FC,SESS cache
+
+    %% Notes / Legends
+    subgraph Legend[Legend]
+        L1[Pipeline Orchestrator: ThreatHuntingPipeline]
+        L2[Search: Hybrid (Semantic + Keyword) + Fusion]
+        L3[Threat Analysis: Features → Scoring → Explanation]
+        L4[Caches: Performance & Determinism]
+        L5[Vector Backend: Chroma with compatibility shim]
     end
-    
-    %% Styling
-    classDef interface fill:#e1f5fe
-    classDef core fill:#f3e5f5
-    classDef infra fill:#e8f5e8
-    
-    class A,I,N,O interface
-    class B,E,F,G,H core
-    class C,D,J,K,L,M infra
 ```
