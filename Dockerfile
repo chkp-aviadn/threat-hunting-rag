@@ -39,9 +39,9 @@ ENV ANONYMIZED_TELEMETRY=FALSE
 # Expose API port
 EXPOSE 8000
 
-# Health check (disabled for CLI mode)
-# HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-#     CMD curl -f http://localhost:8000/health || exit 1
+# Copy and setup startup script
+COPY startup.sh .
+RUN chmod +x startup.sh
 
-# Default command: Start interactive CLI
-CMD ["python", "-m", "src.interfaces.cli.app", "--interactive"]
+# Default command: Use startup script that respects MODE environment variable
+CMD ["sh", "./startup.sh"]

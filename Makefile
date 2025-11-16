@@ -5,7 +5,7 @@ VENV ?= .venv
 VENV_PY := $(VENV)/bin/python
 IMAGE ?= threat-hunting-rag
 
-.PHONY: help install setup api cli cli-interactive query demo-interactive bootstrap env test coverage index qa docker-build docker-up docker-cli docker-api docker-down docker-logs docker-shell docker-test clean rebuild-index full-reset env-%
+.PHONY: help install setup api cli cli-interactive query demo-interactive bootstrap env test coverage index qa docker-build docker-cli docker-api clean rebuild-index full-reset env-%
 
 help:
 	@echo "Targets:"
@@ -22,13 +22,8 @@ help:
 	@echo "  quick-cli    One-step: ensure venv + deps + dataset then start interactive CLI"
 	@echo "  env          Create .env from .env.example (FORCE=1 to overwrite)"
 	@echo "  docker-build Build Docker image"
-	@echo "  docker-up    Start containers with docker-compose (CLI interactive mode)"
 	@echo "  docker-cli   Run interactive CLI in Docker"
-	@echo "  docker-api   Run API server in Docker"
-	@echo "  docker-down  Stop and remove containers"
-	@echo "  docker-logs  View container logs"
-	@echo "  docker-shell Access container shell"
-	@echo "  docker-test  Test API inside container"
+	@echo "  docker-api   Run API server in Docker (detached, port 8000)"
 	@echo "  test         Run test suite (quick)"
 	@echo "  coverage     Run tests with coverage report"
 	@echo "  clean        Safe repository cleanup (caches, logs, temp artifacts)"
@@ -123,14 +118,10 @@ docker-build:
 	docker build -t $(IMAGE) .
 	@echo "[docker-build] Image built successfully"
 
-docker-up:
-	@echo "[docker-up] Starting interactive CLI container"
-	docker-compose up
-	@echo "[docker-up] Container stopped"
-
 docker-cli:
 	@echo "[docker-cli] Running interactive CLI in Docker"
 	docker run -it --rm \
+		-e MODE=cli-interactive \
 		-v $(PWD)/data:/app/data \
 		-v $(PWD)/cache:/app/cache \
 		-v $(PWD)/logs:/app/logs \
@@ -138,48 +129,18 @@ docker-cli:
 		$(IMAGE)
 
 docker-api:
-	@echo "[docker-api] Starting API server in Docker"
+	@echo "[docker-api] Starting API server in Docker (detached)"
+	@docker rm -f threat-hunting-rag-api 2>/dev/null || true
 	docker run -d --name threat-hunting-rag-api \
 		-p 8000:8000 \
-		-v $(PWD)/data:/app/data \
-		-v $(PWD)/cache:/app/cache \
-		-v $(PWD)/logs:/app/logs \
 		-e MODE=api \
 		-e HOST=0.0.0.0 \
 		-e PORT=8000 \
+		-v $(PWD)/data:/app/data \
+		-v $(PWD)/cache:/app/cache \
+		-v $(PWD)/logs:/app/logs \
 		--env-file .env \
 		$(IMAGE)
 	@echo "[docker-api] API server started at http://localhost:8000"
-	@echo "[docker-api] View logs: docker logs -f threat-hunting-rag-api"
-	@echo "[docker-api] Stop with: docker stop threat-hunting-rag-api && docker rm threat-hunting-rag-api"
-
-docker-down:
-	@echo "[docker-down] Stopping containers"
-	docker-compose down
-	@echo "[docker-down] Containers stopped"
-
-docker-logs:
-	@echo "[docker-logs] Tailing container logs (Ctrl+C to exit)"
-	docker-compose logs -f
-
-docker-shell:
-	@echo "[docker-shell] Accessing container shell"
-	docker exec -it threat-hunting-rag bash
-
-docker-test:
-	@echo "[docker-test] Testing API inside container"
-	@echo "Health check:"
-	@curl -s http://localhost:8000/health | jq . || curl -s http://localhost:8000/health
-	@echo ""
-	@echo "Search test:"
-	@curl -s -X POST http://localhost:8000/api/v1/search \
-		-H "Content-Type: application/json" \
-		-d '{"query": "wire transfer from CEO", "top_k": 3}' | jq '.results[0] // .' || echo "Search failed"
-
-docker-restart: docker-down docker-up
-
-docker-clean:
-	@echo "[docker-clean] Removing containers and images"
-	docker-compose down -v
-	docker rmi $(IMAGE) || true
-	@echo "[docker-clean] Done"
+	@echo "[docker-api] Check logs: docker logs -f threat-hunting-rag-api"
+	@echo "[docker-api] Stop: docker stop threat-hunting-rag-api"
