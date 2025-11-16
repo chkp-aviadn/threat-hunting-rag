@@ -62,7 +62,72 @@ cp .env.example .env
 ```
 
 ---
-## 3. Makefile Essentials
+## 3. Docker Deployment
+
+Run the system in Docker for isolated, portable execution.
+
+### Quick Start with Docker
+
+```bash
+# Build the Docker image
+make docker-build
+
+# Run interactive CLI (default)
+make docker-cli
+
+# Or start with docker-compose
+docker-compose up
+
+# Run API server instead
+make docker-api
+```
+
+### Docker Commands via Makefile
+
+| Target | What it does |
+|--------|--------------|
+| `make docker-build` | Build Docker image |
+| `make docker-cli` | Run interactive CLI in Docker (one-off container) |
+| `make docker-api` | Start API server in Docker (port 8000) |
+| `make docker-up` | Start with docker-compose (interactive CLI) |
+| `make docker-down` | Stop and remove containers |
+| `make docker-logs` | View container logs |
+| `make docker-shell` | Access container shell for debugging |
+| `make docker-test` | Test API health inside container |
+
+### Docker Modes
+
+The container supports different modes via `MODE` environment variable:
+- `cli-interactive` (default) - Full interactive CLI with refinement
+- `cli` - Basic CLI single query mode
+- `api` - REST API server
+- `setup` - Setup/validate system only
+
+Override mode:
+```bash
+docker run -it --rm \
+  -e MODE=api \
+  -p 8000:8000 \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/cache:/app/cache \
+  -v $(pwd)/logs:/app/logs \
+  --env-file .env \
+  threat-hunting-rag
+```
+
+### Data Persistence
+
+Docker setup uses volume mounts for persistence:
+- `./data` - Email dataset and ChromaDB vector index
+- `./cache` - Embeddings and model cache
+- `./logs` - Application logs
+
+These directories are **NOT** copied into the Docker image; they're mounted at runtime for data persistence and smaller image size.
+
+For full Docker documentation, see [`DOCKER.md`](DOCKER.md).
+
+---
+## 4. Makefile Essentials
 
 | Target | What it does |
 |--------|--------------|
@@ -105,7 +170,7 @@ When to choose:
 Rule of thumb: bootstrap = comprehensive first-time setup; install = packages only; setup = data/index only; quick-* = convenience wrappers.
 
 ---
-## 4. Using the CLI
+## 5. Using the CLI
 
 Run a single query (human output):
 ```bash
@@ -126,7 +191,7 @@ Interactive mode (continuous queries + refinement):
 ```bash
 python -m src.interfaces.cli.app --interactive
 ```
-### 4.1 Interactive CLI Capabilities
+### 5.1 Interactive CLI Capabilities
 
 When you start `--interactive` you enter a small REPL that supports natural language queries and iterative refinement without rebuilding embeddings each time.
 
@@ -159,7 +224,7 @@ Natural language support means you don't need structured syntax—phrases like:
 ```
 are tokenized; semantic + keyword hybrid search finds relevant emails; threat features (urgency, financial request, credential harvest signals, impersonation, suspicious attachments, unknown sender domain patterns) are extracted for each result and blended into the `threat_score`.
 
-### 4.2 Iterative Refinement Explained
+### 5.2 Iterative Refinement Explained
 
 Refinement lets you drill down on the PREVIOUS result set without repeating vector search:
 1. Run a broad query: `query urgent payment`
@@ -186,7 +251,7 @@ Use cases:
 
 What "iterative" means here: each `refine` stacks on the latest displayed set. If you run a new `query` it resets the refinement chain.
 
-### 4.3 Threat Score Interpretation In CLI
+### 5.3 Threat Score Interpretation In CLI
 
 | Score Range | Level | Action |
 |-------------|-------|--------|
@@ -198,7 +263,7 @@ What "iterative" means here: each `refine` stacks on the latest displayed set. I
 
 Raising `threshold` filters quickly toward HIGH/CRITICAL signals; lowering it broadens context.
 
-### 4.4 Command Reference (Quick Table)
+### 5.4 Command Reference (Quick Table)
 | Command | Parameters | Effect |
 |---------|------------|--------|
 | `query <text>` | free-form text | Executes new search (semantic + keyword) |
@@ -211,7 +276,7 @@ Raising `threshold` filters quickly toward HIGH/CRITICAL signals; lowering it br
 | `help` | — | Prints usage summary |
 | `exit` / `quit` | — | Terminates interactive session |
 
-### 4.5 Tips
+### 5.5 Tips
 - Start broad (`query payment request`) then refine by raising threshold.
 - Combine focus with threshold: `refine focus=urgent threshold=0.5` (order doesn't matter in command parsing; both tokens read).
 - If refinement yields zero items, lower threshold or remove focus to recover broader context.
@@ -234,7 +299,7 @@ python app.py --query "credential harvesting reset password" --threshold 0.3
 Exit interactive mode with `exit` or `quit`.
 
 ---
-## 5. REST API
+## 6. REST API
 
 Start server:
 ```bash
@@ -321,11 +386,11 @@ curl -s -H "X-API-Key: demo-key-12345" -H "Content-Type: application/json" \
 | `keyword_matches` | Query tokens found in the email |
 
 ---
-## 6. Refinement Concept
-Refinement does NOT re-run a vector search; it filters & re-ranks previous results (apply threshold, focus feature, limit). This is faster and allows quick “drill down” after a broad initial query.
+## 7. Refinement Concept
+Refinement does NOT re-run a vector search; it filters & re-ranks previous results (apply threshold, focus feature, limit). This is faster and allows quick "drill down" after a broad initial query.
 
 ---
-## 7. Threat Scoring (Simple View)
+## 8. Threat Scoring (Simple View)
 Scores blend:
 - Semantic similarity
 - Detected feature confidence (urgent language, suspicious attachment, impersonation, new sender)
@@ -340,7 +405,7 @@ Levels:
 | CRITICAL | 0.8 |
 
 ---
-## 8. Where to Look Next (Advanced Docs – Coming Soon)
+## 9. Where to Look Next (Advanced Docs – Coming Soon)
 | Topic | Future File |
 |-------|-------------|
 | Detailed architecture & data flow | `docs/architecture.md` |
@@ -351,7 +416,7 @@ Levels:
 Existing planning references: `docs/planning/task.txt`, `docs/planning/plan.md`, `diagrams/architecture.mmd`.
 
 ---
-## 9. Troubleshooting Quick List
+## 10. Troubleshooting Quick List
 | Symptom | Fix |
 |---------|-----|
 | `ModuleNotFoundError: interfaces` | Use `make api` (PYTHONPATH set) or run `python app.py --api` |
@@ -360,7 +425,7 @@ Existing planning references: `docs/planning/task.txt`, `docs/planning/plan.md`,
 | Curl 401 Unauthorized | Missing `X-API-Key` header (use `demo-key-12345`) |
 
 ---
-## 10. License & Disclaimer
+## 11. License & Disclaimer
 Synthetic dataset & system are for demonstration / evaluation only. Do not rely solely on these heuristics for production phishing defense without additional validation and monitoring.
 
 ---

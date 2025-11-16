@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  threat-hunting-rag:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: threat-hunting-rag
+    stdin_open: true    # Enable interactive mode
+    tty: true           # Allocate a pseudo-TTY
+    volumes:
+      # Persist data, cache, and logs
+      - ./data:/app/data
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+    environment:
+      - LOG_LEVEL=INFO
+      - CHROMA_TELEMETRY_DISABLED=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  # Optional: Redis for session caching (uncomment to enable)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: threat-hunting-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+  #   restart: unless-stopped
+
+# volumes:
+#   redis-data:
