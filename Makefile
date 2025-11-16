@@ -134,12 +134,12 @@ docker-api:
 	docker run -d --name threat-hunting-rag-api \
 		-p 8000:8000 \
 		-e MODE=api \
-		-e HOST=0.0.0.0 \
-		-e PORT=8000 \
+		-e API_HOST=0.0.0.0 \
+		-e API_PORT=8000 \
+		-e LOG_LEVEL=INFO \
 		-v $(PWD)/data:/app/data \
 		-v $(PWD)/cache:/app/cache \
 		-v $(PWD)/logs:/app/logs \
-		--env-file .env \
 		$(IMAGE)
 	@echo "[docker-api] API server started at http://localhost:8000"
 	@echo "[docker-api] Check logs: docker logs -f threat-hunting-rag-api"
