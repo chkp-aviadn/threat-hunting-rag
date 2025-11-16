@@ -64,10 +64,10 @@ env:
 
 
 test:
-	pytest -q
+	@bash -c "source $(VENV)/bin/activate && pytest -q"
 
 coverage:
-	pytest --cov=src --cov-report=term-missing
+	@bash -c "source $(VENV)/bin/activate && pytest --cov=src --cov-report=term-missing"
 
 env-%:  ## Print value of an environment variable, e.g. `make env-PYTHONPATH`
 	@echo "$*=$(${*})"
