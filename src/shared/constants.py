@@ -7,8 +7,8 @@ from typing import Dict
 
 # Threat level score thresholds (overall threat_score)
 THREAT_LEVEL_THRESHOLDS = {
-    "CRITICAL": 0.85,
-    "HIGH": 0.65,
+    "CRITICAL": 0.75,
+    "HIGH": 0.60,
     "MEDIUM": 0.40,
     "LOW": 0.15,
     "NEGLIGIBLE": 0.0,
@@ -16,13 +16,13 @@ THREAT_LEVEL_THRESHOLDS = {
 
 # Feature weighting for aggregated risk scoring (ThreatFeatures.get_overall_score)
 AGGREGATED_FEATURE_WEIGHTS: Dict[str, float] = {
-    "urgent_language": 0.15,
-    "suspicious_language": 0.10,
-    "executive_impersonation": 0.20,
-    "new_sender": 0.10,
-    "domain_suspicious": 0.15,
+    "urgent_language": 0.12,
+    "suspicious_language": 0.08,
+    "executive_impersonation": 0.25,
+    "new_sender": 0.08,
+    "domain_suspicious": 0.12,
     "suspicious_attachment": 0.15,
-    "executable_attachment": 0.20,
+    "executable_attachment": 0.30,
     "financial_request": 0.15,
     "credential_harvest": 0.20,
     "link_suspicious": 0.10,
@@ -31,10 +31,10 @@ AGGREGATED_FEATURE_WEIGHTS: Dict[str, float] = {
 
 # Primary ThreatScorer feature weights (must sum to 1.0)
 THREAT_SCORER_WEIGHTS: Dict[str, float] = {
-    "urgent_language": 0.30,
-    "suspicious_attachment": 0.25,
-    "executive_impersonation": 0.25,
-    "new_sender": 0.20,
+    "urgent_language": 0.25,
+    "suspicious_attachment": 0.35,
+    "executive_impersonation": 0.30,
+    "new_sender": 0.10,
 }
 
 # Explanation indicator thresholds

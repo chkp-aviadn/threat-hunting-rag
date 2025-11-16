@@ -157,6 +157,18 @@ class ThreatScorer:
             overall_score = sum(
                 feature_scores[feature] * self.weights[feature] for feature in self.weights.keys()
             )
+            
+            # CRITICAL ESCALATION: Executable attachments automatically trigger high scores
+            if attachment_result.detected:
+                executable_extensions = [".exe", ".scr", ".js", ".vbs", ".bat", ".cmd"]
+                has_executable = any(
+                    any(ext in indicator.lower() for ext in executable_extensions) 
+                    for indicator in attachment_result.indicators
+                )
+                if has_executable:
+                    # Boost score significantly for executable attachments
+                    overall_score = max(overall_score, 0.8)  # Ensure at least HIGH/CRITICAL range
+                    logger.debug(f"Executable attachment detected - score boosted to {overall_score}")
 
             # Calculate confidence based on number and strength of signals
             confidence = self._calculate_confidence(

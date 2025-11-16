@@ -484,6 +484,20 @@ class UnifiedSearchService:
                 if not sender or "@" not in sender:
                     sender = "unknown@example.com"
 
+                # Parse attachments from metadata
+                attachments_list = []
+                attachments_str = metadata.get("attachments", "")
+                if attachments_str and attachments_str.strip():
+                    # Split by comma if multiple attachments
+                    attachment_files = [f.strip() for f in attachments_str.split(',') if f.strip()]
+                    for filename in attachment_files:
+                        from data_preparation.schemas.email import EmailAttachment
+                        # Create EmailAttachment object
+                        attachments_list.append(EmailAttachment(
+                            filename=filename,
+                            size=metadata.get("attachment_size", 1024)  # Default size if not available
+                        ))
+
                 email = Email(
                     id=metadata.get("email_id", email_id),
                     sender=sender,
@@ -494,6 +508,8 @@ class UnifiedSearchService:
                     category=metadata.get("category", "unknown"),
                     is_phishing=metadata.get("is_phishing", False),
                     confidence_score=metadata.get("confidence_score", 0.0),
+                    attachments=attachments_list,
+                    attachment_count=len(attachments_list)
                 )
 
                 # Calculate threat score based on similarity and metadata
@@ -510,6 +526,22 @@ class UnifiedSearchService:
                     if keyword_matches:
                         threat_score = min(1.0, threat_score + 0.05 * len(keyword_matches))
                         threat_level = self._determine_threat_level(threat_score)
+                
+                # ATTACHMENT QUERY BOOSTING: Boost emails with attachments for attachment-related queries
+                attachment_query_terms = ["attachment", "exe", "scr", "js", "file", "zip", "docm", "malware"]
+                query_lower = query.text.lower()
+                if any(term in query_lower for term in attachment_query_terms):
+                    attachment_count = metadata.get("attachment_count", 0)
+                    attachments = metadata.get("attachments", "")
+                    if attachment_count > 0 or attachments:
+                        # Boost threat score for attachment queries when email has attachments
+                        attachment_boost = 0.15
+                        # Extra boost for executable attachments
+                        if attachments and any(ext in attachments.lower() for ext in [".exe", ".scr", ".js", ".vbs"]):
+                            attachment_boost = 0.25
+                        threat_score = min(1.0, threat_score + attachment_boost)
+                        threat_level = self._determine_threat_level(threat_score)
+                        logger.debug(f"Attachment query boost applied: +{attachment_boost} for {email.id}")
 
                 # Create mock ThreatFeatures for now (in production this would be real analysis)
                 from threat_analysis.models.threat import ThreatFeatures

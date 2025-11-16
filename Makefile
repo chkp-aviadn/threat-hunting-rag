@@ -5,7 +5,7 @@ VENV ?= .venv
 VENV_PY := $(VENV)/bin/python
 IMAGE ?= threat-hunting-rag
 
-.PHONY: help install setup api cli cli-interactive query demo demo-interactive bootstrap env test coverage index qa docker-build docker-build-distroless docker-run docker-run-detached clean rebuild-index full-reset env-%
+.PHONY: help install setup api cli cli-interactive query demo-interactive bootstrap env test coverage index qa docker-build docker-build-distroless docker-run docker-run-detached clean rebuild-index full-reset env-%
 
 help:
 	@echo "Targets:"
@@ -16,8 +16,7 @@ help:
 	@echo "  cli          Run CLI interface"
 	@echo "  cli-interactive Full interactive CLI (src.interfaces.cli.app)"
 	@echo "  query        Prompt for one query"
-	@echo "  demo         Run example queries script (structured outputs)"
-	@echo "  demo-interactive Run automated interactive session capture"
+	@echo "  demo-interactive Run automated interactive CLI session with example queries"
 	@echo "  bootstrap    Create venv, install deps, build index"
 	@echo "  quick-api    One-step: ensure venv + deps + dataset then start API"
 	@echo "  quick-cli    One-step: ensure venv + deps + dataset then start interactive CLI"
@@ -46,9 +45,6 @@ cli-interactive:
 
 query:
 	@read -p "Query: " q; $(PYTHON) app.py --query "$$q"
-
-demo:
-	$(PYTHON) examples/implement_queries.py
 
 demo-interactive:
 	$(PYTHON) examples/run_interactive_queries.py

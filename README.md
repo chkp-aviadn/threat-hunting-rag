@@ -20,7 +20,7 @@ Use provided targets for one-command setup and launch.
 | `src/orchestration/` | Pipeline that blends retrieval + analysis + explanations |
 | `src/interfaces/cli/` | CLI: single queries & interactive refinement |
 | `src/interfaces/api/` | Minimal REST API (search, refine, chat, health) |
-| `examples/` | Ready‑made query examples & sample outputs |
+| `examples/` | Query examples documentation & automated CLI test script |
 | `diagrams/architecture.mmd` | Mermaid architecture diagram |
 | `docs/planning/` | Task description and planning notes (advanced docs coming later) |
 
@@ -77,6 +77,7 @@ cp .env.example .env
 | `make coverage` | Run tests w/ coverage report |
 | `make quick-api` | One-step: ensure venv + deps + dataset then start API |
 | `make quick-cli` | One-step: ensure venv + deps + dataset then start interactive CLI |
+| `make demo-interactive` | Run automated interactive CLI session with example queries |
 
 Tips:
 - Use `full-reset` only when you want a fresh dataset & vectors.

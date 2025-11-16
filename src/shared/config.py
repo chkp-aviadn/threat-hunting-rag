@@ -13,6 +13,10 @@ from dataclasses import dataclass
 import sys
 import os
 
+# Disable ChromaDB telemetry BEFORE any ChromaDB imports
+os.environ.setdefault("CHROMA_TELEMETRY_DISABLED", "TRUE")
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "FALSE")
+
 # SQLite compatibility fix for ChromaDB
 import sqlite3
 

@@ -9,6 +9,11 @@ If ChromaDB cannot be imported due to SQLite version issues, falls back to a sim
 vector store implementation.
 """
 
+# Disable ChromaDB telemetry BEFORE importing chromadb
+import os
+os.environ.setdefault("CHROMA_TELEMETRY_DISABLED", "TRUE")
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "FALSE")
+
 import sys
 import warnings
 import numpy as np

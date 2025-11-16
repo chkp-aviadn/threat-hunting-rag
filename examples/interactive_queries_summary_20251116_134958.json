@@ -1,0 +1,1007 @@
+{
+  "queries": [
+    "Show me emails asking for confidential information from unknown senders.",
+    "Find emails that mention wire transfers or urgent money transfers.",
+    "List emails with links to unfamiliar or misspelled domains.",
+    "Identify emails pretending to be from IT support asking for password resets.",
+    "Show me emails where the sender\u2019s address doesn\u2019t match the display name.",
+    "Find emails containing invoices or payment instructions from first-time contacts.",
+    "Highlight emails with suspicious-looking PDF or ZIP attachments.",
+    "Locate emails referencing overdue payments or account suspension warnings.",
+    "Show me messages claiming to be from well-known vendors but using personal email addresses.",
+    "Find emails sent outside business hours requesting urgent approval or action."
+  ],
+  "results": {
+    "Show me emails asking for confidential information from unknown senders.": [
+      {
+        "rank": 1,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.467,
+        "sender": "emily.rodriguez@busines.net",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 56.0,
+        "keywords": [
+          "confidential"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "HIGH",
+        "threat_score": 0.712,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Emergency Request from John Smith...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "from"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "HIGH",
+        "threat_score": 0.624,
+        "sender": "sarah@secure-verify.org",
+        "subject": "ASAP: Wire Transfer Authorization...",
+        "confidence_pct": 65.0
+      },
+      {
+        "rank": 4,
+        "threat_level": "HIGH",
+        "threat_score": 0.639,
+        "sender": "robert@verify-now.com",
+        "subject": "Emergency Request from David Martinez...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "from"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "HIGH",
+        "threat_score": 0.682,
+        "sender": "jennifer@secure-verify.org",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "confidential"
+        ]
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.609,
+        "sender": "sarah.johnson@secure-verify.org",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "confidential"
+        ]
+      },
+      {
+        "rank": 7,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.561,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 61.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "LOW",
+        "threat_score": 0.389,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 50.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.697,
+        "sender": "cfo@c0mpany.com",
+        "subject": "Quick Favor - Wire Transfer Needed...",
+        "confidence_pct": 67.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "john@corporate.com",
+        "subject": "Monthly Newsletter - April",
+        "confidence_pct": 0.0
+      }
+    ],
+    "Find emails that mention wire transfers or urgent money transfers.": [
+      {
+        "rank": 1,
+        "threat_level": "HIGH",
+        "threat_score": 0.622,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 71.4,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "HIGH",
+        "threat_score": 0.683,
+        "sender": "robert@verify-now.com",
+        "subject": "Emergency Request from David Martinez...",
+        "confidence_pct": 74.6,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "HIGH",
+        "threat_score": 0.637,
+        "sender": "sarah.johnson@secure-verify.org",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 74.3,
+        "keywords": [
+          "wire"
+        ]
+      },
+      {
+        "rank": 4,
+        "threat_level": "CRITICAL",
+        "threat_score": 0.755,
+        "sender": "cfo@c0mpany.com",
+        "subject": "Quick Favor - Wire Transfer Needed...",
+        "confidence_pct": 76.2,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "CRITICAL",
+        "threat_score": 0.758,
+        "sender": "john@urgent-action.com",
+        "subject": "Quick Favor - Wire Transfer Needed...",
+        "confidence_pct": 84.8,
+        "keywords": [
+          "wire"
+        ]
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.708,
+        "sender": "jennifer@secure-verify.org",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 75.4,
+        "keywords": [
+          "wire"
+        ]
+      },
+      {
+        "rank": 7,
+        "threat_level": "HIGH",
+        "threat_score": 0.742,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Emergency Request from John Smith...",
+        "confidence_pct": 71.8,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 8,
+        "threat_level": "CRITICAL",
+        "threat_score": 0.789,
+        "sender": "david@urgent-action.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 80.2,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.666,
+        "sender": "sarah@secure-verify.org",
+        "subject": "ASAP: Wire Transfer Authorization...",
+        "confidence_pct": 69.1,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      },
+      {
+        "rank": 10,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.493,
+        "sender": "emily.rodriguez@busines.net",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 59.5,
+        "keywords": [
+          "urgent",
+          "wire"
+        ]
+      }
+    ],
+    "List emails with links to unfamiliar or misspelled domains.": [
+      {
+        "rank": 1,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "jesus@business.net",
+        "subject": "Project Update: Reverse-engineered stable website",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 2,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.14,
+        "sender": "angel@acme-corp.com",
+        "subject": "Monthly Newsletter - April...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 3,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "john@corporate.com",
+        "subject": "Monthly Newsletter - April",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 4,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.14,
+        "sender": "todd@innovation-hub.com",
+        "subject": "Monthly Newsletter - May...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 5,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "heather.cross@enterprise.org",
+        "subject": "Monthly Newsletter - August",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 6,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "mark@acme-corp.com",
+        "subject": "Monthly Newsletter - June",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 7,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "it-support@globalfirm.org",
+        "subject": "Monthly Newsletter - June",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "it-support@corporate.com",
+        "subject": "Monthly Newsletter - February",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "admin@acme-corp.com",
+        "subject": "Monthly Newsletter - June",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.561,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 61.0
+      }
+    ],
+    "Identify emails pretending to be from IT support asking for password resets.": [
+      {
+        "rank": 1,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.105,
+        "sender": "noreply@busines.net",
+        "subject": "Password Expiration Notice...",
+        "confidence_pct": 0.0,
+        "keywords": [
+          "password"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "no-reply@verify-now.com",
+        "subject": "Suspicious Activity Detected - Verify Now...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 3,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.105,
+        "sender": "it-support@security-update.org",
+        "subject": "Password Reset Request...",
+        "confidence_pct": 0.0,
+        "keywords": [
+          "password"
+        ]
+      },
+      {
+        "rank": 4,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.105,
+        "sender": "system@verify-now.com",
+        "subject": "Password Reset Request...",
+        "confidence_pct": 0.0,
+        "keywords": [
+          "password"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "account-security@account-alert.net",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 6,
+        "threat_level": "LOW",
+        "threat_score": 0.26,
+        "sender": "it-security@corporrate.com",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 7,
+        "threat_level": "LOW",
+        "threat_score": 0.242,
+        "sender": "account-security@account-alert.net",
+        "subject": "Suspicious Activity Detected - Verify Now...",
+        "confidence_pct": 39.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "it-security@enterprize.org",
+        "subject": "Security Breach Detected - Immediate Action Required...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "account-security@enterprize.org",
+        "subject": "Security Breach Detected - Immediate Action Required...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "it-security@payment-urgent.com",
+        "subject": "Security Breach Detected - Immediate Action Required...",
+        "confidence_pct": 65.0
+      }
+    ],
+    "Show me emails where the sender\u2019s address doesn\u2019t match the display name.": [
+      {
+        "rank": 1,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.561,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 61.0
+      },
+      {
+        "rank": 2,
+        "threat_level": "LOW",
+        "threat_score": 0.389,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 50.0
+      },
+      {
+        "rank": 3,
+        "threat_level": "LOW",
+        "threat_score": 0.242,
+        "sender": "account-security@enterprize.org",
+        "subject": "Account Compromise Alert...",
+        "confidence_pct": 39.0
+      },
+      {
+        "rank": 4,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "no-reply@urgent-action.com",
+        "subject": "Account Compromise Alert...",
+        "confidence_pct": 65.0
+      },
+      {
+        "rank": 5,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "john@corporate.com",
+        "subject": "Monthly Newsletter - April",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.697,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Emergency Request from John Smith...",
+        "confidence_pct": 67.0
+      },
+      {
+        "rank": 7,
+        "threat_level": "LOW",
+        "threat_score": 0.26,
+        "sender": "it-security@corporrate.com",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "heather.cross@enterprise.org",
+        "subject": "Monthly Newsletter - August",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "no-reply@verify-now.com",
+        "subject": "Suspicious Activity Detected - Verify Now...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "account-security@account-alert.net",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 58.0
+      }
+    ],
+    "Find emails containing invoices or payment instructions from first-time contacts.": [
+      {
+        "rank": 1,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.419,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 50.0,
+        "keywords": [
+          "payment",
+          "time"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "HIGH",
+        "threat_score": 0.654,
+        "sender": "robert@verify-now.com",
+        "subject": "Emergency Request from David Martinez...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "from",
+          "payment"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.467,
+        "sender": "emily.rodriguez@busines.net",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 56.0,
+        "keywords": [
+          "payment"
+        ]
+      },
+      {
+        "rank": 4,
+        "threat_level": "HIGH",
+        "threat_score": 0.695,
+        "sender": "final-notice@c0mpany.com",
+        "subject": "CRITICAL: Invoice Payment Due in 24 Hours...",
+        "confidence_pct": 58.0,
+        "keywords": [
+          "payment"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "HIGH",
+        "threat_score": 0.727,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Emergency Request from John Smith...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "from",
+          "payment"
+        ]
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.712,
+        "sender": "cfo@c0mpany.com",
+        "subject": "Quick Favor - Wire Transfer Needed...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "payment"
+        ]
+      },
+      {
+        "rank": 7,
+        "threat_level": "HIGH",
+        "threat_score": 0.695,
+        "sender": "urgent-billing@security-update.org",
+        "subject": "CRITICAL: Invoice Payment Due in 24 Hours...",
+        "confidence_pct": 58.0,
+        "keywords": [
+          "payment"
+        ]
+      },
+      {
+        "rank": 8,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.44,
+        "sender": "billing-urgent@account-alert.net",
+        "subject": "FINAL NOTICE: Outstanding Invoice #24871...",
+        "confidence_pct": 52.0,
+        "keywords": [
+          "payment"
+        ]
+      },
+      {
+        "rank": 9,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.015,
+        "sender": "heather.cross@enterprise.org",
+        "subject": "Monthly Newsletter - August",
+        "confidence_pct": 0.0,
+        "keywords": [
+          "find"
+        ]
+      },
+      {
+        "rank": 10,
+        "threat_level": "LOW",
+        "threat_score": 0.292,
+        "sender": "payment-required@security-update.org",
+        "subject": "FINAL NOTICE: Outstanding Invoice #43681...",
+        "confidence_pct": 47.0,
+        "keywords": [
+          "payment"
+        ]
+      }
+    ],
+    "Highlight emails with suspicious-looking PDF or ZIP attachments.": [
+      {
+        "rank": 1,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "mark@acme-corp.com",
+        "subject": "Monthly Newsletter - June",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 2,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "heather.cross@enterprise.org",
+        "subject": "Monthly Newsletter - August",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 3,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "admin@company.com",
+        "subject": "Monthly Newsletter - September",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 4,
+        "threat_level": "LOW",
+        "threat_score": 0.185,
+        "sender": "angel@acme-corp.com",
+        "subject": "Monthly Newsletter - April...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 5,
+        "threat_level": "LOW",
+        "threat_score": 0.185,
+        "sender": "it-support@acme-corp.com",
+        "subject": "Office Policy Update...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 6,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.0,
+        "sender": "john@corporate.com",
+        "subject": "Monthly Newsletter - April",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 7,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "danielle.johnson@enterprise.org",
+        "subject": "Office Policy Update",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "hr@enterprise.org",
+        "subject": "Office Policy Update",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "angela@innovation-hub.com",
+        "subject": "Office Policy Update",
+        "confidence_pct": 0.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.045,
+        "sender": "sarah.campos@innovation-hub.com",
+        "subject": "Office Policy Update",
+        "confidence_pct": 0.0
+      }
+    ],
+    "Locate emails referencing overdue payments or account suspension warnings.": [
+      {
+        "rank": 1,
+        "threat_level": "HIGH",
+        "threat_score": 0.719,
+        "sender": "urgent-billing@enterprize.org",
+        "subject": "URGENT: Payment Required - Account Suspension Imminent...",
+        "confidence_pct": 61.0,
+        "keywords": [
+          "account",
+          "suspension"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "LOW",
+        "threat_score": 0.315,
+        "sender": "final-notice@corporrate.com",
+        "subject": "IMMEDIATE: Payment Overdue - Legal Action Pending...",
+        "confidence_pct": 49.7,
+        "keywords": [
+          "account",
+          "overdue"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "HIGH",
+        "threat_score": 0.71,
+        "sender": "billing-urgent@payment-urgent.com",
+        "subject": "URGENT: Payment Required - Account Suspension Imminent...",
+        "confidence_pct": 67.1,
+        "keywords": [
+          "account",
+          "suspension"
+        ]
+      },
+      {
+        "rank": 4,
+        "threat_level": "HIGH",
+        "threat_score": 0.71,
+        "sender": "final-notice@c0mpany.com",
+        "subject": "CRITICAL: Invoice Payment Due in 24 Hours...",
+        "confidence_pct": 58.0,
+        "keywords": [
+          "account",
+          "overdue"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.455,
+        "sender": "billing-urgent@account-alert.net",
+        "subject": "FINAL NOTICE: Outstanding Invoice #24871...",
+        "confidence_pct": 52.0,
+        "keywords": [
+          "account",
+          "overdue"
+        ]
+      },
+      {
+        "rank": 6,
+        "threat_level": "LOW",
+        "threat_score": 0.307,
+        "sender": "payment-required@security-update.org",
+        "subject": "FINAL NOTICE: Outstanding Invoice #43681...",
+        "confidence_pct": 47.0,
+        "keywords": [
+          "account",
+          "overdue"
+        ]
+      },
+      {
+        "rank": 7,
+        "threat_level": "HIGH",
+        "threat_score": 0.71,
+        "sender": "urgent-billing@security-update.org",
+        "subject": "CRITICAL: Invoice Payment Due in 24 Hours...",
+        "confidence_pct": 58.0,
+        "keywords": [
+          "account",
+          "overdue"
+        ]
+      },
+      {
+        "rank": 8,
+        "threat_level": "LOW",
+        "threat_score": 0.29,
+        "sender": "final-notice@busines.net",
+        "subject": "URGENT: Payment Required - Account Suspension Imminent...",
+        "confidence_pct": 43.0,
+        "keywords": [
+          "account",
+          "suspension"
+        ]
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.71,
+        "sender": "billing-urgent@busines.net",
+        "subject": "URGENT: Payment Required - Account Suspension Imminent...",
+        "confidence_pct": 56.0,
+        "keywords": [
+          "account",
+          "suspension"
+        ]
+      },
+      {
+        "rank": 10,
+        "threat_level": "HIGH",
+        "threat_score": 0.725,
+        "sender": "collections@urgent-action.com",
+        "subject": "IMMEDIATE: Payment Overdue - Legal Action Pending...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "account",
+          "overdue",
+          "suspension"
+        ]
+      }
+    ],
+    "Show me messages claiming to be from well-known vendors but using personal email addresses.": [
+      {
+        "rank": 1,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.404,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 50.0,
+        "keywords": [
+          "email"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.576,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 61.0,
+        "keywords": [
+          "email"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "NEGLIGIBLE",
+        "threat_score": 0.14,
+        "sender": "angel@acme-corp.com",
+        "subject": "Monthly Newsletter - April...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 4,
+        "threat_level": "LOW",
+        "threat_score": 0.242,
+        "sender": "account-security@enterprize.org",
+        "subject": "Account Compromise Alert...",
+        "confidence_pct": 39.0
+      },
+      {
+        "rank": 5,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "no-reply@urgent-action.com",
+        "subject": "Account Compromise Alert...",
+        "confidence_pct": 65.0
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "no-reply@verify-now.com",
+        "subject": "Suspicious Activity Detected - Verify Now...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 7,
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "account-security@account-alert.net",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 58.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "LOW",
+        "threat_score": 0.26,
+        "sender": "it-security@corporrate.com",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 43.0
+      },
+      {
+        "rank": 9,
+        "threat_level": "LOW",
+        "threat_score": 0.242,
+        "sender": "account-security@account-alert.net",
+        "subject": "Suspicious Activity Detected - Verify Now...",
+        "confidence_pct": 39.0
+      },
+      {
+        "rank": 10,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.452,
+        "sender": "emily.rodriguez@busines.net",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 56.0
+      }
+    ],
+    "Find emails sent outside business hours requesting urgent approval or action.": [
+      {
+        "rank": 1,
+        "threat_level": "HIGH",
+        "threat_score": 0.639,
+        "sender": "robert@verify-now.com",
+        "subject": "Emergency Request from David Martinez...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 2,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.467,
+        "sender": "emily.rodriguez@busines.net",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 56.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 3,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.576,
+        "sender": "cfo@corporrate.com",
+        "subject": "Re: Urgent Wire Transfer Request...",
+        "confidence_pct": 61.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 4,
+        "threat_level": "HIGH",
+        "threat_score": 0.712,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Emergency Request from John Smith...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 5,
+        "threat_level": "HIGH",
+        "threat_score": 0.639,
+        "sender": "sarah@secure-verify.org",
+        "subject": "ASAP: Wire Transfer Authorization...",
+        "confidence_pct": 65.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 6,
+        "threat_level": "HIGH",
+        "threat_score": 0.712,
+        "sender": "cfo@c0mpany.com",
+        "subject": "Quick Favor - Wire Transfer Needed...",
+        "confidence_pct": 67.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 7,
+        "threat_level": "HIGH",
+        "threat_score": 0.667,
+        "sender": "jennifer@secure-verify.org",
+        "subject": "CONFIDENTIAL: Emergency Payment Required...",
+        "confidence_pct": 67.0
+      },
+      {
+        "rank": 8,
+        "threat_level": "MEDIUM",
+        "threat_score": 0.404,
+        "sender": "ceo@c0mpany.com",
+        "subject": "Urgent: Client Payment Due Today...",
+        "confidence_pct": 50.0,
+        "keywords": [
+          "urgent"
+        ]
+      },
+      {
+        "rank": 9,
+        "threat_level": "HIGH",
+        "threat_score": 0.71,
+        "sender": "account-security@account-alert.net",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 58.0,
+        "keywords": [
+          "action",
+          "hours"
+        ]
+      },
+      {
+        "rank": 10,
+        "threat_level": "LOW",
+        "threat_score": 0.29,
+        "sender": "it-security@corporrate.com",
+        "subject": "Account Security Alert - Action Required...",
+        "confidence_pct": 43.0,
+        "keywords": [
+          "action",
+          "hours"
+        ]
+      }
+    ]
+  },
+  "parsing_warnings": []
+}

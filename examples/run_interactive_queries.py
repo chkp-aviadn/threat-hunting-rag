@@ -9,10 +9,9 @@ Usage:
   python examples/run_interactive_queries.py
 
 Artifacts produced:
-  examples/interactive_session_<timestamp>.log          Raw console output
-  examples/interactive_queries_summary_<timestamp>.json Parsed summary
-  examples/interactive_queries_latest.log               Latest raw log symlink/overwrite
-  examples/interactive_queries_latest.json              Latest summary overwrite
+  examples/interactive_session_<timestamp>.log           Raw console output (full CLI interaction)
+  examples/interactive_queries_summary_<timestamp>.json  Machine-readable parsed summary
+  examples/interactive_queries_report_<timestamp>.md     Human-readable executive report
 
 Parsing heuristic:
   - Each query start identified by line beginning with "🔍 Processing query:".
@@ -25,6 +24,11 @@ If parsing fails, the raw log still contains full detail for manual review.
 """
 
 from __future__ import annotations
+
+# Disable ChromaDB telemetry before any imports
+import os
+os.environ.setdefault("CHROMA_TELEMETRY_DISABLED", "TRUE")
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "FALSE")
 
 import subprocess
 import sys
@@ -147,21 +151,91 @@ def parse_session_output(raw: str) -> Dict[str, Any]:
     }
 
 
+def generate_markdown_report(parsed: Dict[str, Any], timestamp: str) -> str:
+    """Generate a human-readable Markdown report from parsed results."""
+    lines = []
+    lines.append("# Threat Hunting Interactive Demo Results")
+    lines.append(f"\n**Generated:** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    lines.append(f"**Session ID:** {timestamp}\n")
+    
+    # Calculate overall statistics
+    threat_counts = {'CRITICAL': 0, 'HIGH': 0, 'MEDIUM': 0, 'LOW': 0, 'NEGLIGIBLE': 0}
+    total_results = 0
+    
+    for query, results in parsed['results'].items():
+        for result in results:
+            threat_counts[result['threat_level']] += 1
+            total_results += 1
+    
+    lines.append("## 📊 Executive Summary")
+    lines.append(f"\n- **Total Queries:** {len(parsed['queries'])}")
+    lines.append(f"- **Total Results Analyzed:** {total_results}")
+    lines.append(f"\n### Threat Level Distribution\n")
+    lines.append("| Threat Level | Count | Percentage |")
+    lines.append("|-------------|-------|------------|")
+    for level in ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'NEGLIGIBLE']:
+        count = threat_counts[level]
+        pct = (count/total_results*100) if total_results > 0 else 0
+        emoji = {'CRITICAL': '🚨', 'HIGH': '⚠️', 'MEDIUM': '⚡', 'LOW': '📝', 'NEGLIGIBLE': '✅'}[level]
+        lines.append(f"| {emoji} {level:11s} | {count:5d} | {pct:6.1f}% |")
+    
+    lines.append("\n---\n")
+    lines.append("## 🔍 Query Results Detail\n")
+    
+    # Detail for each query
+    for i, query in enumerate(parsed['queries'], 1):
+        results = parsed['results'].get(query, [])
+        lines.append(f"### Query {i}: {query}")
+        lines.append(f"\n**Results Found:** {len(results)}\n")
+        
+        if not results:
+            lines.append("*No results captured*\n")
+            continue
+        
+        # Show top 5 results per query
+        lines.append("| Rank | Level | Score | From | Subject |")
+        lines.append("|------|-------|-------|------|---------|")
+        for result in results[:5]:
+            level_emoji = {'CRITICAL': '🚨', 'HIGH': '⚠️', 'MEDIUM': '⚡', 'LOW': '📝', 'NEGLIGIBLE': '✅'}[result['threat_level']]
+            subject = result.get('subject', 'N/A')[:50] + ('...' if len(result.get('subject', '')) > 50 else '')
+            sender = result.get('sender', 'N/A')[:30]
+            lines.append(f"| {result['rank']} | {level_emoji} {result['threat_level']} | {result['threat_score']:.3f} | `{sender}` | {subject} |")
+        
+        if len(results) > 5:
+            lines.append(f"\n*...and {len(results)-5} more results*\n")
+        
+        lines.append("")
+    
+    lines.append("\n---\n")
+    lines.append("## 📋 Notes\n")
+    lines.append("- **Raw Log:** Contains full CLI output with detailed analysis")
+    lines.append("- **JSON Summary:** Machine-readable format with complete result data")
+    lines.append("- **This Report:** Human-readable executive summary")
+    
+    if parsed.get("parsing_warnings"):
+        lines.append(f"\n⚠️ **Parsing Warnings:** {len(parsed['parsing_warnings'])} (see JSON for details)")
+    
+    return "\n".join(lines)
+
+
 def write_outputs(raw: str, parsed: Dict[str, Any]) -> None:
     examples_dir = Path(__file__).parent
     timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
     log_path = examples_dir / f"interactive_session_{timestamp}.log"
     summary_path = examples_dir / f"interactive_queries_summary_{timestamp}.json"
-    latest_log = examples_dir / "interactive_queries_latest.log"
-    latest_json = examples_dir / "interactive_queries_latest.json"
+    report_path = examples_dir / f"interactive_queries_report_{timestamp}.md"
 
+    # Write raw log and JSON summary
     log_path.write_text(raw, encoding="utf-8")
     summary_path.write_text(json.dumps(parsed, indent=2), encoding="utf-8")
-    latest_log.write_text(raw, encoding="utf-8")
-    latest_json.write_text(json.dumps(parsed, indent=2), encoding="utf-8")
+    
+    # Generate human-readable Markdown report
+    markdown = generate_markdown_report(parsed, timestamp)
+    report_path.write_text(markdown, encoding="utf-8")
 
     print(f"✅ Raw log saved to {log_path}")
     print(f"✅ Summary saved to {summary_path}")
+    print(f"✅ Report saved to {report_path}")
     if parsed.get("parsing_warnings"):
         print(f"⚠️ Parsing warnings: {len(parsed['parsing_warnings'])}")
 

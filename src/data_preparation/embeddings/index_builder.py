@@ -162,6 +162,10 @@ class VectorIndexBuilder:
                 "category": email.get("category", "unknown"),
                 "is_phishing": email.get("is_phishing", False),
                 "confidence_score": email.get("confidence_score", 0.0),
+                "attachments": email.get("attachments", ""),
+                "attachment_count": email.get("attachment_count", 0),
+                "phishing_type": email.get("phishing_type", ""),
+                "confidence": email.get("confidence", 0.0),
                 "index": i,
             }
 

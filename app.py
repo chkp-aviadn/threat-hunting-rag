@@ -14,7 +14,11 @@ Usage:
     python app.py --query "threat query"   # Quick query execution
 """
 
+# Disable ChromaDB telemetry before any imports
 import os
+os.environ.setdefault("CHROMA_TELEMETRY_DISABLED", "TRUE")
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "FALSE")
+
 import sys
 import time
 import logging

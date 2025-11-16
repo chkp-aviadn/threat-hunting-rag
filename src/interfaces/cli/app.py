@@ -18,6 +18,11 @@ Usage Examples:
     python -m interfaces.cli.app --batch queries.txt --output results.json
 """
 
+# Disable ChromaDB telemetry before any imports
+import os
+os.environ.setdefault("CHROMA_TELEMETRY_DISABLED", "TRUE") 
+os.environ.setdefault("ANONYMIZED_TELEMETRY", "FALSE")
+
 import argparse
 import sys
 import json
