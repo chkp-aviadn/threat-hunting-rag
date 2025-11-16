@@ -226,64 +226,6 @@
           "urgent",
           "wire"
         ]
-      },
-      {
-        "rank": 1,
-        "threat_level": "CRITICAL",
-        "threat_score": 0.755,
-        "sender": "cfo@c0mpany.com",
-        "subject": "Quick Favor - Wire Transfer Needed...",
-        "confidence_pct": 76.2,
-        "keywords": [
-          "urgent",
-          "wire"
-        ]
-      },
-      {
-        "rank": 2,
-        "threat_level": "CRITICAL",
-        "threat_score": 0.758,
-        "sender": "john@urgent-action.com",
-        "subject": "Quick Favor - Wire Transfer Needed...",
-        "confidence_pct": 84.8,
-        "keywords": [
-          "wire"
-        ]
-      },
-      {
-        "rank": 3,
-        "threat_level": "HIGH",
-        "threat_score": 0.708,
-        "sender": "jennifer@secure-verify.org",
-        "subject": "CONFIDENTIAL: Emergency Payment Required...",
-        "confidence_pct": 75.4,
-        "keywords": [
-          "wire"
-        ]
-      },
-      {
-        "rank": 4,
-        "threat_level": "HIGH",
-        "threat_score": 0.742,
-        "sender": "ceo@c0mpany.com",
-        "subject": "Emergency Request from John Smith...",
-        "confidence_pct": 71.8,
-        "keywords": [
-          "urgent",
-          "wire"
-        ]
-      },
-      {
-        "rank": 5,
-        "threat_level": "CRITICAL",
-        "threat_score": 0.789,
-        "sender": "david@urgent-action.com",
-        "subject": "Urgent: Client Payment Due Today...",
-        "confidence_pct": 80.2,
-        "keywords": [
-          "urgent",
-          "wire"
-        ]
       }
     ],
     "List emails with links to unfamiliar or misspelled domains.": [

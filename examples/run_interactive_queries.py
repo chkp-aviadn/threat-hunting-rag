@@ -119,6 +119,13 @@ def parse_session_output(raw: str) -> Dict[str, Any]:
         current_result = None
 
     for i, line in enumerate(lines):
+        # Skip refine results (they'll be shown in the refine section)
+        if "🔁 Refined results:" in line:
+            # Stop collecting results for current query when refine starts
+            commit_result()
+            current_query = None
+            continue
+            
         # Detect start of a new query (may be preceded by prompt '🔍 threat-hunt> ')
         if "Processing query:" in line:
             # New query begins; commit previous result

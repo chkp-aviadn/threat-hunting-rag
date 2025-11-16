@@ -13,7 +13,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Show me emails asking for confidential information from unknown senders.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.046s | Found 10 results
+⏱️  Processed in 0.042s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.467)
@@ -824,7 +824,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'List emails with links to unfamiliar or misspelled domains.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.025s | Found 10 results
+⏱️  Processed in 0.026s | Found 10 results
 ================================================================================
 
 ✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.000)
@@ -1041,7 +1041,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Identify emails pretending to be from IT support asking for password resets.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.026s | Found 10 results
+⏱️  Processed in 0.025s | Found 10 results
 ================================================================================
 
 ✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.105)
@@ -1605,7 +1605,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Find emails containing invoices or payment instructions from first-time contacts.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.024s | Found 10 results
+⏱️  Processed in 0.023s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.419)
@@ -2113,7 +2113,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Locate emails referencing overdue payments or account suspension warnings.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.022s | Found 10 results
+⏱️  Processed in 0.025s | Found 10 results
 ================================================================================
 
 ⚠️ RESULT #1 - HIGH RISK (Score: 0.719)
@@ -2441,7 +2441,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Show me messages claiming to be from well-known vendors but using personal email addresses.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.022s | Found 10 results
+⏱️  Processed in 0.023s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.404)

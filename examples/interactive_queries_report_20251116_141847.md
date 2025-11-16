@@ -1,22 +1,22 @@
 # Threat Hunting Interactive Demo Results
 
-**Generated:** 2025-11-16 14:15:09 UTC
-**Session ID:** 20251116_141509
+**Generated:** 2025-11-16 14:18:47 UTC
+**Session ID:** 20251116_141847
 
 ## 📊 Executive Summary
 
 - **Total Queries:** 10
-- **Total Results Analyzed:** 105
+- **Total Results Analyzed:** 100
 
 ### Threat Level Distribution
 
 | Threat Level | Count | Percentage |
 |-------------|-------|------------|
-| 🚨 CRITICAL    |     6 |    5.7% |
-| ⚠️ HIGH        |    43 |   41.0% |
-| ⚡ MEDIUM      |    15 |   14.3% |
-| 📝 LOW         |    16 |   15.2% |
-| ✅ NEGLIGIBLE  |    25 |   23.8% |
+| 🚨 CRITICAL    |     3 |    3.0% |
+| ⚠️ HIGH        |    41 |   41.0% |
+| ⚡ MEDIUM      |    15 |   15.0% |
+| 📝 LOW         |    16 |   16.0% |
+| ✅ NEGLIGIBLE  |    25 |   25.0% |
 
 ---
 
@@ -41,7 +41,7 @@
 
 ### Query 2: Find emails that mention wire transfers or urgent money transfers.
 
-**Results Found:** 15
+**Results Found:** 10
 
 | Rank | Level | Score | From | Subject |
 |------|-------|-------|------|---------|
@@ -55,11 +55,6 @@
 | 8 | 🚨 CRITICAL | 0.789 | `david@urgent-action.com` | Urgent: Client Payment Due Today... |
 | 9 | ⚠️ HIGH | 0.666 | `sarah@secure-verify.org` | ASAP: Wire Transfer Authorization... |
 | 10 | ⚡ MEDIUM | 0.493 | `emily.rodriguez@busines.net` | CONFIDENTIAL: Emergency Payment Required... |
-| 1 | 🚨 CRITICAL | 0.755 | `cfo@c0mpany.com` | Quick Favor - Wire Transfer Needed... |
-| 2 | 🚨 CRITICAL | 0.758 | `john@urgent-action.com` | Quick Favor - Wire Transfer Needed... |
-| 3 | ⚠️ HIGH | 0.708 | `jennifer@secure-verify.org` | CONFIDENTIAL: Emergency Payment Required... |
-| 4 | ⚠️ HIGH | 0.742 | `ceo@c0mpany.com` | Emergency Request from John Smith... |
-| 5 | 🚨 CRITICAL | 0.789 | `david@urgent-action.com` | Urgent: Client Payment Due Today... |
 
 ### Query 3: List emails with links to unfamiliar or misspelled domains.
 
