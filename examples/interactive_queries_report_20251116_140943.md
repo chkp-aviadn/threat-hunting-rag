@@ -1,22 +1,22 @@
 # Threat Hunting Interactive Demo Results
 
-**Generated:** 2025-11-16 14:00:51 UTC
-**Session ID:** 20251116_140051
+**Generated:** 2025-11-16 14:09:43 UTC
+**Session ID:** 20251116_140943
 
 ## 📊 Executive Summary
 
 - **Total Queries:** 10
-- **Total Results Analyzed:** 100
+- **Total Results Analyzed:** 105
 
 ### Threat Level Distribution
 
 | Threat Level | Count | Percentage |
 |-------------|-------|------------|
-| 🚨 CRITICAL    |     3 |    3.0% |
-| ⚠️ HIGH        |    40 |   40.0% |
-| ⚡ MEDIUM      |    15 |   15.0% |
-| 📝 LOW         |    17 |   17.0% |
-| ✅ NEGLIGIBLE  |    25 |   25.0% |
+| 🚨 CRITICAL    |     6 |    5.7% |
+| ⚠️ HIGH        |    42 |   40.0% |
+| ⚡ MEDIUM      |    15 |   14.3% |
+| 📝 LOW         |    17 |   16.2% |
+| ✅ NEGLIGIBLE  |    25 |   23.8% |
 
 ---
 
@@ -41,7 +41,7 @@
 
 ### Query 2: Find emails that mention wire transfers or urgent money transfers.
 
-**Results Found:** 10
+**Results Found:** 15
 
 | Rank | Level | Score | From | Subject |
 |------|-------|-------|------|---------|
@@ -55,6 +55,11 @@
 | 8 | 🚨 CRITICAL | 0.789 | `david@urgent-action.com` | Urgent: Client Payment Due Today... |
 | 9 | ⚠️ HIGH | 0.666 | `sarah@secure-verify.org` | ASAP: Wire Transfer Authorization... |
 | 10 | ⚡ MEDIUM | 0.493 | `emily.rodriguez@busines.net` | CONFIDENTIAL: Emergency Payment Required... |
+| 1 | 🚨 CRITICAL | 0.755 | `cfo@c0mpany.com` | Quick Favor - Wire Transfer Needed... |
+| 2 | 🚨 CRITICAL | 0.758 | `john@urgent-action.com` | Quick Favor - Wire Transfer Needed... |
+| 3 | ⚠️ HIGH | 0.708 | `jennifer@secure-verify.org` | CONFIDENTIAL: Emergency Payment Required... |
+| 4 | ⚠️ HIGH | 0.742 | `ceo@c0mpany.com` | Emergency Request from John Smith... |
+| 5 | 🚨 CRITICAL | 0.789 | `david@urgent-action.com` | Urgent: Client Payment Due Today... |
 
 ### Query 3: List emails with links to unfamiliar or misspelled domains.
 
@@ -200,3 +205,15 @@
 - **Raw Log:** Contains full CLI output with detailed analysis
 - **JSON Summary:** Machine-readable format with complete result data
 - **This Report:** Human-readable executive summary
+
+---
+
+## 🔧 Session Commands Executed
+
+This demo also tested interactive commands:
+
+- **refine threshold=0.7** - Filtered wire transfer results to show only HIGH/CRITICAL (5 results)
+- **history** - Displayed all 11 queries (10 searches + 1 refine)
+- **stats** - Showed session statistics and threat breakdown
+
+See the raw log file for full command outputs.

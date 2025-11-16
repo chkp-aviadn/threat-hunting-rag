@@ -13,7 +13,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Show me emails asking for confidential information from unknown senders.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.036s | Found 10 results
+⏱️  Processed in 0.040s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.467)
@@ -317,7 +317,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Find emails that mention wire transfers or urgent money transfers.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.024s | Found 10 results
+⏱️  Processed in 0.025s | Found 10 results
 ================================================================================
 
 ⚠️ RESULT #1 - HIGH RISK (Score: 0.622)
@@ -646,10 +646,185 @@ Commands:
    🎯 Confidence: 59.5%
    🔑 Keywords: urgent, wire
 --------------------------------------------------------------------------------
+🔍 threat-hunt> 🔁 Refined results: 5 items (threshold=0.7, limit=None, focus=None)
+⏱️  Processed in 0.000s | Found 5 results
+================================================================================
+
+🚨 RESULT #1 - CRITICAL RISK (Score: 0.755)
+   From: cfo@c0mpany.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 17:23:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.755)
+      - Similarity=0.154 | Confidence: 0.762 | Rank: 4
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: cfo@c0mpany.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 76.2%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+🚨 RESULT #2 - CRITICAL RISK (Score: 0.758)
+   From: john@urgent-action.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 12:40:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.758)
+      - Similarity=0.147 | Confidence: 0.848 | Rank: 5
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: john@urgent-action.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 84.8%
+   🔑 Keywords: wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #3 - HIGH RISK (Score: 0.708)
+   From: jennifer@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-24 20:31:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.708)
+      - Similarity=0.14 | Confidence: 0.754 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: jennifer@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 75.4%
+   🔑 Keywords: wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.742)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.742)
+      - Similarity=0.081 | Confidence: 0.718 | Rank: 7
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 71.8%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+🚨 RESULT #5 - CRITICAL RISK (Score: 0.789)
+   From: david@urgent-action.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-28 11:55:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.789)
+      - Similarity=0.07 | Confidence: 0.802 | Rank: 8
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: david@urgent-action.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 80.2%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
 🔍 threat-hunt> 🔍 Processing query: 'List emails with links to unfamiliar or misspelled domains.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.023s | Found 10 results
+⏱️  Processed in 0.024s | Found 10 results
 ================================================================================
 
 ✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.000)
@@ -866,7 +1041,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Identify emails pretending to be from IT support asking for password resets.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.021s | Found 10 results
+⏱️  Processed in 0.026s | Found 10 results
 ================================================================================
 
 ✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.105)
@@ -1147,7 +1322,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Show me emails where the sender’s address doesn’t match the display name.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.021s | Found 10 results
+⏱️  Processed in 0.025s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.561)
@@ -1731,7 +1906,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Highlight emails with suspicious-looking PDF or ZIP attachments.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.019s | Found 10 results
+⏱️  Processed in 0.024s | Found 10 results
 ================================================================================
 
 ✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.045)
@@ -1935,7 +2110,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Locate emails referencing overdue payments or account suspension warnings.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.023s | Found 10 results
+⏱️  Processed in 0.030s | Found 10 results
 ================================================================================
 
 ⚠️ RESULT #1 - HIGH RISK (Score: 0.719)
@@ -2263,7 +2438,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Show me messages claiming to be from well-known vendors but using personal email addresses.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.022s | Found 10 results
+⏱️  Processed in 0.023s | Found 10 results
 ================================================================================
 
 ⚡ RESULT #1 - MEDIUM RISK (Score: 0.404)
@@ -2554,7 +2729,7 @@ Commands:
 🔍 threat-hunt> 🔍 Processing query: 'Find emails sent outside business hours requesting urgent approval or action.'
    Method: hybrid, Max results: 10
 
-⏱️  Processed in 0.025s | Found 10 results
+⏱️  Processed in 0.021s | Found 10 results
 ================================================================================
 
 ⚠️ RESULT #1 - HIGH RISK (Score: 0.639)
@@ -2869,4 +3044,26 @@ Commands:
    🔑 Keywords: action, hours
 --------------------------------------------------------------------------------
 🔍 threat-hunt> 
-👋 Session complete! Total time: 0.2s, Queries: 10
+📝 QUERY HISTORY (11 queries):
+   1. Show me emails asking for confidential information from unknown senders. -> 10 results
+   2. Find emails that mention wire transfers or urgent money transfers. -> 10 results
+   3. REFINE(0.7,None,None) -> 5 results
+   4. List emails with links to unfamiliar or misspelled domains. -> 10 results
+   5. Identify emails pretending to be from IT support asking for password resets. -> 10 results
+   6. Show me emails where the sender’s address doesn’t match the display name. -> 10 results
+   7. Find emails containing invoices or payment instructions from first-time contacts. -> 10 results
+   8. Highlight emails with suspicious-looking PDF or ZIP attachments. -> 10 results
+   9. Locate emails referencing overdue payments or account suspension warnings. -> 10 results
+  10. Show me messages claiming to be from well-known vendors but using personal email addresses. -> 10 results
+  11. Find emails sent outside business hours requesting urgent approval or action. -> 10 results
+
+🔍 threat-hunt> 
+📊 SESSION STATISTICS:
+  Session time: 0.3 seconds
+  Queries executed: 11
+  Total results found: 105
+  Average query time: 0.02 seconds
+  Threat breakdown: {'HIGH': 42, 'MEDIUM': 15, 'LOW': 17, 'CRITICAL': 6, 'NEGLIGIBLE': 25}
+
+🔍 threat-hunt> 
+👋 Session complete! Total time: 0.3s, Queries: 11

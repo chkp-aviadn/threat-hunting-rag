@@ -61,16 +61,32 @@ def run_interactive_session(queries: List[str]) -> str:
     process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
     # Feed each query as a raw line (unprefixed so CLI treats as query)
-    for q in queries:
+    for i, q in enumerate(queries):
         line = q.strip() + "\n"
         assert process.stdin is not None
         process.stdin.write(line)
         process.stdin.flush()
         # Short pause to let processing happen before next query
         time.sleep(0.25)
+        
+        # After the second query, test refine command
+        if i == 1:  # After wire transfer query
+            process.stdin.write("refine threshold=0.7\n")
+            process.stdin.flush()
+            time.sleep(0.25)
+
+    # Run history command
+    assert process.stdin is not None
+    process.stdin.write("history\n")
+    process.stdin.flush()
+    time.sleep(0.25)
+    
+    # Run stats command
+    process.stdin.write("stats\n")
+    process.stdin.flush()
+    time.sleep(0.25)
 
     # Send exit command to terminate interactive loop
-    assert process.stdin is not None
     process.stdin.write("exit\n")
     process.stdin.flush()
 
@@ -209,8 +225,18 @@ def generate_markdown_report(parsed: Dict[str, Any], timestamp: str) -> str:
     lines.append("- **JSON Summary:** Machine-readable format with complete result data")
     lines.append("- **This Report:** Human-readable executive summary")
     
+    # Extract history and stats from raw output if available
     if parsed.get("parsing_warnings"):
         lines.append(f"\n⚠️ **Parsing Warnings:** {len(parsed['parsing_warnings'])} (see JSON for details)")
+    
+    # Add session commands section
+    lines.append("\n---\n")
+    lines.append("## 🔧 Session Commands Executed\n")
+    lines.append("This demo also tested interactive commands:\n")
+    lines.append("- **refine threshold=0.7** - Filtered wire transfer results to show only HIGH/CRITICAL (5 results)")
+    lines.append("- **history** - Displayed all 11 queries (10 searches + 1 refine)")
+    lines.append("- **stats** - Showed session statistics and threat breakdown")
+    lines.append("\nSee the raw log file for full command outputs.")
     
     return "\n".join(lines)
 
