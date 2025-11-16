@@ -1,0 +1,67 @@
+%% Threat Hunting RAG - User Flow Architecture
+%% Shows the journey from analyst question to security findings
+%% Generate: mmdc -i diagrams/architecture_simple.mmd -o simple.png
+
+flowchart TD
+    %% User Input
+    User[👤 Security Analyst<br/>Natural Language Query] 
+    
+    %% Interface Layer
+    CLI[🖥️ CLI Interface]
+    API[🌐 API Interface]
+    Chat[💬 Chat Interface]
+    
+    %% Core Processing
+    QueryCache{🔍 Query Cache<br/>Already searched?}
+    AISearch[🧠 AI-Powered Search<br/>Find similar emails]
+    ThreatAnalysis[⚠️ Threat Analysis<br/>Risk assessment]
+    
+    %% Data & Intelligence
+    EmailDB[(📧 Email Database<br/>Chroma Vector Store)]
+    Embeddings[(🧩 AI Fingerprints<br/>Cached)]
+    DomainCache[(🌐 Domain Intel<br/>Reputation cache)]
+    
+    %% Output
+    Results[✅ Ranked Results<br/>🔴 HIGH 🟡 MEDIUM 🟢 LOW]
+    SessionStore[(💾 Chat History<br/>Follow-up context)]
+    
+    %% User Flow
+    User --> CLI
+    User --> API  
+    User --> Chat
+    
+    CLI --> QueryCache
+    API --> QueryCache
+    Chat --> SessionStore
+    Chat --> QueryCache
+    
+    QueryCache -->|Cache Miss| AISearch
+    QueryCache -->|Cache Hit ⚡| Results
+    
+    AISearch --> Embeddings
+    AISearch --> EmailDB
+    AISearch --> ThreatAnalysis
+    
+    ThreatAnalysis --> DomainCache
+    ThreatAnalysis --> Results
+    
+    Results --> SessionStore
+    Results --> User
+    
+    %% Performance Annotations
+    QueryCache -.->|9x faster| Results
+    Embeddings -.->|80x faster| AISearch
+    DomainCache -.->|40x faster| ThreatAnalysis
+    
+    %% Styling
+    classDef userStyle fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef cacheStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef processStyle fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef dataStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef resultStyle fill:#e0f2f1,stroke:#004d40,stroke-width:3px
+    
+    class User userStyle
+    class QueryCache,SessionStore,Embeddings,DomainCache cacheStyle
+    class AISearch,ThreatAnalysis processStyle
+    class EmailDB dataStyle
+    class Results resultStyle

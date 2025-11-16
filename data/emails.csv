@@ -1,768 +1,191 @@
-id,sender,sender_domain,subject,body,timestamp,attachments,attachment_count,is_phishing,confidence,created_at,phishing_type
-2c1d4f5e-33a7-4184-8ef6-9258f21a6606,danielle.johnson@enterprise.org,enterprise.org,Office Policy Update,"Dear Joy,
+id,sender,sender_domain,subject,body,timestamp,attachments,attachment_count,is_phishing,phishing_type,confidence
+2e029041-857b-4b57-b789-1d724da49923,danielle.johnson@enterprise.org,enterprise.org,Office Policy Update,"Dear Joy,
 
 Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Danielle Johnson",2025-10-21T10:43:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.981812,
-0d381eff-c8d1-4558-833f-49429137282b,it-support@enterprise.org,enterprise.org,Team Building Event,"Hi Team,
+Danielle Johnson",2025-10-21T10:43:00,budget.xlsx,1,False,,0.95
+58872cb8-b5c9-489f-b403-737e76046d88,system@security-update.org,security-update.org,Security: Password Must Be Changed,"Your password will expire in 24 hours. Reset your password now to maintain access:
 
-This is a reminder about our upcoming meeting scheduled for 2025-11-16. Please review the agenda attached and come prepared with your updates.
+https://password-reset-secure.com/update
 
-Best regards,
-Anthony Robinson",2025-11-07T12:32:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.982166,
-124eb50c-4191-4608-b45b-29b51fb646f7,it-support@company.com,company.com,Training Session Reminder,"Dear Jason,
+IT Support",2025-10-31T10:31:00,,0,True,credential_harvest,0.9
+5e34f751-02e5-4c69-8f4a-f81057c151ad,noreply@corporrate.com,corporrate.com,Password Expiration Notice,"Your password will expire in 24 hours. Reset your password now to maintain access:
+
+https://password-reset-secure.com/update
+
+IT Support",2025-10-20T11:48:00,,0,True,credential_harvest,0.9
+015c2bec-19a5-40c6-aac8-31837d954ed2,it-support@business.net,business.net,Office Policy Update,"Dear Gregory,
 
 Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Lisa Smith",2025-10-24T13:51:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.982332,
-953b2403-021d-4b44-9075-88f7bf7710c0,colin@company.com,company.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Reactive explicit product. We're currently on track and expect to meet our deadline.
-
-Regards,
-Colin Abbott",2025-11-07T14:06:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.982481,
-b1fc6714-1542-42e9-9e7a-09886539a5b6,admin@enterprise.org,enterprise.org,Q3 Budget Review,"Hello,
-
-I wanted to update you on the progress of Focused bandwidth-monitored implementation. We're currently on track and expect to meet our deadline.
-
-Regards,
-Christine Hensley",2025-11-05T09:46:00,[],0,False,0.95,2025-11-13T10:38:24.982634,
-75235db7-e8e5-432b-bd6f-4ed7bb776f06,it-support@innovation-hub.com,innovation-hub.com,Q4 Budget Review,"Hi Team,
+Nicholas Thomas",2025-10-27T15:38:00,agenda.pdf,1,False,,0.95
+ec9353ed-2483-461a-b462-099d2443c13d,hr@business.net,business.net,Project Update: Multi-lateral upward-trending capacity,"Hi Team,
 
 This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
 
 Best regards,
-Joshua Reid",2025-11-04T14:36:00,[],0,False,0.95,2025-11-13T10:38:24.982873,
-e5c9475a-65a1-4bbe-ba82-175cdf18c0a8,george.daniel@corporate.com,corporate.com,Weekly Team Meeting - 2025-11-18,"Hello,
-
-I wanted to update you on the progress of Visionary zero-defect approach. We're currently on track and expect to meet our deadline.
-
-Regards,
-George Daniel",2025-10-17T12:55:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.983034,
-c195eb86-56ad-433c-80ed-6838b977242f,admin@enterprise.org,enterprise.org,Office Policy Update,"Hello,
-
-I wanted to update you on the progress of Extended solution-oriented methodology. We're currently on track and expect to meet our deadline.
-
-Regards,
-Jeremy Johnson",2025-10-31T14:13:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.983196,
-3a713cf3-4fae-48ae-964d-2930d75b32bd,randall.rocha@acme-corp.com,acme-corp.com,Quarterly All-Hands Meeting,"Dear Amber,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Randall Rocha",2025-10-30T15:17:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.983353,
-df2e1693-c281-42b9-ad31-7c93302d28d0,hr@corporate.com,corporate.com,Weekly Team Meeting - 2025-11-18,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Michael Osborn",2025-10-31T13:04:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.983485,
-2c3dc949-7d5f-494f-bbb4-e12bc3d1c8ca,it-support@corporate.com,corporate.com,Monthly Newsletter - February,"Hi everyone,
+Benjamin Kramer",2025-10-17T13:38:00,budget.xlsx,1,False,,0.95
+6c0be96c-63f9-43d4-bdbd-5c38f3239f9b,hr@company.com,company.com,Office Policy Update,"Hi everyone,
 
 Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
 
 Best,
-Bryan James",2025-10-16T16:09:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.983647,
-e69335e3-6b88-4357-b7d1-aa6eb3df8f31,joseph@acme-corp.com,acme-corp.com,Training Session Reminder,"Hi everyone,
+Amber Cooke",2025-10-24T14:29:00,,0,False,,0.95
+90cbf7fd-2149-48bd-845f-5c009775fda9,account-security@enterprize.org,enterprize.org,Account Compromise Alert,"ACCOUNT COMPROMISE DETECTED
 
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
 
-Best,
-Joseph Davidson",2025-10-31T14:14:00,[],0,False,0.95,2025-11-13T10:38:24.983866,
-6ceee915-1b4c-41f1-b4f7-807a5fe67a5a,it-support@business.net,business.net,IT Maintenance Window,"Hi Team,
+https://account-verify-security.org/login
 
-This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
+Do not delay - your account security is at risk.
 
-Best regards,
-William Rodriguez",2025-11-07T11:50:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.984015,
-18c91431-4146-453e-a19d-cb260a5649d0,it-support@globalfirm.org,globalfirm.org,Q4 Budget Review,"Hi everyone,
+IT Security",2025-10-24T17:01:00,,0,True,account_suspension,0.9
+759fbb2b-2d18-4d50-8c04-bbc00e208e3b,account-security@account-alert.net,account-alert.net,Suspicious Activity Detected - Verify Now,"ACCOUNT COMPROMISE DETECTED
 
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
 
-Best,
-Carol Burns",2025-10-30T17:16:00,[],0,False,0.95,2025-11-13T10:38:24.984178,
-f96faf97-ffcf-45b4-b529-75a8670943f9,lisa.spence@company.com,company.com,New Employee Welcome,"Hello,
+https://account-verify-security.org/login
 
-I wanted to update you on the progress of Robust interactive data-warehouse. We're currently on track and expect to meet our deadline.
+Do not delay - your account security is at risk.
 
-Regards,
-Lisa Spence",2025-11-04T15:10:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.984366,
-6f5664e3-b2ac-49b7-90a8-77563e39ec26,sarah.campos@innovation-hub.com,innovation-hub.com,Office Policy Update,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-16. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Sarah Campos",2025-10-17T17:38:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.984818,
-189f21f9-85ec-4824-9fa9-bc1dfc1e8a12,john@corporate.com,corporate.com,Monthly Newsletter - April,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-John Brown",2025-11-03T16:01:00,[],0,False,0.95,2025-11-13T10:38:24.985043,
-2ea578b3-5107-4af4-b991-efde24d3ca28,hr@enterprise.org,enterprise.org,Office Policy Update,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Michele Jones",2025-10-16T10:05:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.985211,
-8c031645-45ce-42c0-a3a8-79159208b47b,kristen.aguirre@innovation-hub.com,innovation-hub.com,New Employee Welcome,"Dear Robert,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Kristen Aguirre",2025-10-14T17:10:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.985376,
-ba0c885c-8779-4305-8d06-fec5d101b905,it-support@acme-corp.com,acme-corp.com,Quarterly All-Hands Meeting,"Dear Amanda,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Tracey Garcia",2025-10-20T12:45:00,[],0,False,0.95,2025-11-13T10:38:24.985507,
-9c994e74-ef04-428f-8cff-695e8ab1981e,admin@acme-corp.com,acme-corp.com,Monthly Newsletter - June,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-John Leblanc",2025-11-06T12:04:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.985688,
-7bea7a50-f4da-4b43-b586-0cf348b1ce66,gabriel.tucker@techsolutions.com,techsolutions.com,Quarterly All-Hands Meeting,"Dear Tricia,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Gabriel Tucker",2025-11-11T09:14:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.985879,
-75be269a-2994-497c-9e67-be50d745d68e,heather.cross@enterprise.org,enterprise.org,Monthly Newsletter - August,"Dear Kenneth,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Heather Cross",2025-10-23T16:13:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986019,
-6f83bf94-3baa-4983-9668-218d2a4a8859,it-support@business.net,business.net,Quarterly All-Hands Meeting,"Dear Susan,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Bruce Edwards",2025-10-17T15:12:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986147,
-778c4a64-9517-4679-bc66-883c37cbd260,carlos.hensley@enterprise.org,enterprise.org,Team Building Event,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Carlos Hensley",2025-10-30T09:43:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986285,
-4af49cbe-43f4-4736-9444-0d0a4d9208f7,leslie.green@enterprise.org,enterprise.org,Team Building Event,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Leslie Green",2025-11-07T12:34:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986431,
-58bf2669-e91b-4cde-bcff-22faa4cf5f5e,albert@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Cloned dynamic hub. We're currently on track and expect to meet our deadline.
-
-Regards,
-Albert Howell",2025-11-06T10:28:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986591,
-7070bfe1-4199-45fc-8a52-7f9c1da3d3c5,justin.kim@enterprise.org,enterprise.org,New Employee Welcome,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Justin Kim",2025-11-07T15:31:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986797,
-4afa3e76-bf0c-47c1-8ffe-bc72eaacaaa9,sheila@innovation-hub.com,innovation-hub.com,Team Building Event,"Dear Juan,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Sheila Taylor",2025-11-13T15:16:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.986964,
-ae80859f-9c19-417d-a446-f60dffb4a8fc,hr@innovation-hub.com,innovation-hub.com,Team Building Event,"Dear Joshua,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Cynthia Baker",2025-11-04T12:03:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.987113,
-3067aa73-5200-4e0b-a218-c4ecfc670159,hr@company.com,company.com,Weekly Team Meeting - 2025-11-26,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Tina Martin",2025-10-15T17:10:00,[],0,False,0.95,2025-11-13T10:38:24.987344,
-0e2171b2-e5c2-4b35-9716-2b299a6f0c70,it-support@company.com,company.com,Q2 Budget Review,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Mary Aguilar",2025-11-11T12:25:00,[],0,False,0.95,2025-11-13T10:38:24.987504,
-61b12b81-9005-42c6-a4b7-7b7a4b5a57d3,it-support@enterprise.org,enterprise.org,Training Session Reminder,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Evelyn Estrada",2025-10-23T17:20:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.987641,
-45ecb4f2-767a-4dfb-b117-0cae66f3c480,angel@acme-corp.com,acme-corp.com,Monthly Newsletter - April,"Hello,
-
-I wanted to update you on the progress of Customer-focused homogeneous alliance. We're currently on track and expect to meet our deadline.
-
-Regards,
-Angel Doyle",2025-11-07T13:29:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.987846,
-b6552153-dbcd-4b1a-9086-6278bd60d9ee,michele.walker@techsolutions.com,techsolutions.com,Weekly Team Meeting - 2025-12-07,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Michele Walker",2025-10-27T12:32:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.987998,
-0715d218-fe0c-46e1-9707-ec5946f18600,mark@acme-corp.com,acme-corp.com,Monthly Newsletter - June,"Dear Erin,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Mark Lin",2025-11-04T11:28:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.988126,
-7c412f51-b077-416a-81a1-f8b44a37a739,it-support@acme-corp.com,acme-corp.com,New Employee Welcome,"Hello,
-
-I wanted to update you on the progress of Optional real-time migration. We're currently on track and expect to meet our deadline.
-
-Regards,
-Natalie Green",2025-10-14T11:16:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.988258,
-50760382-104c-4194-8fdb-ac135bd5f54b,darrell.lam@enterprise.org,enterprise.org,New Employee Welcome,"Hello,
-
-I wanted to update you on the progress of Up-sized user-facing support. We're currently on track and expect to meet our deadline.
-
-Regards,
-Darrell Lam",2025-10-24T12:45:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.988391,
-f20c606c-c508-457d-9f51-1aa58f7a0479,emily@techsolutions.com,techsolutions.com,Office Policy Update,"Hello,
-
-I wanted to update you on the progress of Innovative motivating function. We're currently on track and expect to meet our deadline.
-
-Regards,
-Emily Diaz",2025-11-11T15:53:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.988646,
-804d5923-8afa-4985-b514-dc774272c2d4,elizabeth.nguyen@acme-corp.com,acme-corp.com,Weekly Team Meeting - 2025-12-04,"Dear Shelby,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Elizabeth Nguyen",2025-11-07T16:35:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.988859,
-bac7e216-67cc-4877-bfe1-296b87475043,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-11-14,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Kevin Kelley",2025-10-27T09:53:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989010,
-cfa4244d-b111-4598-8b97-ed31a1a7af0d,it-support@techsolutions.com,techsolutions.com,New Employee Welcome,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Jason Kennedy",2025-11-12T13:23:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989158,
-6d5ea2c7-4308-49b2-82f1-bdb992cca863,hr@company.com,company.com,Training Session Reminder,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Jimmy Collins",2025-10-20T17:56:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989280,
-513c14f1-4b6d-45e3-8619-72d59e8770d4,it-support@globalfirm.org,globalfirm.org,Project Update: Networked modular initiative,"Dear Diana,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Olivia Johnston",2025-10-16T15:01:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989413,
-c83eccc4-3b38-4526-aa96-ba80662bb406,hr@business.net,business.net,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Persevering client-driven website. We're currently on track and expect to meet our deadline.
-
-Regards,
-Kimberly Robinson",2025-10-17T10:24:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989536,
-88170251-f9fa-4e0e-a554-4469a8e6ad03,admin@company.com,company.com,Training Session Reminder,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Steven Schmidt",2025-11-04T12:14:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.989705,
-09d13643-52e8-4327-9b62-e2fe5b02f043,julia@company.com,company.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Grass-roots leadingedge archive. We're currently on track and expect to meet our deadline.
-
-Regards,
-Julia Wells",2025-10-14T13:22:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.990074,
-20c43efa-fdb1-4bd3-875f-815b33bdce88,it-support@globalfirm.org,globalfirm.org,Monthly Newsletter - June,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Jennifer Young",2025-11-07T13:02:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.990243,
-0e39ddd6-f94f-4b80-a3bf-f4d75f09170d,it-support@enterprise.org,enterprise.org,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Virtual object-oriented implementation. We're currently on track and expect to meet our deadline.
-
-Regards,
-Rick Daniels",2025-10-24T17:07:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.990385,
-6ab1fb70-acc4-4b7f-a2dc-65774e2020fb,it-support@globalfirm.org,globalfirm.org,Training Session Reminder,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Thomas Bender",2025-11-13T17:59:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.991282,
-627fe202-5eb2-4ada-9346-97c67970860e,hr@corporate.com,corporate.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of De-engineered regional monitoring. We're currently on track and expect to meet our deadline.
-
-Regards,
-Joshua Tucker",2025-11-03T10:46:00,[],0,False,0.95,2025-11-13T10:38:24.991681,
-bd9d998c-e95c-4236-9412-b097e71c6a78,it-support@acme-corp.com,acme-corp.com,Office Policy Update,"Hello,
-
-I wanted to update you on the progress of Fundamental homogeneous Graphic Interface. We're currently on track and expect to meet our deadline.
-
-Regards,
-Anthony Long",2025-10-22T13:35:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.991887,
-d09e4759-fc89-4403-8ceb-af778eb01f0b,jason@business.net,business.net,Team Building Event,"Dear Robert,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Jason Murphy",2025-10-24T13:25:00,[],0,False,0.95,2025-11-13T10:38:24.992040,
-bd303188-fd77-4378-98e7-3036fce38d91,hr@company.com,company.com,Office Policy Update,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Amber Cooke",2025-10-24T14:29:00,[],0,False,0.95,2025-11-13T10:38:24.992180,
-c7d7c379-67a2-42ed-8702-edccb1d27276,admin@innovation-hub.com,innovation-hub.com,Training Session Reminder,"Dear Jonathan,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Christine Allen",2025-11-04T17:42:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.994275,
-9e752b70-387f-40e0-89d6-bbbc4f344108,jennifer.strickland@techsolutions.com,techsolutions.com,Training Session Reminder,"Dear Larry,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Jennifer Strickland",2025-11-07T09:02:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.994526,
-4e6be374-fbe9-426c-9eb2-819eb99e7014,admin@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-James Vargas",2025-10-16T12:45:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.996015,
-a231dd95-ab23-482b-926e-f59ba80216e2,admin@globalfirm.org,globalfirm.org,Team Building Event,"Dear Melissa,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Blake Patel",2025-10-16T10:49:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:24.998012,
-97c708d7-2c41-4e58-a6f3-85dd694e61bc,cynthia@globalfirm.org,globalfirm.org,Project Update: Optional context-sensitive superstructure,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Cynthia Poole",2025-11-06T10:29:00,[],0,False,0.95,2025-11-13T10:38:24.999955,
-ee678a68-ad1e-44b1-b104-d4f1910d33c3,admin@business.net,business.net,New Employee Welcome,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Steven Petersen",2025-10-17T17:27:00,[],0,False,0.95,2025-11-13T10:38:25.000307,
-3f184bdc-66b8-4155-b84c-27ae41e58076,nicholas@innovation-hub.com,innovation-hub.com,IT Maintenance Window,"Hello,
-
-I wanted to update you on the progress of Right-sized tangible focus group. We're currently on track and expect to meet our deadline.
-
-Regards,
-Nicholas Johnson",2025-10-17T13:49:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.000652,
-87c9810d-31fa-4f33-9244-d842f6948777,angela@innovation-hub.com,innovation-hub.com,Office Policy Update,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Angela Black",2025-11-06T13:21:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.000938,
-8a085885-5baa-4db7-8f10-f20bd65ec76a,it-support@techsolutions.com,techsolutions.com,Q2 Budget Review,"Dear Bonnie,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Shane Smith",2025-10-31T11:45:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.001210,
-9a546fdf-c39d-4237-af4c-5b94076da80b,wendy.pierce@corporate.com,corporate.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Decentralized value-added monitoring. We're currently on track and expect to meet our deadline.
-
-Regards,
-Wendy Pierce",2025-10-30T15:03:00,[],0,False,0.95,2025-11-13T10:38:25.001663,
-45790ddc-0e81-438d-a2f3-8643a42c2820,admin@corporate.com,corporate.com,Team Building Event,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Stephanie Vaughn",2025-11-13T14:19:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.001901,
-8b066e0a-9326-4c77-8c45-2a7eacd3ed14,admin@globalfirm.org,globalfirm.org,New Employee Welcome,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Kenneth Ward",2025-11-05T15:31:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.002141,
-767ba806-49e1-4b79-af40-2d9464bbb623,admin@company.com,company.com,Monthly Newsletter - September,"Dear Matthew,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Miranda Henry",2025-10-15T11:39:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.002442,
-654b4cc0-c012-4194-848c-a57da2ebf7f7,admin@company.com,company.com,Quarterly All-Hands Meeting,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Lynn Morales",2025-11-07T16:11:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.002645,
-12922a3e-e1cc-4252-b6e2-3f703be15476,hr@company.com,company.com,Team Building Event,"Dear Shannon,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Angela Butler",2025-11-03T14:48:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.002841,
-db6798e3-7a2a-40ae-aa5a-eeea314a3b02,hr@globalfirm.org,globalfirm.org,Team Building Event,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Ashley Brown",2025-11-13T17:03:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.003001,
-6be96f16-6e7f-47d8-ac7a-8e036b35d116,charles@techsolutions.com,techsolutions.com,Q1 Budget Review,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Charles Smith",2025-11-07T09:39:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.003158,
-8f150b2a-f4f6-41e1-b587-566a5b7dfb7b,jesus@business.net,business.net,Project Update: Reverse-engineered stable website,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Jesus Baker",2025-10-14T12:29:00,[],0,False,0.95,2025-11-13T10:38:25.003342,
-7c273bca-9da4-40ea-8d38-be027394d134,hr@acme-corp.com,acme-corp.com,Project Update: Integrated radical synergy,"Dear Samantha,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Margaret Jones",2025-11-10T09:59:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.003487,
-c1313339-71e3-49ef-82f2-4f9a614308c5,it-support@acme-corp.com,acme-corp.com,Team Building Event,"Dear Pamela,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Holly Bender",2025-10-24T12:06:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.003620,
-e7d50051-d99c-49f5-bd30-9a9e7db41acc,it-support@acme-corp.com,acme-corp.com,Q1 Budget Review,"Hello,
-
-I wanted to update you on the progress of Balanced well-modulated system engine. We're currently on track and expect to meet our deadline.
-
-Regards,
-Christopher Hayden",2025-10-31T14:04:00,[],0,False,0.95,2025-11-13T10:38:25.003764,
-40b5b70f-66ba-42e9-9e66-df97191d33c9,gregory.stone@techsolutions.com,techsolutions.com,Team Building Event,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Gregory Stone",2025-10-14T14:40:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.003914,
-988d9a76-1001-4cfe-be7a-6ab9c888029a,mathew@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Virtual neutral alliance. We're currently on track and expect to meet our deadline.
-
-Regards,
-Mathew Santiago",2025-10-17T17:49:00,[],0,False,0.95,2025-11-13T10:38:25.004059,
-71319d73-9cd2-4551-b700-aacbdbd6df1e,admin@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
-
-I wanted to update you on the progress of Persistent incremental application. We're currently on track and expect to meet our deadline.
-
-Regards,
-Shawn Edwards",2025-10-17T10:17:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.004306,
-cfa99ac7-07ef-40c0-841f-d932913f026d,jacob@innovation-hub.com,innovation-hub.com,IT Maintenance Window,"Hello,
-
-I wanted to update you on the progress of Horizontal leadingedge standardization. We're currently on track and expect to meet our deadline.
-
-Regards,
-Jacob Cox",2025-10-29T14:11:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.004520,
-ae236852-43b8-4f0c-b2ae-d7bd0f2fbc16,todd@innovation-hub.com,innovation-hub.com,Monthly Newsletter - May,"Hello,
-
-I wanted to update you on the progress of Face-to-face bifurcated Local Area Network. We're currently on track and expect to meet our deadline.
-
-Regards,
-Todd Johnson",2025-10-16T13:35:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.004701,
-9d96dde3-5c1d-40b8-b471-4d87cf6d4a3f,it-support@company.com,company.com,Training Session Reminder,"Dear Robert,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Stacey Holland",2025-10-29T17:48:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.004839,
-7adf170e-395f-4bf9-a7aa-be39780ffae3,admin@corporate.com,corporate.com,IT Maintenance Window,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Andrea Reyes",2025-11-04T12:25:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.004982,
-9ddadc08-25e0-47fe-a6a4-8c243b279c2a,hr@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-William Hoover",2025-10-28T14:27:00,[],0,False,0.95,2025-11-13T10:38:25.005111,
-513e84d2-a32a-4a1b-889c-17fa23e5b29c,hr@techsolutions.com,techsolutions.com,IT Maintenance Window,"Hello,
-
-I wanted to update you on the progress of Open-source 6thgeneration functionalities. We're currently on track and expect to meet our deadline.
-
-Regards,
-Martin Hines",2025-11-06T10:46:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005314,
-f4245fc2-bfcf-47db-9f3e-27f443f06112,hr@corporate.com,corporate.com,Q2 Budget Review,"Dear Tina,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Julie Thornton",2025-10-21T16:17:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005465,
-f6fa568c-3b49-46b9-aaea-c7a8c4086d00,tammy.rivera@acme-corp.com,acme-corp.com,Training Session Reminder,"Dear Alexis,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Tammy Rivera",2025-11-07T13:00:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005597,
-97982aa1-0f2a-4996-b4e8-4d4d30671cfa,hr@business.net,business.net,Weekly Team Meeting - 2025-11-23,"Hello,
+IT Security",2025-10-24T05:15:00,,0,True,account_suspension,0.9
+d29f0ba1-ad44-4b20-9cc7-82621493cd3d,hr@business.net,business.net,Weekly Team Meeting - 2025-11-23,"Hello,
 
 I wanted to update you on the progress of Public-key homogeneous functionalities. We're currently on track and expect to meet our deadline.
 
 Regards,
-Terrance Costa",2025-10-24T16:06:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005717,
-fdfa4d8c-e044-49eb-9c25-ea3ceee16a36,it-support@company.com,company.com,Office Policy Update,"Hi everyone,
+Terrance Costa",2025-10-24T16:06:00,budget.xlsx,1,False,,0.95
+5c3ee69c-dd13-493d-bb64-e0e855ef0022,hr@company.com,company.com,Weekly Team Meeting - 2025-11-26,"Hi everyone,
 
 Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
 
 Best,
-Courtney Clay",2025-11-03T11:03:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005838,
-7979649d-2121-4ec2-9b30-8e43f3568771,admin@acme-corp.com,acme-corp.com,Q1 Budget Review,"Hi everyone,
+Tina Martin",2025-10-15T17:10:00,,0,False,,0.95
+bcc7d980-5d11-47e9-8f79-656c06ffde4f,it-support@enterprise.org,enterprise.org,Team Building Event,"Hello,
 
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+I wanted to update you on the progress of Virtual object-oriented implementation. We're currently on track and expect to meet our deadline.
 
-Best,
-Ryan Garcia",2025-11-11T09:09:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.005965,
-ea5472e2-93d2-452d-a0cd-225a54247161,it-support@business.net,business.net,Office Policy Update,"Dear Gregory,
+Regards,
+Rick Daniels",2025-10-24T17:07:00,policy.docx,1,False,,0.95
+cdd0c24c-ae70-4547-847e-46ddf2087aaa,kristen.aguirre@innovation-hub.com,innovation-hub.com,New Employee Welcome,"Dear Robert,
 
 Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Nicholas Thomas",2025-10-27T15:38:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.006165,
-6db4be9c-4bc1-4677-b335-1640a9259eb1,it-support@corporate.com,corporate.com,Team Building Event,"Hi everyone,
+Kristen Aguirre",2025-10-14T17:10:00,policy.docx,1,False,,0.95
+2296c7b7-e633-4e5e-a00b-390b92869f63,ceo@c0mpany.com,c0mpany.com,Emergency Request from John Smith,"Hi,
 
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+I need you to process an urgent wire transfer today. Client payment of $22,391 needs to go out immediately.
 
-Best,
-John Durham",2025-10-17T15:19:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.006465,
-cb2d153d-f3d3-4cee-949c-5cad91ea683a,it-support@company.com,company.com,Q2 Budget Review,"Dear Hannah,
+Please handle this confidentially and let me know when complete.
+
+Thanks,
+John Smith
+CEO",2025-10-28T10:47:00,wire_details.exe,1,True,executive_impersonation,0.9
+7391ca7e-f0ec-42ef-9d08-4d9ae785aefa,sheila@innovation-hub.com,innovation-hub.com,Team Building Event,"Dear Juan,
 
 Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Amy Jones",2025-10-23T10:10:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.006611,
-73f33ac4-1758-49b7-b7f4-632f7b1fded2,melissa@corporate.com,corporate.com,New Employee Welcome,"Dear Kenneth,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Melissa Rodriguez",2025-10-31T16:44:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.006740,
-3801a3d1-17b6-4a52-a3d7-269bc15c0816,hr@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-12-06,"Hello,
-
-I wanted to update you on the progress of Focused real-time website. We're currently on track and expect to meet our deadline.
-
-Regards,
-Alan Grimes",2025-10-22T16:04:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.006886,
-76761e34-aa19-40c7-aef5-400fe068c560,hr@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Michael Fields",2025-10-27T12:41:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.007011,
-3b54f21d-81d8-45fa-b363-4b5aee07746b,hr@business.net,business.net,Project Update: Multi-lateral upward-trending capacity,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Benjamin Kramer",2025-10-17T13:38:00,"[{'filename': 'budget.xlsx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.007145,
-1219404d-1ff9-414b-8a4b-50b3ce988633,admin@acme-corp.com,acme-corp.com,Q4 Budget Review,"Hello,
-
-I wanted to update you on the progress of Implemented value-added Graphical User Interface. We're currently on track and expect to meet our deadline.
-
-Regards,
-Kristin Walter",2025-10-14T13:32:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.007384,
-49a8fc8c-b43b-4b26-9e71-faaee9a778f3,admin@innovation-hub.com,innovation-hub.com,Q1 Budget Review,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Linda Mcdonald",2025-10-24T13:01:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.007565,
-a6875a0a-e70a-40cc-8f07-a7423d71a155,krystal@enterprise.org,enterprise.org,Quarterly All-Hands Meeting,"Hello,
-
-I wanted to update you on the progress of Sharable holistic benchmark. We're currently on track and expect to meet our deadline.
-
-Regards,
-Krystal Smith",2025-11-12T11:30:00,[],0,False,0.95,2025-11-13T10:38:25.007704,
-f276b2b4-4c17-4bc9-b0af-b9059d827103,hr@innovation-hub.com,innovation-hub.com,Project Update: Realigned fresh-thinking pricing structure,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Emily Ruiz",2025-10-29T14:26:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.007847,
-efc0ec31-5565-4a31-9c46-814a7af21f77,hr@techsolutions.com,techsolutions.com,Q2 Budget Review,"Hello,
-
-I wanted to update you on the progress of Persevering holistic secured line. We're currently on track and expect to meet our deadline.
-
-Regards,
-Ricky Taylor",2025-10-22T16:18:00,"[{'filename': 'policy.docx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.008001,
-41f31ddf-2f6e-4798-a953-011f0f37d1b7,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-11-29,"Hi Team,
-
-This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
-
-Best regards,
-Stacy Horton",2025-11-05T14:07:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.008331,
-534e936d-94ad-4ef9-85d8-8c921b8a2bd6,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-12-04,"Hi everyone,
-
-Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
-
-Best,
-Sheila Ramirez",2025-11-07T17:23:00,"[{'filename': 'agenda.pdf', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.008590,
-b2650d73-4fc3-442e-9267-593183b9725f,admin@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-11-15,"Hello,
-
-I wanted to update you on the progress of Extended secondary productivity. We're currently on track and expect to meet our deadline.
-
-Regards,
-Rachel Newman",2025-11-07T13:28:00,[],0,False,0.95,2025-11-13T10:38:25.008751,
-0bd8e319-3315-4eae-933c-4921f0bf20c4,carla.smith@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-12-06,"Dear Casey,
-
-Please find attached the budget review document for your department. We'll discuss this in our next meeting.
-
-Thanks,
-Carla Smith",2025-10-27T09:35:00,"[{'filename': 'presentation.pptx', 'size': 0, 'content_type': None}]",1,False,0.95,2025-11-13T10:38:25.008899,
-e358f809-3833-46e5-9388-60d54a33c1ce,it-support@enterprize.org,enterprize.org,Password Reset Request,"Your password will expire in 24 hours. Reset your password now to maintain access:
-
-https://password-reset-secure.com/update
-
-IT Support",2025-10-22T13:32:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.009032,credential_harvest
-f3dc6761-6dc7-468f-a6d0-9fd7275d604c,it-security@account-alert.net,account-alert.net,Security Breach Detected - Immediate Action Required,"ACCOUNT COMPROMISE DETECTED
-
-Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
-
-https://account-verify-security.org/login
-
-Do not delay - your account security is at risk.
-
-IT Security",2025-10-15T20:55:00,"[{'filename': 'security_update.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.009177,account_suspension
-3fa4ec01-a2ff-46bd-bc5c-90482d766a1a,urgent-billing@urgent-action.com,urgent-action.com,ACTION REQUIRED: Wire Transfer Needed Today,"FINAL WARNING!
-
-Outstanding balance: $5,168
-Due date: OVERDUE
-
-Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
-
-Pay immediately: https://secure-payment-verify.com/urgent
-
-Collections Team",2025-10-17T16:55:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.009391,urgent_payment
-7b4800d6-b7d9-4f77-bc94-41564e1873e6,cfo@payment-urgent.com,payment-urgent.com,Quick Favor - Wire Transfer Needed,"Quick request - can you wire $26,088 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
-
-Don't reply to this email, just handle it.
-
-Lisa Davis",2025-11-01T13:02:00,[],0,True,0.9,2025-11-13T10:38:25.009547,executive_impersonation
-56d7371c-2cda-4a74-a787-fd24e1466d28,it-security@payment-urgent.com,payment-urgent.com,Security Breach Detected - Immediate Action Required,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
-
-Verify here: https://account-verify-security.org/login
-
-Account Security Team",2025-11-07T17:37:00,"[{'filename': 'verification.scr', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.009762,account_suspension
-9a847be6-68e3-4d38-b166-d3833245420f,it-security@enterprize.org,enterprize.org,Account Security Alert - Action Required,"ACCOUNT COMPROMISE DETECTED
-
-Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
-
-https://account-verify-security.org/login
-
-Do not delay - your account security is at risk.
-
-IT Security",2025-10-17T07:50:00,[],0,True,0.9,2025-11-13T10:38:25.009955,account_suspension
-6d343efa-872d-4530-9141-2ddb99e99516,it-security@secure-verify.org,secure-verify.org,Unauthorized Access Detected,"ACCOUNT COMPROMISE DETECTED
-
-Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
-
-https://account-verify-security.org/login
-
-Do not delay - your account security is at risk.
-
-IT Security",2025-11-03T22:55:00,[],0,True,0.9,2025-11-13T10:38:25.010156,account_suspension
-d59fddfe-ed83-49ea-acf3-a67aa3ef1fb9,billing-urgent@verify-now.com,verify-now.com,FINAL NOTICE: Outstanding Invoice #92727,"CRITICAL PAYMENT NOTICE
-
-Your service will be TERMINATED in 24 hours unless payment of $23,833 is received immediately.
-
-This is your FINAL opportunity to avoid legal proceedings.
-
-Pay now: https://secure-payment-verify.com/urgent
-
-Billing Emergency",2025-10-31T10:48:00,"[{'filename': 'payment_details.zip', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.010429,urgent_payment
-e957839e-ed32-42d5-9158-5721b4a5ca37,collections@payment-urgent.com,payment-urgent.com,URGENT: Account Will Be Closed Without Payment,"URGENT ACTION REQUIRED!
-
-Dear Customer,
-
-Your account requires IMMEDIATE payment of $8,014. Failure to pay within 24 hours will result in account suspension and legal action.
-
-Pay now to avoid consequences: https://secure-payment-verify.com/urgent
-
-Do NOT ignore this notice.
-
-Urgent Billing Department",2025-11-04T14:23:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.010660,urgent_payment
-fcb6d8fc-a2a0-470b-a279-75760700b5f7,it-support@busines.net,busines.net,Password Expiration Notice,"Your password must be updated due to security policy changes. Update now:
-
-https://password-reset-secure.com/update
-
-Password Security Team",2025-11-11T03:31:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.010853,credential_harvest
-8882f35f-50e6-4db2-9773-ee4f47d18f88,cfo@corporrate.com,corporrate.com,Urgent: Client Payment Due Today,"Quick request - can you wire $23,850 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
-
-Don't reply to this email, just handle it.
-
-Michael Brown",2025-10-31T13:40:00,"[{'filename': 'wire_details.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.011057,executive_impersonation
-50906f92-5e96-4f45-b515-adbcdf8b2a72,noreply@urgent-action.com,urgent-action.com,Password Update Required,"Password reset requested for your account. If this wasn't you, click here to secure your account:
-
-https://password-reset-secure.com/update
-
-System Administrator",2025-10-26T09:44:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.011343,credential_harvest
-6e6c16f8-39cb-4b58-b88b-5e68158d5543,it-security@c0mpany.com,c0mpany.com,Your Account Will Be Suspended,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
-
-Verify here: https://account-verify-security.org/login
-
-Account Security Team",2025-10-15T16:53:00,[],0,True,0.9,2025-11-13T10:38:25.011486,account_suspension
-b118b8b1-d4ae-43b5-8a0e-d2baa5dc2b83,account-security@corporrate.com,corporrate.com,Suspicious Activity Detected - Verify Now,"Security Alert!
+Sheila Taylor",2025-11-13T15:16:00,policy.docx,1,False,,0.95
+08d732fe-46af-43da-bf19-b0120da38dec,account-security@account-alert.net,account-alert.net,Account Security Alert - Action Required,"Security Alert!
 
 We've detected suspicious activity on your account. To prevent unauthorized access, your account will be suspended in 2 hours unless you verify your identity.
 
 Verify now: https://account-verify-security.org/login
 
-Security Team",2025-10-21T11:40:00,"[{'filename': 'verification.scr', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.011623,account_suspension
-7d55ab61-262c-4bc1-a990-9095eae69dd2,payment-required@c0mpany.com,c0mpany.com,IMMEDIATE: Payment Overdue - Legal Action Pending,"CRITICAL PAYMENT NOTICE
+Security Team",2025-10-24T16:53:00,security_update.exe,1,True,account_suspension,0.9
+b7ede22b-e329-478b-9b46-d0188511e376,tammy.rivera@acme-corp.com,acme-corp.com,Training Session Reminder,"Dear Alexis,
 
-Your service will be TERMINATED in 24 hours unless payment of $28,911 is received immediately.
-
-This is your FINAL opportunity to avoid legal proceedings.
-
-Pay now: https://secure-payment-verify.com/urgent
-
-Billing Emergency",2025-11-08T13:11:00,"[{'filename': 'payment_details.zip', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.011749,urgent_payment
-d9af616c-e91f-42b2-b3aa-79cc2739b0fb,cfo@busines.net,busines.net,CONFIDENTIAL: Emergency Payment Required,"Quick request - can you wire $27,198 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
-
-Don't reply to this email, just handle it.
-
-Sarah Johnson",2025-11-07T12:55:00,"[{'filename': 'transfer_form.docm', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.011879,executive_impersonation
-dc4143b5-c14e-4cd3-93cd-18a587b83d94,system@security-update.org,security-update.org,Password Reset Request,"Your password will expire in 24 hours. Reset your password now to maintain access:
-
-https://password-reset-secure.com/update
-
-IT Support",2025-10-23T13:37:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.012033,credential_harvest
-d0a73ae2-986f-43c1-8474-fc8e0098259e,password-reset@secure-verify.org,secure-verify.org,Your Password Expires Today,"Your password will expire in 24 hours. Reset your password now to maintain access:
-
-https://password-reset-secure.com/update
-
-IT Support",2025-11-06T10:40:00,[],0,True,0.9,2025-11-13T10:38:25.012175,credential_harvest
-cff7137f-6aa6-497d-a2ce-4baef6382019,noreply@urgent-action.com,urgent-action.com,Password Reset Request,"Your password will expire in 24 hours. Reset your password now to maintain access:
-
-https://password-reset-secure.com/update
-
-IT Support",2025-11-10T10:15:00,[],0,True,0.9,2025-11-13T10:38:25.012382,credential_harvest
-bbc111e7-3036-46c0-919a-2ddaa7029487,cfo@account-alert.net,account-alert.net,ASAP: Wire Transfer Authorization,"I'm in meetings all day but need you to process a $15,126 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-David Martinez
-CFO",2025-10-29T21:02:00,[],0,True,0.9,2025-11-13T10:38:25.012579,executive_impersonation
-cb984277-4b8c-4c26-82e4-9e09fb38d5f6,it-security@corporrate.com,corporrate.com,Security Breach Detected - Immediate Action Required,"ACCOUNT COMPROMISE DETECTED
+Tammy Rivera",2025-11-07T13:00:00,presentation.pptx,1,False,,0.95
+912dc648-b71d-4b6d-8db8-7cba2e09a912,john@corporate.com,corporate.com,Monthly Newsletter - April,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+John Brown",2025-11-03T16:01:00,,0,False,,0.95
+7061e18a-225b-482f-86e0-1e72dc72a225,colin@company.com,company.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Reactive explicit product. We're currently on track and expect to meet our deadline.
+
+Regards,
+Colin Abbott",2025-11-07T14:06:00,budget.xlsx,1,False,,0.95
+7dee58b4-aee8-4dd9-b313-869ec66ba1d1,hr@innovation-hub.com,innovation-hub.com,Team Building Event,"Dear Joshua,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Cynthia Baker",2025-11-04T12:03:00,budget.xlsx,1,False,,0.95
+b4f0378b-fa57-4f8c-be71-68ef77fe5c78,it-support@company.com,company.com,Training Session Reminder,"Dear Jason,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Lisa Smith",2025-10-24T13:51:00,policy.docx,1,False,,0.95
+5b8fda16-8333-4e93-b6fc-ff755e717a62,jesus@business.net,business.net,Project Update: Reverse-engineered stable website,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Jesus Baker",2025-10-14T12:29:00,,0,False,,0.95
+c773fc46-8b5c-4430-9591-a2c0eee439ad,it-security@enterprize.org,enterprize.org,Security Breach Detected - Immediate Action Required,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
+
+Verify here: https://account-verify-security.org/login
+
+Account Security Team",2025-11-06T09:46:00,security_update.exe,1,True,account_suspension,0.9
+f56fd66e-3664-4c18-bf5e-1eb684e83477,it-support@company.com,company.com,Q2 Budget Review,"Dear Hannah,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Amy Jones",2025-10-23T10:10:00,presentation.pptx,1,False,,0.95
+798d4c19-2c07-4c7e-aead-592b9e5700c2,michele.walker@techsolutions.com,techsolutions.com,Weekly Team Meeting - 2025-12-07,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Michele Walker",2025-10-27T12:32:00,agenda.pdf,1,False,,0.95
+3ece98b4-df5f-4cd3-b287-0549c1147f69,sarah.campos@innovation-hub.com,innovation-hub.com,Office Policy Update,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-16. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Sarah Campos",2025-10-17T17:38:00,presentation.pptx,1,False,,0.95
+39b97575-5ef1-4e82-8460-3eb21cea98a2,it-security@corporrate.com,corporrate.com,Account Security Alert - Action Required,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
+
+Verify here: https://account-verify-security.org/login
+
+Account Security Team",2025-11-11T04:41:00,,0,True,account_suspension,0.9
+6dccc4cd-9fc3-4b5e-a61a-43fd8504f8c6,it-support@company.com,company.com,Office Policy Update,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Courtney Clay",2025-11-03T11:03:00,policy.docx,1,False,,0.95
+5afd485f-6c23-46dc-ad49-e58dd7d3293a,carla.smith@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-12-06,"Dear Casey,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Carla Smith",2025-10-27T09:35:00,presentation.pptx,1,False,,0.95
+6a107278-7fa5-4b4d-8c95-70b5390e43ee,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-11-14,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Kevin Kelley",2025-10-27T09:53:00,budget.xlsx,1,False,,0.95
+1e21b8bd-aaaf-4c9c-8d70-057301dd7af5,it-support@acme-corp.com,acme-corp.com,Office Policy Update,"Hello,
+
+I wanted to update you on the progress of Fundamental homogeneous Graphic Interface. We're currently on track and expect to meet our deadline.
+
+Regards,
+Anthony Long",2025-10-22T13:35:00,policy.docx,1,False,,0.95
+a354a5e5-130c-44fc-8072-84e8e27a73da,security@busines.net,busines.net,Security Breach Detected - Immediate Action Required,"ACCOUNT COMPROMISE DETECTED
 
 Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
 
@@ -770,42 +193,114 @@ https://account-verify-security.org/login
 
 Do not delay - your account security is at risk.
 
-IT Security",2025-10-16T06:17:00,[],0,True,0.9,2025-11-13T10:38:25.012712,account_suspension
-897673fa-f952-43aa-8423-966359158314,emily.rodriguez@enterprize.org,enterprize.org,ASAP: Wire Transfer Authorization,"Hi,
+IT Security",2025-11-11T23:24:00,,0,True,account_suspension,0.9
+9af2bced-0c7a-4ec0-8432-6363dde406e3,it-support@enterprise.org,enterprise.org,Team Building Event,"Hi Team,
 
-I need you to process an urgent wire transfer today. Client payment of $26,856 needs to go out immediately.
+This is a reminder about our upcoming meeting scheduled for 2025-11-16. Please review the agenda attached and come prepared with your updates.
 
-Please handle this confidentially and let me know when complete.
+Best regards,
+Anthony Robinson",2025-11-07T12:32:00,agenda.pdf,1,False,,0.95
+1a1dc99f-3bb2-4e43-8dc1-1267acfd77a2,it-support@business.net,business.net,Quarterly All-Hands Meeting,"Dear Susan,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Lisa Davis
-CEO",2025-11-07T10:53:00,"[{'filename': 'wire_details.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.012844,executive_impersonation
-fef7edea-5c92-49e7-bede-54bbf5328083,ceo@verify-now.com,verify-now.com,Quick Favor - Wire Transfer Needed,"Quick request - can you wire $14,482 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
+Bruce Edwards",2025-10-17T15:12:00,policy.docx,1,False,,0.95
+bd6d77fe-8712-45ff-86b0-9fe14a28d337,wendy.pierce@corporate.com,corporate.com,Team Building Event,"Hello,
 
-Don't reply to this email, just handle it.
+I wanted to update you on the progress of Decentralized value-added monitoring. We're currently on track and expect to meet our deadline.
 
-Michael Brown",2025-11-08T00:08:00,[],0,True,0.9,2025-11-13T10:38:25.012971,executive_impersonation
-73fd1961-0cf5-447e-87b6-770e2403311f,collections@secure-verify.org,secure-verify.org,CRITICAL: Invoice Payment Due in 24 Hours,"URGENT ACTION REQUIRED!
+Regards,
+Wendy Pierce",2025-10-30T15:03:00,,0,False,,0.95
+d8b512e1-4bd5-489e-9ada-011f56a835d8,justin.kim@enterprise.org,enterprise.org,New Employee Welcome,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Justin Kim",2025-11-07T15:31:00,budget.xlsx,1,False,,0.95
+db40cb79-d9a8-46d9-8da1-21bf0b1e1e46,it-support@techsolutions.com,techsolutions.com,Q2 Budget Review,"Dear Bonnie,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Shane Smith",2025-10-31T11:45:00,budget.xlsx,1,False,,0.95
+d98b1b11-b7af-471b-8353-b71d855d5c02,angel@acme-corp.com,acme-corp.com,Monthly Newsletter - April,"Hello,
+
+I wanted to update you on the progress of Customer-focused homogeneous alliance. We're currently on track and expect to meet our deadline.
+
+Regards,
+Angel Doyle",2025-11-07T13:29:00,policy.docx,1,False,,0.95
+af0fba80-f100-4494-9895-268d45f71910,gregory.stone@techsolutions.com,techsolutions.com,Team Building Event,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Gregory Stone",2025-10-14T14:40:00,policy.docx,1,False,,0.95
+93f5c29a-b45b-47ec-ba7d-be00459b81aa,it-support@corporate.com,corporate.com,Team Building Event,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+John Durham",2025-10-17T15:19:00,presentation.pptx,1,False,,0.95
+d50ef30b-2aae-4f77-ba6f-ed18d0da4ca0,admin@innovation-hub.com,innovation-hub.com,Q1 Budget Review,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Linda Mcdonald",2025-10-24T13:01:00,presentation.pptx,1,False,,0.95
+c32451b8-1a36-4c84-ad75-20d8475a3a18,mark@acme-corp.com,acme-corp.com,Monthly Newsletter - June,"Dear Erin,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Mark Lin",2025-11-04T11:28:00,presentation.pptx,1,False,,0.95
+1f9fc8ed-bbed-4ca8-83c5-4507c3101bd9,payment-required@urgent-action.com,urgent-action.com,ACTION REQUIRED: Wire Transfer Needed Today,"URGENT ACTION REQUIRED!
 
 Dear Customer,
 
-Your account requires IMMEDIATE payment of $16,419. Failure to pay within 24 hours will result in account suspension and legal action.
+Your account requires IMMEDIATE payment of $37,596. Failure to pay within 24 hours will result in account suspension and legal action.
 
 Pay now to avoid consequences: https://secure-payment-verify.com/urgent
 
 Do NOT ignore this notice.
 
-Urgent Billing Department",2025-10-25T03:47:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.013191,urgent_payment
-6de7d140-1fe2-4bd6-a377-da8fcfef4395,urgent-billing@payment-urgent.com,payment-urgent.com,ACTION REQUIRED: Wire Transfer Needed Today,"CRITICAL PAYMENT NOTICE
+Urgent Billing Department",2025-10-31T08:53:00,account_statement.js,1,True,urgent_payment,0.9
+b7fb57d9-e526-4bd9-877e-fbce4788c3e7,angela@innovation-hub.com,innovation-hub.com,Office Policy Update,"Hi Team,
 
-Your service will be TERMINATED in 24 hours unless payment of $12,146 is received immediately.
+This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
 
-This is your FINAL opportunity to avoid legal proceedings.
+Best regards,
+Angela Black",2025-11-06T13:21:00,presentation.pptx,1,False,,0.95
+1ec3661d-8a3b-42fd-9c10-40ee4cf6227a,collections@urgent-action.com,urgent-action.com,IMMEDIATE: Payment Overdue - Legal Action Pending,"URGENT ACTION REQUIRED!
 
-Pay now: https://secure-payment-verify.com/urgent
+Dear Customer,
 
-Billing Emergency",2025-10-14T09:46:00,"[{'filename': 'account_statement.js', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.013505,urgent_payment
-64220ed4-ea2a-4c3d-b108-8bdcc84b58f7,security@payment-urgent.com,payment-urgent.com,Account Security Alert - Action Required,"ACCOUNT COMPROMISE DETECTED
+Your account requires IMMEDIATE payment of $20,545. Failure to pay within 24 hours will result in account suspension and legal action.
+
+Pay now to avoid consequences: https://secure-payment-verify.com/urgent
+
+Do NOT ignore this notice.
+
+Urgent Billing Department",2025-10-24T13:44:00,account_statement.js,1,True,urgent_payment,0.9
+5b898bd3-409d-41c7-8866-b015e8d083bd,hr@company.com,company.com,Team Building Event,"Dear Shannon,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Angela Butler",2025-11-03T14:48:00,policy.docx,1,False,,0.95
+13996e15-d20e-4d85-99cd-89cf7557cfc4,leslie.green@enterprise.org,enterprise.org,Team Building Event,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Leslie Green",2025-11-07T12:34:00,budget.xlsx,1,False,,0.95
+0baccc59-8884-4b88-9f64-d4921479d5db,hr@acme-corp.com,acme-corp.com,Project Update: Integrated radical synergy,"Dear Samantha,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Margaret Jones",2025-11-10T09:59:00,presentation.pptx,1,False,,0.95
+e7f9d884-dde5-4f28-b09d-08f5ce6c17e6,no-reply@urgent-action.com,urgent-action.com,Account Compromise Alert,"ACCOUNT COMPROMISE DETECTED
 
 Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
 
@@ -813,63 +308,26 @@ https://account-verify-security.org/login
 
 Do not delay - your account security is at risk.
 
-IT Security",2025-10-22T01:20:00,[],0,True,0.9,2025-11-13T10:38:25.013801,account_suspension
-460d0795-7ab1-4d75-b18e-812d5d4c82e7,cfo@enterprize.org,enterprize.org,Emergency Request from Jennifer Garcia,"Quick request - can you wire $44,150 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
+IT Security",2025-10-23T21:02:00,security_update.exe,1,True,account_suspension,0.9
+26fb4210-063b-4370-a45d-eb4a5251449e,admin@acme-corp.com,acme-corp.com,Q4 Budget Review,"Hello,
 
-Don't reply to this email, just handle it.
+I wanted to update you on the progress of Implemented value-added Graphical User Interface. We're currently on track and expect to meet our deadline.
 
-Robert Wilson",2025-10-31T10:50:00,"[{'filename': 'transfer_form.docm', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014017,executive_impersonation
-395fc7db-7dc9-4e2e-8a76-fffd24e91d52,collections@security-update.org,security-update.org,IMMEDIATE: Payment Overdue - Legal Action Pending,"URGENT ACTION REQUIRED!
+Regards,
+Kristin Walter",2025-10-14T13:32:00,policy.docx,1,False,,0.95
+7367e4d1-f9a6-4a82-b08e-c1f6407a3339,melissa@corporate.com,corporate.com,New Employee Welcome,"Dear Kenneth,
 
-Dear Customer,
-
-Your account requires IMMEDIATE payment of $32,119. Failure to pay within 24 hours will result in account suspension and legal action.
-
-Pay now to avoid consequences: https://secure-payment-verify.com/urgent
-
-Do NOT ignore this notice.
-
-Urgent Billing Department",2025-10-31T15:46:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014178,urgent_payment
-b6c6af7c-f172-41a5-bfbf-299931b74151,urgent-billing@secure-verify.org,secure-verify.org,ACTION REQUIRED: Wire Transfer Needed Today,"FINAL WARNING!
-
-Outstanding balance: $29,530
-Due date: OVERDUE
-
-Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
-
-Pay immediately: https://secure-payment-verify.com/urgent
-
-Collections Team",2025-10-29T10:05:00,"[{'filename': 'payment_details.zip', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014390,urgent_payment
-6e3f9d9a-6049-4241-a429-05075f5c1d3a,urgent-billing@enterprize.org,enterprize.org,URGENT: Payment Required - Account Suspension Imminent,"URGENT ACTION REQUIRED!
-
-Dear Customer,
-
-Your account requires IMMEDIATE payment of $41,462. Failure to pay within 24 hours will result in account suspension and legal action.
-
-Pay now to avoid consequences: https://secure-payment-verify.com/urgent
-
-Do NOT ignore this notice.
-
-Urgent Billing Department",2025-10-27T17:21:00,"[{'filename': 'invoice_urgent.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014553,urgent_payment
-0bdbdd2a-b52b-4e58-8405-e1c67a79b3e2,payment-required@account-alert.net,account-alert.net,URGENT: Account Will Be Closed Without Payment,"CRITICAL PAYMENT NOTICE
-
-Your service will be TERMINATED in 24 hours unless payment of $8,371 is received immediately.
-
-This is your FINAL opportunity to avoid legal proceedings.
-
-Pay now: https://secure-payment-verify.com/urgent
-
-Billing Emergency",2025-10-31T10:36:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014706,urgent_payment
-b900d435-57b3-4725-b37f-bc81f3082588,ceo@busines.net,busines.net,Re: Urgent Wire Transfer Request,"Hi,
-
-I need you to process an urgent wire transfer today. Client payment of $23,256 needs to go out immediately.
-
-Please handle this confidentially and let me know when complete.
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Lisa Davis
-CEO",2025-10-20T17:01:00,"[{'filename': 'transfer_form.docm', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014825,executive_impersonation
-a30f3d53-17c3-43ef-9df4-0ac028d1b5ec,no-reply@c0mpany.com,c0mpany.com,Your Account Will Be Suspended,"ACCOUNT COMPROMISE DETECTED
+Melissa Rodriguez",2025-10-31T16:44:00,agenda.pdf,1,False,,0.95
+d7b06fbd-7cb6-41c3-a804-1a9595e86dcf,hr@corporate.com,corporate.com,Q2 Budget Review,"Dear Tina,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Julie Thornton",2025-10-21T16:17:00,budget.xlsx,1,False,,0.95
+9a970658-57b6-4404-8ce7-1ef11390f478,it-security@payment-urgent.com,payment-urgent.com,Security Breach Detected - Immediate Action Required,"ACCOUNT COMPROMISE DETECTED
 
 Immediate action required to secure your account. Click here to verify your identity and prevent account closure:
 
@@ -877,43 +335,14 @@ https://account-verify-security.org/login
 
 Do not delay - your account security is at risk.
 
-IT Security",2025-11-07T02:47:00,"[{'filename': 'security_update.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.014947,account_suspension
-4be1185a-66bb-43f9-b437-1b44dd0ef3a3,final-notice@enterprize.org,enterprize.org,FINAL NOTICE: Outstanding Invoice #59308,"FINAL WARNING!
+IT Security",2025-10-31T11:43:00,verification.scr,1,True,account_suspension,0.9
+c82ca9b8-9b06-454f-9807-212a3eaa22e2,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-12-04,"Hi everyone,
 
-Outstanding balance: $34,730
-Due date: OVERDUE
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
 
-Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
-
-Pay immediately: https://secure-payment-verify.com/urgent
-
-Collections Team",2025-11-04T23:38:00,"[{'filename': 'final_notice.pdf', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.015078,urgent_payment
-aa1ce0b8-2923-4010-a17b-f2304108c191,collections@c0mpany.com,c0mpany.com,FINAL NOTICE: Outstanding Invoice #90981,"URGENT ACTION REQUIRED!
-
-Dear Customer,
-
-Your account requires IMMEDIATE payment of $49,169. Failure to pay within 24 hours will result in account suspension and legal action.
-
-Pay now to avoid consequences: https://secure-payment-verify.com/urgent
-
-Do NOT ignore this notice.
-
-Urgent Billing Department",2025-10-25T19:28:00,"[{'filename': 'invoice_urgent.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.015200,urgent_payment
-a635b646-629c-471a-b4b8-fd22a3b66970,it-support@urgent-action.com,urgent-action.com,Password Expiration Notice,"Password reset requested for your account. If this wasn't you, click here to secure your account:
-
-https://password-reset-secure.com/update
-
-System Administrator",2025-10-23T21:02:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.015435,credential_harvest
-7378d92d-a19f-42c9-81d9-d367a2b33a3c,john.smith@account-alert.net,account-alert.net,CONFIDENTIAL: Emergency Payment Required,"Hi,
-
-I need you to process an urgent wire transfer today. Client payment of $21,745 needs to go out immediately.
-
-Please handle this confidentially and let me know when complete.
-
-Thanks,
-Robert Wilson
-CEO",2025-10-29T06:34:00,"[{'filename': 'transfer_form.docm', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.015700,executive_impersonation
-cdf57a53-89a2-4eaa-b48c-f4bff75e2fa0,jennifer.garcia@security-update.org,security-update.org,Urgent: Client Payment Due Today,"Hi,
+Best,
+Sheila Ramirez",2025-11-07T17:23:00,agenda.pdf,1,False,,0.95
+763fa9d4-78af-446b-a52e-70293f7cf29a,sarah@secure-verify.org,secure-verify.org,ASAP: Wire Transfer Authorization,"Hi,
 
 I need you to process an urgent wire transfer today. Client payment of $35,130 needs to go out immediately.
 
@@ -921,46 +350,612 @@ Please handle this confidentially and let me know when complete.
 
 Thanks,
 Sarah Johnson
-CEO",2025-10-24T15:45:00,"[{'filename': 'transfer_form.docm', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.015854,executive_impersonation
-bacb39f8-71dd-4f2a-a763-32bc9d67a739,password-reset@urgent-action.com,urgent-action.com,Security: Password Must Be Changed,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+CEO",2025-10-24T15:45:00,transfer_form.docm,1,True,executive_impersonation,0.9
+767c7e41-06c3-4753-9df8-1b171e7dd1f5,krystal@enterprise.org,enterprise.org,Quarterly All-Hands Meeting,"Hello,
 
-https://password-reset-secure.com/update
+I wanted to update you on the progress of Sharable holistic benchmark. We're currently on track and expect to meet our deadline.
 
-System Administrator",2025-10-15T14:05:00,[],0,True,0.9,2025-11-13T10:38:25.016059,credential_harvest
-339b316a-c07f-4bfe-9a12-1ca260857dda,it-support@enterprize.org,enterprize.org,Security: Password Must Be Changed,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+Regards,
+Krystal Smith",2025-11-12T11:30:00,,0,False,,0.95
+369abe6e-0291-47d5-9abd-f4a5c07aac5a,gabriel.tucker@techsolutions.com,techsolutions.com,Quarterly All-Hands Meeting,"Dear Tricia,
 
-https://password-reset-secure.com/update
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
-System Administrator",2025-11-04T02:04:00,"[{'filename': 'password_tool.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.016206,credential_harvest
-af60967b-0ee0-4a07-b212-f4eecd870166,final-notice@security-update.org,security-update.org,FINAL NOTICE: Outstanding Invoice #55793,"FINAL WARNING!
+Thanks,
+Gabriel Tucker",2025-11-11T09:14:00,agenda.pdf,1,False,,0.95
+6324d516-fac0-4f40-b0ca-98cf9d4496a3,no-reply@verify-now.com,verify-now.com,Suspicious Activity Detected - Verify Now,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
 
-Outstanding balance: $47,299
+Verify here: https://account-verify-security.org/login
+
+Account Security Team",2025-11-13T04:43:00,verification.scr,1,True,account_suspension,0.9
+fe8b9296-8b88-4cf3-8d04-164453885a79,jennifer.strickland@techsolutions.com,techsolutions.com,Training Session Reminder,"Dear Larry,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Jennifer Strickland",2025-11-07T09:02:00,budget.xlsx,1,False,,0.95
+9b25283b-ac46-4463-a69c-230747807b0c,robert@verify-now.com,verify-now.com,Emergency Request from David Martinez,"Hi,
+
+I need you to process an urgent wire transfer today. Client payment of $12,498 needs to go out immediately.
+
+Please handle this confidentially and let me know when complete.
+
+Thanks,
+Lisa Davis
+CEO",2025-11-06T15:21:00,transfer_form.docm,1,True,executive_impersonation,0.9
+fd3a3d9f-8696-409f-8d16-2f347198b940,cynthia@globalfirm.org,globalfirm.org,Project Update: Optional context-sensitive superstructure,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Cynthia Poole",2025-11-06T10:29:00,,0,False,,0.95
+3bc77694-b884-4cbb-94c4-6c4c9a0f8cac,todd@innovation-hub.com,innovation-hub.com,Monthly Newsletter - May,"Hello,
+
+I wanted to update you on the progress of Face-to-face bifurcated Local Area Network. We're currently on track and expect to meet our deadline.
+
+Regards,
+Todd Johnson",2025-10-16T13:35:00,presentation.pptx,1,False,,0.95
+c5722def-677b-4594-962b-8fbf59cbf056,admin@innovation-hub.com,innovation-hub.com,Training Session Reminder,"Dear Jonathan,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Christine Allen",2025-11-04T17:42:00,agenda.pdf,1,False,,0.95
+28673470-1028-4268-a76d-1e135cb270e2,billing-urgent@payment-urgent.com,payment-urgent.com,URGENT: Payment Required - Account Suspension Imminent,"CRITICAL PAYMENT NOTICE
+
+Your service will be TERMINATED in 24 hours unless payment of $14,721 is received immediately.
+
+This is your FINAL opportunity to avoid legal proceedings.
+
+Pay now: https://secure-payment-verify.com/urgent
+
+Billing Emergency",2025-10-24T21:24:00,invoice_urgent.exe,1,True,urgent_payment,0.9
+72ba641d-8837-44bb-988c-e59b7115cfb7,it-support@enterprise.org,enterprise.org,Training Session Reminder,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Evelyn Estrada",2025-10-23T17:20:00,policy.docx,1,False,,0.95
+4406e1ec-f5a1-4ffe-80c6-b80e3fa0a023,billing-urgent@account-alert.net,account-alert.net,FINAL NOTICE: Outstanding Invoice #24871,"FINAL WARNING!
+
+Outstanding balance: $12,698
 Due date: OVERDUE
 
 Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
 
 Pay immediately: https://secure-payment-verify.com/urgent
 
-Collections Team",2025-11-09T05:38:00,"[{'filename': 'payment_details.zip', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.016589,urgent_payment
-6e6a9448-97d9-4a6c-a4e3-c146cc18b53c,michael@enterprize.org,enterprize.org,Urgent: Client Payment Due Today,"I'm in meetings all day but need you to process a $41,994 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+Collections Team",2025-10-22T13:32:00,payment_details.zip,1,True,urgent_payment,0.9
+3a998b9d-4640-486e-81e4-0c15a218d6f8,hr@innovation-hub.com,innovation-hub.com,Project Update: Realigned fresh-thinking pricing structure,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Emily Ruiz",2025-10-29T14:26:00,agenda.pdf,1,False,,0.95
+75977920-c702-43e2-a470-3ce76ea4c9db,it-support@business.net,business.net,IT Maintenance Window,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+William Rodriguez",2025-11-07T11:50:00,agenda.pdf,1,False,,0.95
+3f4a4c1b-538e-45f7-8745-80c5e2a4dbb9,hr@globalfirm.org,globalfirm.org,Team Building Event,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Ashley Brown",2025-11-13T17:03:00,policy.docx,1,False,,0.95
+fe33a9db-2501-4563-bb77-cacf1bda3072,randall.rocha@acme-corp.com,acme-corp.com,Quarterly All-Hands Meeting,"Dear Amber,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
 
 Thanks,
-Jennifer Garcia
-CFO",2025-11-01T14:40:00,[],0,True,0.9,2025-11-13T10:38:25.016751,executive_impersonation
-155e2dbb-7055-48a7-bf20-e32670dde87a,security@urgent-action.com,urgent-action.com,Your Account Will Be Suspended,"Security Alert!
+Randall Rocha",2025-10-30T15:17:00,budget.xlsx,1,False,,0.95
+d401bf7a-5cab-46ac-8971-3c8a9fdeca81,hr@company.com,company.com,Training Session Reminder,"Hi Team,
 
-We've detected suspicious activity on your account. To prevent unauthorized access, your account will be suspended in 2 hours unless you verify your identity.
+This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
 
-Verify now: https://account-verify-security.org/login
+Best regards,
+Jimmy Collins",2025-10-20T17:56:00,presentation.pptx,1,False,,0.95
+844d5223-75d4-47ea-a6be-099c9b21ea7d,george.daniel@corporate.com,corporate.com,Weekly Team Meeting - 2025-11-18,"Hello,
 
-Security Team",2025-11-12T14:53:00,"[{'filename': 'verification.scr', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.016899,account_suspension
-0a3b4a35-32de-453c-af83-ffe95786215f,security@enterprize.org,enterprize.org,Account Compromise Alert,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
+I wanted to update you on the progress of Visionary zero-defect approach. We're currently on track and expect to meet our deadline.
+
+Regards,
+George Daniel",2025-10-17T12:55:00,agenda.pdf,1,False,,0.95
+1069ab21-2099-4855-9f18-3fd33a594e01,admin@acme-corp.com,acme-corp.com,Q1 Budget Review,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Ryan Garcia",2025-11-11T09:09:00,policy.docx,1,False,,0.95
+656bcbab-5c31-4890-bd4a-114755600033,jason@business.net,business.net,Team Building Event,"Dear Robert,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Jason Murphy",2025-10-24T13:25:00,,0,False,,0.95
+891b591d-5357-4e14-9c18-f195c5c82f9b,account-security@enterprize.org,enterprize.org,Security Breach Detected - Immediate Action Required,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
 
 Verify here: https://account-verify-security.org/login
 
-Account Security Team",2025-10-14T09:28:00,"[{'filename': 'verification.scr', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.017030,account_suspension
-3a54ebac-d28d-48a6-b755-ae5f2cf8fe3a,ceo@secure-verify.org,secure-verify.org,Re: Urgent Wire Transfer Request,"Quick request - can you wire $10,526 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
+Account Security Team",2025-11-04T22:55:00,security_update.exe,1,True,account_suspension,0.9
+4043b4a8-f432-415a-b3f8-31e1630bbc68,it-support@security-update.org,security-update.org,Password Reset Request,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+
+https://password-reset-secure.com/update
+
+System Administrator",2025-10-31T13:29:00,,0,True,credential_harvest,0.9
+5b1ac583-3c25-4c28-9af1-a717d4216f6c,cfo@c0mpany.com,c0mpany.com,Quick Favor - Wire Transfer Needed,"Hi,
+
+I need you to process an urgent wire transfer today. Client payment of $48,039 needs to go out immediately.
+
+Please handle this confidentially and let me know when complete.
+
+Thanks,
+Emily Rodriguez
+CEO",2025-10-31T17:23:00,wire_details.exe,1,True,executive_impersonation,0.9
+085fba59-6b98-4f64-a666-8e167e2cda18,julia@company.com,company.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Grass-roots leadingedge archive. We're currently on track and expect to meet our deadline.
+
+Regards,
+Julia Wells",2025-10-14T13:22:00,agenda.pdf,1,False,,0.95
+8eb07f59-27a7-4b04-aebb-a0253c38b0ca,admin@acme-corp.com,acme-corp.com,Monthly Newsletter - June,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+John Leblanc",2025-11-06T12:04:00,agenda.pdf,1,False,,0.95
+e2560a2c-e66d-4636-bae2-8b6d04cde28e,admin@company.com,company.com,Monthly Newsletter - September,"Dear Matthew,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Miranda Henry",2025-10-15T11:39:00,policy.docx,1,False,,0.95
+5c8f07ba-ca77-4899-9218-a43426ecd155,admin@company.com,company.com,Quarterly All-Hands Meeting,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Lynn Morales",2025-11-07T16:11:00,policy.docx,1,False,,0.95
+510f3303-2785-4a5c-8d0b-d30fa33d9e8e,admin@corporate.com,corporate.com,IT Maintenance Window,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Andrea Reyes",2025-11-04T12:25:00,agenda.pdf,1,False,,0.95
+0ee74988-1f68-40b7-a891-fd37f2168767,admin@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+James Vargas",2025-10-16T12:45:00,policy.docx,1,False,,0.95
+7671a8f2-a971-4604-9d37-26003b91b711,it-support@company.com,company.com,Q2 Budget Review,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Mary Aguilar",2025-11-11T12:25:00,,0,False,,0.95
+509d1a87-f00d-4e04-aec6-f399390c7359,admin@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-11-15,"Hello,
+
+I wanted to update you on the progress of Extended secondary productivity. We're currently on track and expect to meet our deadline.
+
+Regards,
+Rachel Newman",2025-11-07T13:28:00,,0,False,,0.95
+e49a99bd-4ca8-49ef-9aec-3c75013764ee,heather.cross@enterprise.org,enterprise.org,Monthly Newsletter - August,"Dear Kenneth,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Heather Cross",2025-10-23T16:13:00,presentation.pptx,1,False,,0.95
+75355219-78de-4e44-b3d2-aa2152d0f795,final-notice@c0mpany.com,c0mpany.com,CRITICAL: Invoice Payment Due in 24 Hours,"FINAL WARNING!
+
+Outstanding balance: $48,909
+Due date: OVERDUE
+
+Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
+
+Pay immediately: https://secure-payment-verify.com/urgent
+
+Collections Team",2025-10-17T15:55:00,invoice_urgent.exe,1,True,urgent_payment,0.9
+380742be-8289-4823-9700-480c812f08ec,hr@innovation-hub.com,innovation-hub.com,Weekly Team Meeting - 2025-12-06,"Hello,
+
+I wanted to update you on the progress of Focused real-time website. We're currently on track and expect to meet our deadline.
+
+Regards,
+Alan Grimes",2025-10-22T16:04:00,presentation.pptx,1,False,,0.95
+a11e64cb-3f28-4cdd-80e2-629400f33ed3,it-support@corporate.com,corporate.com,Monthly Newsletter - February,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Bryan James",2025-10-16T16:09:00,policy.docx,1,False,,0.95
+50bf8038-791c-4f1e-b1c5-138dd4bb72ee,it-support@globalfirm.org,globalfirm.org,Project Update: Networked modular initiative,"Dear Diana,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Olivia Johnston",2025-10-16T15:01:00,budget.xlsx,1,False,,0.95
+3c1c0d62-1890-4415-9a26-316ad3f7bf83,it-support@globalfirm.org,globalfirm.org,Q4 Budget Review,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Carol Burns",2025-10-30T17:16:00,,0,False,,0.95
+1194a30f-7dc5-464b-9785-cc803a726e4a,hr@techsolutions.com,techsolutions.com,Q2 Budget Review,"Hello,
+
+I wanted to update you on the progress of Persevering holistic secured line. We're currently on track and expect to meet our deadline.
+
+Regards,
+Ricky Taylor",2025-10-22T16:18:00,policy.docx,1,False,,0.95
+e3a620cd-8578-4d07-9f78-2dbb703a5a4e,account-security@corporrate.com,corporrate.com,Unauthorized Access Detected,"Your account has been flagged for suspicious activity. Verify your identity within 24 hours or your account will be permanently suspended.
+
+Verify here: https://account-verify-security.org/login
+
+Account Security Team",2025-10-24T07:02:00,,0,True,account_suspension,0.9
+114bc9a6-1b17-4d5e-98cc-c564789d315c,billing-urgent@busines.net,busines.net,URGENT: Payment Required - Account Suspension Imminent,"URGENT ACTION REQUIRED!
+
+Dear Customer,
+
+Your account requires IMMEDIATE payment of $29,654. Failure to pay within 24 hours will result in account suspension and legal action.
+
+Pay now to avoid consequences: https://secure-payment-verify.com/urgent
+
+Do NOT ignore this notice.
+
+Urgent Billing Department",2025-11-07T14:19:00,account_statement.js,1,True,urgent_payment,0.9
+f2f878eb-67ca-46d3-8fe7-02284fed72d1,noreply@busines.net,busines.net,Password Expiration Notice,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+
+https://password-reset-secure.com/update
+
+System Administrator",2025-11-03T12:44:00,,0,True,credential_harvest,0.9
+e61d8bff-4436-4643-9b6a-9aa25c45b7ad,password-reset@secure-verify.org,secure-verify.org,Security: Password Must Be Changed,"Your password will expire in 24 hours. Reset your password now to maintain access:
+
+https://password-reset-secure.com/update
+
+IT Support",2025-10-31T13:47:00,,0,True,credential_harvest,0.9
+ae0cc728-1b44-4145-81d5-256765dea513,final-notice@busines.net,busines.net,URGENT: Payment Required - Account Suspension Imminent,"URGENT ACTION REQUIRED!
+
+Dear Customer,
+
+Your account requires IMMEDIATE payment of $13,519. Failure to pay within 24 hours will result in account suspension and legal action.
+
+Pay now to avoid consequences: https://secure-payment-verify.com/urgent
+
+Do NOT ignore this notice.
+
+Urgent Billing Department",2025-11-10T09:08:00,final_notice.pdf,1,True,urgent_payment,0.9
+b1ae8548-c23e-48a6-aedc-16b9feb81941,it-support@techsolutions.com,techsolutions.com,New Employee Welcome,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Jason Kennedy",2025-11-12T13:23:00,budget.xlsx,1,False,,0.95
+223a59b0-5b63-4c72-bdeb-de1ee77d134a,carlos.hensley@enterprise.org,enterprise.org,Team Building Event,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Carlos Hensley",2025-10-30T09:43:00,policy.docx,1,False,,0.95
+8fd85e28-62f0-4f45-80a9-626eb7ed65ae,hr@techsolutions.com,techsolutions.com,IT Maintenance Window,"Hello,
+
+I wanted to update you on the progress of Open-source 6thgeneration functionalities. We're currently on track and expect to meet our deadline.
+
+Regards,
+Martin Hines",2025-11-06T10:46:00,presentation.pptx,1,False,,0.95
+be2ba4eb-7007-42a4-925e-e08f235eec81,it-support@acme-corp.com,acme-corp.com,Team Building Event,"Dear Pamela,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Holly Bender",2025-10-24T12:06:00,agenda.pdf,1,False,,0.95
+8589863a-37a8-45a2-9f0e-f2d4df71c561,payment-required@security-update.org,security-update.org,FINAL NOTICE: Outstanding Invoice #43681,"FINAL WARNING!
+
+Outstanding balance: $24,342
+Due date: OVERDUE
+
+Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
+
+Pay immediately: https://secure-payment-verify.com/urgent
+
+Collections Team",2025-10-30T10:09:00,final_notice.pdf,1,True,urgent_payment,0.9
+6840d17d-ea9e-4a28-82ad-f18d649cf917,it-support@innovation-hub.com,innovation-hub.com,Q4 Budget Review,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-18. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Joshua Reid",2025-11-04T14:36:00,,0,False,,0.95
+9ee1189a-100b-45ce-ab90-b2174e182a00,hr@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Michael Fields",2025-10-27T12:41:00,agenda.pdf,1,False,,0.95
+2c275be1-5e78-4346-a171-a4a7305d2aed,it-support@globalfirm.org,globalfirm.org,Weekly Team Meeting - 2025-11-29,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Stacy Horton",2025-11-05T14:07:00,presentation.pptx,1,False,,0.95
+b8208b23-070d-48a5-9398-564cbf179d15,it-support@busines.net,busines.net,Password Reset Request,"Your password will expire in 24 hours. Reset your password now to maintain access:
+
+https://password-reset-secure.com/update
+
+IT Support",2025-11-06T14:49:00,password_tool.exe,1,True,credential_harvest,0.9
+77f885d1-8f0f-412d-a7ce-c720f9accefa,it-support@acme-corp.com,acme-corp.com,Q1 Budget Review,"Hello,
+
+I wanted to update you on the progress of Balanced well-modulated system engine. We're currently on track and expect to meet our deadline.
+
+Regards,
+Christopher Hayden",2025-10-31T14:04:00,,0,False,,0.95
+be32d2f5-6875-453e-9e92-3bf7b997aba3,cfo@corporrate.com,corporrate.com,Re: Urgent Wire Transfer Request,"Quick request - can you wire $40,164 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
 
 Don't reply to this email, just handle it.
 
-Michael Brown",2025-10-30T23:10:00,"[{'filename': 'wire_details.exe', 'size': 0, 'content_type': None}]",1,True,0.9,2025-11-13T10:38:25.017170,executive_impersonation
+Sarah Johnson",2025-10-21T21:06:00,transfer_form.docm,1,True,executive_impersonation,0.9
+e83d9dce-7314-43ef-80c6-cfebe4ff2cfe,it-support@globalfirm.org,globalfirm.org,Training Session Reminder,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Thomas Bender",2025-11-13T17:59:00,policy.docx,1,False,,0.95
+212d8cc7-6b93-41e2-bdcc-860e83620fce,urgent-billing@security-update.org,security-update.org,CRITICAL: Invoice Payment Due in 24 Hours,"FINAL WARNING!
+
+Outstanding balance: $47,920
+Due date: OVERDUE
+
+Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
+
+Pay immediately: https://secure-payment-verify.com/urgent
+
+Collections Team",2025-10-24T15:17:00,invoice_urgent.exe,1,True,urgent_payment,0.9
+f41ec612-e388-4907-89fc-ae7098409955,mathew@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Virtual neutral alliance. We're currently on track and expect to meet our deadline.
+
+Regards,
+Mathew Santiago",2025-10-17T17:49:00,,0,False,,0.95
+78eb7c7b-4a19-4bbb-9582-ae68d1c7dd61,jacob@innovation-hub.com,innovation-hub.com,IT Maintenance Window,"Hello,
+
+I wanted to update you on the progress of Horizontal leadingedge standardization. We're currently on track and expect to meet our deadline.
+
+Regards,
+Jacob Cox",2025-10-29T14:11:00,agenda.pdf,1,False,,0.95
+8f138e3d-a8df-47ec-af56-baf1b0edf461,joseph@acme-corp.com,acme-corp.com,Training Session Reminder,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Joseph Davidson",2025-10-31T14:14:00,,0,False,,0.95
+d84487eb-6478-47b3-b0f7-0078ccb901d7,final-notice@corporrate.com,corporrate.com,IMMEDIATE: Payment Overdue - Legal Action Pending,"FINAL WARNING!
+
+Outstanding balance: $7,860
+Due date: OVERDUE
+
+Immediate wire transfer required to avoid account closure. Contact our urgent payment line or your account will be terminated.
+
+Pay immediately: https://secure-payment-verify.com/urgent
+
+Collections Team",2025-10-22T15:24:00,final_notice.pdf,1,True,urgent_payment,0.9
+2b7d9912-dedc-4bd3-b579-8f52c4c8171d,emily.rodriguez@busines.net,busines.net,CONFIDENTIAL: Emergency Payment Required,"Hi,
+
+I need you to process an urgent wire transfer today. Client payment of $33,855 needs to go out immediately.
+
+Please handle this confidentially and let me know when complete.
+
+Thanks,
+Sarah Johnson
+CEO",2025-11-13T11:26:00,,0,True,executive_impersonation,0.9
+9c054aab-fbfb-4ed2-b612-cdce2652482d,password-reset@payment-urgent.com,payment-urgent.com,Password Reset Request,"Your password will expire in 24 hours. Reset your password now to maintain access:
+
+https://password-reset-secure.com/update
+
+IT Support",2025-10-31T11:35:00,password_tool.exe,1,True,credential_harvest,0.9
+f996d3d5-c2bd-4032-9f97-9c6e46726986,password-reset@account-alert.net,account-alert.net,Your Password Expires Today,"Your password will expire in 24 hours. Reset your password now to maintain access:
+
+https://password-reset-secure.com/update
+
+IT Support",2025-11-06T07:23:00,,0,True,credential_harvest,0.9
+ce3b60c9-a086-4e5e-b38a-eec14fc7a6b2,it-support@acme-corp.com,acme-corp.com,New Employee Welcome,"Hello,
+
+I wanted to update you on the progress of Optional real-time migration. We're currently on track and expect to meet our deadline.
+
+Regards,
+Natalie Green",2025-10-14T11:16:00,agenda.pdf,1,False,,0.95
+c300af51-8eb0-4acc-a380-671cd0504ff0,david@urgent-action.com,urgent-action.com,Urgent: Client Payment Due Today,"I'm in meetings all day but need you to process a $14,479 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+
+Thanks,
+David Martinez
+CFO",2025-10-28T11:55:00,wire_details.exe,1,True,executive_impersonation,0.9
+8bbed5ea-0d0d-4f40-82f0-396031198c9c,it-support@globalfirm.org,globalfirm.org,Monthly Newsletter - June,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-14. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Jennifer Young",2025-11-07T13:02:00,presentation.pptx,1,False,,0.95
+4566887c-8d60-42e5-9c2e-cead08de9ad3,admin@enterprise.org,enterprise.org,Office Policy Update,"Hello,
+
+I wanted to update you on the progress of Extended solution-oriented methodology. We're currently on track and expect to meet our deadline.
+
+Regards,
+Jeremy Johnson",2025-10-31T14:13:00,budget.xlsx,1,False,,0.95
+d9eb7e19-125b-4162-ab32-85bd65dee685,admin@enterprise.org,enterprise.org,Q3 Budget Review,"Hello,
+
+I wanted to update you on the progress of Focused bandwidth-monitored implementation. We're currently on track and expect to meet our deadline.
+
+Regards,
+Christine Hensley",2025-11-05T09:46:00,,0,False,,0.95
+50d8f42e-3ac9-4c69-8eef-77ec10263f89,admin@globalfirm.org,globalfirm.org,Team Building Event,"Dear Melissa,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Blake Patel",2025-10-16T10:49:00,agenda.pdf,1,False,,0.95
+18714b89-dd54-494f-831b-a2e9c259479d,admin@business.net,business.net,New Employee Welcome,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Steven Petersen",2025-10-17T17:27:00,,0,False,,0.95
+8d6ced38-7f8f-4a1f-b004-9b9af8a6da1e,sarah.johnson@secure-verify.org,secure-verify.org,CONFIDENTIAL: Emergency Payment Required,"I'm in meetings all day but need you to process a $10,346 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+
+Thanks,
+Robert Wilson
+CFO",2025-10-29T16:26:00,transfer_form.docm,1,True,executive_impersonation,0.9
+e5231c3d-ae37-4e0d-8528-14e3313e1dca,hr@corporate.com,corporate.com,Weekly Team Meeting - 2025-11-18,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-17. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Michael Osborn",2025-10-31T13:04:00,presentation.pptx,1,False,,0.95
+50c725ad-5034-4c93-a0ce-65c2eb9aab41,admin@corporate.com,corporate.com,Team Building Event,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Stephanie Vaughn",2025-11-13T14:19:00,policy.docx,1,False,,0.95
+bc978a0a-3e54-45ea-bf4e-adffd9ca3a7f,system@verify-now.com,verify-now.com,Password Reset Request,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+
+https://password-reset-secure.com/update
+
+System Administrator",2025-11-07T22:04:00,,0,True,credential_harvest,0.9
+b3487a62-fb50-4bd8-bbe6-2bc977a7f91b,lisa.spence@company.com,company.com,New Employee Welcome,"Hello,
+
+I wanted to update you on the progress of Robust interactive data-warehouse. We're currently on track and expect to meet our deadline.
+
+Regards,
+Lisa Spence",2025-11-04T15:10:00,agenda.pdf,1,False,,0.95
+62e30aeb-92b6-4c60-a3ea-2c3d9b6cb936,charles@techsolutions.com,techsolutions.com,Q1 Budget Review,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-15. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Charles Smith",2025-11-07T09:39:00,budget.xlsx,1,False,,0.95
+27128b88-1989-4d65-a4c3-fc0fd8b27a1b,admin@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Persistent incremental application. We're currently on track and expect to meet our deadline.
+
+Regards,
+Shawn Edwards",2025-10-17T10:17:00,budget.xlsx,1,False,,0.95
+b52c8d54-ba17-435d-b9bc-031cda27cea8,urgent-billing@enterprize.org,enterprize.org,URGENT: Payment Required - Account Suspension Imminent,"CRITICAL PAYMENT NOTICE
+
+Your service will be TERMINATED in 24 hours unless payment of $11,586 is received immediately.
+
+This is your FINAL opportunity to avoid legal proceedings.
+
+Pay now: https://secure-payment-verify.com/urgent
+
+Billing Emergency",2025-11-04T00:18:00,account_statement.js,1,True,urgent_payment,0.9
+595e2f38-bbee-4ee2-be42-c38186170b0a,system@verify-now.com,verify-now.com,Your Password Expires Today,"Password reset requested for your account. If this wasn't you, click here to secure your account:
+
+https://password-reset-secure.com/update
+
+System Administrator",2025-11-07T21:33:00,,0,True,credential_harvest,0.9
+2887d4f7-3e81-48a3-a1ad-51c9657d2437,hr@enterprise.org,enterprise.org,Office Policy Update,"Hi Team,
+
+This is a reminder about our upcoming meeting scheduled for 2025-11-19. Please review the agenda attached and come prepared with your updates.
+
+Best regards,
+Michele Jones",2025-10-16T10:05:00,budget.xlsx,1,False,,0.95
+bdaf94d4-10d0-43a4-a20e-b84acfc1c50c,noreply@secure-verify.org,secure-verify.org,Password Expiration Notice,"Your password must be updated due to security policy changes. Update now:
+
+https://password-reset-secure.com/update
+
+Password Security Team",2025-10-15T13:14:00,password_tool.exe,1,True,credential_harvest,0.9
+6d1374bb-8135-4502-afba-a4ddcb0028fb,emily@techsolutions.com,techsolutions.com,Office Policy Update,"Hello,
+
+I wanted to update you on the progress of Innovative motivating function. We're currently on track and expect to meet our deadline.
+
+Regards,
+Emily Diaz",2025-11-11T15:53:00,agenda.pdf,1,False,,0.95
+4d882f0f-5e68-458c-a7ae-070cbbee6ef8,it-support@company.com,company.com,Training Session Reminder,"Dear Robert,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Stacey Holland",2025-10-29T17:48:00,policy.docx,1,False,,0.95
+819aaed6-ef5e-4570-bbb9-c0287fd5cc51,hr@corporate.com,corporate.com,Quarterly All-Hands Meeting,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+William Hoover",2025-10-28T14:27:00,,0,False,,0.95
+2cbb5c71-8ce9-40fa-9c11-1fd9736b4ff6,jennifer@secure-verify.org,secure-verify.org,CONFIDENTIAL: Emergency Payment Required,"I'm in meetings all day but need you to process a $49,682 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+
+Thanks,
+Michael Brown
+CFO",2025-10-24T20:31:00,wire_details.exe,1,True,executive_impersonation,0.9
+626f9662-a9e6-4f37-9336-fc03c1039b05,john@urgent-action.com,urgent-action.com,Quick Favor - Wire Transfer Needed,"I'm in meetings all day but need you to process a $37,553 wire transfer ASAP. Same vendor as usual. Handle this quietly.
+
+Thanks,
+Robert Wilson
+CFO",2025-10-31T12:40:00,wire_details.exe,1,True,executive_impersonation,0.9
+db00a604-b070-4450-93bc-ecaec4db779b,ceo@c0mpany.com,c0mpany.com,Urgent: Client Payment Due Today,"Quick request - can you wire $11,511 to our vendor today? Use the same account as last time. This is time sensitive for a client deal.
+
+Don't reply to this email, just handle it.
+
+Jennifer Garcia",2025-10-24T14:03:00,,0,True,executive_impersonation,0.9
+33debaa6-9645-4145-9c94-94426a63d9b0,admin@company.com,company.com,Training Session Reminder,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Steven Schmidt",2025-11-04T12:14:00,presentation.pptx,1,False,,0.95
+07488a3e-ae29-4854-a23a-99ccf42450f4,it-support@acme-corp.com,acme-corp.com,Quarterly All-Hands Meeting,"Dear Amanda,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Tracey Garcia",2025-10-20T12:45:00,,0,False,,0.95
+5176688a-aa54-424d-bfad-71d40ea2eb80,elizabeth.nguyen@acme-corp.com,acme-corp.com,Weekly Team Meeting - 2025-12-04,"Dear Shelby,
+
+Please find attached the budget review document for your department. We'll discuss this in our next meeting.
+
+Thanks,
+Elizabeth Nguyen",2025-11-07T16:35:00,presentation.pptx,1,False,,0.95
+0195d532-f745-4cf3-9408-c916718d31a6,hr@business.net,business.net,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Persevering client-driven website. We're currently on track and expect to meet our deadline.
+
+Regards,
+Kimberly Robinson",2025-10-17T10:24:00,budget.xlsx,1,False,,0.95
+b6d73f70-78db-4af7-932b-e0e3ada2add6,hr@corporate.com,corporate.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of De-engineered regional monitoring. We're currently on track and expect to meet our deadline.
+
+Regards,
+Joshua Tucker",2025-11-03T10:46:00,,0,False,,0.95
+cce8ca5b-b812-4efc-9717-bef4cfff38e5,admin@globalfirm.org,globalfirm.org,New Employee Welcome,"Hi everyone,
+
+Just a friendly reminder about the training session tomorrow. Don't forget to bring your laptops.
+
+Best,
+Kenneth Ward",2025-11-05T15:31:00,budget.xlsx,1,False,,0.95
+3ca82488-9bd0-4817-bbaf-694fbf25cfe8,collections@secure-verify.org,secure-verify.org,ACTION REQUIRED: Wire Transfer Needed Today,"URGENT ACTION REQUIRED!
+
+Dear Customer,
+
+Your account requires IMMEDIATE payment of $38,455. Failure to pay within 24 hours will result in account suspension and legal action.
+
+Pay now to avoid consequences: https://secure-payment-verify.com/urgent
+
+Do NOT ignore this notice.
+
+Urgent Billing Department",2025-11-07T14:22:00,invoice_urgent.exe,1,True,urgent_payment,0.9
+240b0430-8a55-4850-ac1f-54800aa86489,albert@innovation-hub.com,innovation-hub.com,Team Building Event,"Hello,
+
+I wanted to update you on the progress of Cloned dynamic hub. We're currently on track and expect to meet our deadline.
+
+Regards,
+Albert Howell",2025-11-06T10:28:00,policy.docx,1,False,,0.95
+8ab963a8-0063-4ad5-84be-65b6f65ee899,nicholas@innovation-hub.com,innovation-hub.com,IT Maintenance Window,"Hello,
+
+I wanted to update you on the progress of Right-sized tangible focus group. We're currently on track and expect to meet our deadline.
+
+Regards,
+Nicholas Johnson",2025-10-17T13:49:00,budget.xlsx,1,False,,0.95
+cee798e8-c3e5-4816-93f3-141ec3409db5,darrell.lam@enterprise.org,enterprise.org,New Employee Welcome,"Hello,
+
+I wanted to update you on the progress of Up-sized user-facing support. We're currently on track and expect to meet our deadline.
+
+Regards,
+Darrell Lam",2025-10-24T12:45:00,presentation.pptx,1,False,,0.95
