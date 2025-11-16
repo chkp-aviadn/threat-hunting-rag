@@ -72,13 +72,10 @@ Run the system in Docker for isolated, portable execution.
 # Build the Docker image
 make docker-build
 
-# Run interactive CLI (default)
+# Run interactive CLI
 make docker-cli
 
-# Or start with docker-compose
-docker-compose up
-
-# Run API server instead
+# Run API server (detached, port 8000)
 make docker-api
 ```
 
@@ -87,25 +84,28 @@ make docker-api
 | Target | What it does |
 |--------|--------------|
 | `make docker-build` | Build Docker image |
-| `make docker-cli` | Run interactive CLI in Docker (one-off container) |
-| `make docker-api` | Start API server in Docker (port 8000) |
-| `make docker-up` | Start with docker-compose (interactive CLI) |
-| `make docker-down` | Stop and remove containers |
-| `make docker-logs` | View container logs |
-| `make docker-shell` | Access container shell for debugging |
-| `make docker-test` | Test API health inside container |
+| `make docker-cli` | Run interactive CLI in Docker |
+| `make docker-api` | Start API server in Docker (detached, port 8000) |
 
 ### Docker Modes
 
 The container supports different modes via `MODE` environment variable:
-- `cli-interactive` (default) - Full interactive CLI with refinement
-- `cli` - Basic CLI single query mode
-- `api` - REST API server
-- `setup` - Setup/validate system only
+- `cli-interactive` - Full interactive CLI with refinement (used by `docker-cli`)
+- `api` - REST API server (used by `docker-api`)
 
-Override mode:
+Direct usage:
 ```bash
+# Interactive CLI
 docker run -it --rm \
+  -e MODE=cli-interactive \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/cache:/app/cache \
+  -v $(pwd)/logs:/app/logs \
+  --env-file .env \
+  threat-hunting-rag
+
+# API server
+docker run -d --name threat-hunting-rag-api \
   -e MODE=api \
   -p 8000:8000 \
   -v $(pwd)/data:/app/data \
@@ -113,6 +113,19 @@ docker run -it --rm \
   -v $(pwd)/logs:/app/logs \
   --env-file .env \
   threat-hunting-rag
+```
+
+### Managing API Container
+
+```bash
+# Check logs
+docker logs -f threat-hunting-rag-api
+
+# Stop container
+docker stop threat-hunting-rag-api
+
+# Test API
+curl http://localhost:8000/health
 ```
 
 ### Data Persistence
