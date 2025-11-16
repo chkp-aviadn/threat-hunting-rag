@@ -192,17 +192,14 @@ def generate_markdown_report(parsed: Dict[str, Any], timestamp: str) -> str:
             lines.append("*No results captured*\n")
             continue
         
-        # Show top 5 results per query
+        # Show all 10 results per query
         lines.append("| Rank | Level | Score | From | Subject |")
         lines.append("|------|-------|-------|------|---------|")
-        for result in results[:5]:
+        for result in results:
             level_emoji = {'CRITICAL': '🚨', 'HIGH': '⚠️', 'MEDIUM': '⚡', 'LOW': '📝', 'NEGLIGIBLE': '✅'}[result['threat_level']]
             subject = result.get('subject', 'N/A')[:50] + ('...' if len(result.get('subject', '')) > 50 else '')
             sender = result.get('sender', 'N/A')[:30]
             lines.append(f"| {result['rank']} | {level_emoji} {result['threat_level']} | {result['threat_score']:.3f} | `{sender}` | {subject} |")
-        
-        if len(results) > 5:
-            lines.append(f"\n*...and {len(results)-5} more results*\n")
         
         lines.append("")
     
