@@ -1,0 +1,2875 @@
+✅ Using pysqlite3-binary for ChromaDB compatibility
+🛡️  THREAT HUNTING RAG SYSTEM - Interactive Mode
+============================================================
+Commands:
+  help          - Show available commands
+  query <text>  - Run threat hunting query
+  refine [opts] - Refine last results (threshold=, limit=, focus=)
+  history       - Show query history
+  stats         - Show session statistics
+  clear         - Clear screen
+  exit/quit     - Exit interactive mode
+
+🔍 threat-hunt> 🔍 Processing query: 'Show me emails asking for confidential information from unknown senders.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.037s | Found 10 results
+================================================================================
+
+⚡ RESULT #1 - MEDIUM RISK (Score: 0.467)
+   From: emily.rodriguez@busines.net
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-11-13 11:26:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.467)
+      - Similarity=0.0 | Confidence: 0.56 | Rank: 1
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: emily.rodriguez@busines.net
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 56.0%
+   🔑 Keywords: confidential
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #2 - HIGH RISK (Score: 0.712)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.712)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 2
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: from
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #3 - HIGH RISK (Score: 0.624)
+   From: sarah@secure-verify.org
+   Subject: ASAP: Wire Transfer Authorization
+   Time: 2025-10-24 15:45:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.624)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 3
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: sarah@secure-verify.org
+      Subject: ASAP: Wire Transfer Authorization...
+   🎯 Confidence: 65.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.639)
+   From: robert@verify-now.com
+   Subject: Emergency Request from David Martinez
+   Time: 2025-11-06 15:21:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.639)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 4
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: robert@verify-now.com
+      Subject: Emergency Request from David Martinez...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: from
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #5 - HIGH RISK (Score: 0.682)
+   From: jennifer@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-24 20:31:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.682)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 5
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: jennifer@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: confidential
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.609)
+   From: sarah.johnson@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-29 16:26:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.609)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: sarah.johnson@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: confidential
+--------------------------------------------------------------------------------
+
+⚡ RESULT #7 - MEDIUM RISK (Score: 0.561)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.561)
+      - Similarity=0.0 | Confidence: 0.61 | Rank: 7
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 61.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #8 - LOW RISK (Score: 0.389)
+   From: ceo@c0mpany.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-24 14:03:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.389)
+      - Similarity=0.0 | Confidence: 0.5 | Rank: 8
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 50.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.697)
+   From: cfo@c0mpany.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 17:23:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.697)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 9
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: cfo@c0mpany.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 67.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #10 - NEGLIGIBLE RISK (Score: 0.000)
+   From: john@corporate.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-03 16:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 10
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Find emails that mention wire transfers or urgent money transfers.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.024s | Found 10 results
+================================================================================
+
+⚠️ RESULT #1 - HIGH RISK (Score: 0.622)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.622)
+      - Similarity=0.174 | Confidence: 0.714 | Rank: 1
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 71.4%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #2 - HIGH RISK (Score: 0.683)
+   From: robert@verify-now.com
+   Subject: Emergency Request from David Martinez
+   Time: 2025-11-06 15:21:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.683)
+      - Similarity=0.16 | Confidence: 0.746 | Rank: 2
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: robert@verify-now.com
+      Subject: Emergency Request from David Martinez...
+   🎯 Confidence: 74.6%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #3 - HIGH RISK (Score: 0.637)
+   From: sarah.johnson@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-29 16:26:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.637)
+      - Similarity=0.154 | Confidence: 0.743 | Rank: 3
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: sarah.johnson@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 74.3%
+   🔑 Keywords: wire
+--------------------------------------------------------------------------------
+
+🚨 RESULT #4 - CRITICAL RISK (Score: 0.755)
+   From: cfo@c0mpany.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 17:23:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.755)
+      - Similarity=0.154 | Confidence: 0.762 | Rank: 4
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: cfo@c0mpany.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 76.2%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+🚨 RESULT #5 - CRITICAL RISK (Score: 0.758)
+   From: john@urgent-action.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 12:40:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.758)
+      - Similarity=0.147 | Confidence: 0.848 | Rank: 5
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: john@urgent-action.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 84.8%
+   🔑 Keywords: wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.708)
+   From: jennifer@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-24 20:31:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.708)
+      - Similarity=0.14 | Confidence: 0.754 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: jennifer@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 75.4%
+   🔑 Keywords: wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #7 - HIGH RISK (Score: 0.742)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.742)
+      - Similarity=0.081 | Confidence: 0.718 | Rank: 7
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 71.8%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+🚨 RESULT #8 - CRITICAL RISK (Score: 0.789)
+   From: david@urgent-action.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-28 11:55:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.789)
+      - Similarity=0.07 | Confidence: 0.802 | Rank: 8
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: david@urgent-action.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 80.2%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.666)
+   From: sarah@secure-verify.org
+   Subject: ASAP: Wire Transfer Authorization
+   Time: 2025-10-24 15:45:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.666)
+      - Similarity=0.068 | Confidence: 0.691 | Rank: 9
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: sarah@secure-verify.org
+      Subject: ASAP: Wire Transfer Authorization...
+   🎯 Confidence: 69.1%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+
+⚡ RESULT #10 - MEDIUM RISK (Score: 0.493)
+   From: emily.rodriguez@busines.net
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-11-13 11:26:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.493)
+      - Similarity=0.059 | Confidence: 0.595 | Rank: 10
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: emily.rodriguez@busines.net
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 59.5%
+   🔑 Keywords: urgent, wire
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'List emails with links to unfamiliar or misspelled domains.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.023s | Found 10 results
+================================================================================
+
+✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.000)
+   From: jesus@business.net
+   Subject: Project Update: Reverse-engineered stable website
+   Time: 2025-10-14 12:29:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 1
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #2 - NEGLIGIBLE RISK (Score: 0.140)
+   From: angel@acme-corp.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-07 13:29:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.14)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 2
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+      Email from: angel@acme-corp.com
+      Subject: Monthly Newsletter - April...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #3 - NEGLIGIBLE RISK (Score: 0.000)
+   From: john@corporate.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-03 16:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 3
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #4 - NEGLIGIBLE RISK (Score: 0.140)
+   From: todd@innovation-hub.com
+   Subject: Monthly Newsletter - May
+   Time: 2025-10-16 13:35:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.14)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 4
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+      Email from: todd@innovation-hub.com
+      Subject: Monthly Newsletter - May...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #5 - NEGLIGIBLE RISK (Score: 0.000)
+   From: heather.cross@enterprise.org
+   Subject: Monthly Newsletter - August
+   Time: 2025-10-23 16:13:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 5
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #6 - NEGLIGIBLE RISK (Score: 0.000)
+   From: mark@acme-corp.com
+   Subject: Monthly Newsletter - June
+   Time: 2025-11-04 11:28:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 6
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #7 - NEGLIGIBLE RISK (Score: 0.000)
+   From: it-support@globalfirm.org
+   Subject: Monthly Newsletter - June
+   Time: 2025-11-07 13:02:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 7
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #8 - NEGLIGIBLE RISK (Score: 0.000)
+   From: it-support@corporate.com
+   Subject: Monthly Newsletter - February
+   Time: 2025-10-16 16:09:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 8
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #9 - NEGLIGIBLE RISK (Score: 0.000)
+   From: admin@acme-corp.com
+   Subject: Monthly Newsletter - June
+   Time: 2025-11-06 12:04:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 9
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+⚡ RESULT #10 - MEDIUM RISK (Score: 0.561)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.561)
+      - Similarity=0.0 | Confidence: 0.61 | Rank: 10
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 61.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Identify emails pretending to be from IT support asking for password resets.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.023s | Found 10 results
+================================================================================
+
+✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.105)
+   From: noreply@busines.net
+   Subject: Password Expiration Notice
+   Time: 2025-11-03 12:44:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.105)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 1
+      Key Indicators:
+      - link_suspicious 0.5 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚡ MODERATE RISK INDICATORS:
+        • Contains suspicious or potentially malicious links (confidence: 50.0%)
+      Email from: noreply@busines.net
+      Subject: Password Expiration Notice...
+   🎯 Confidence: 0.0%
+   🔑 Keywords: password
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #2 - HIGH RISK (Score: 0.680)
+   From: no-reply@verify-now.com
+   Subject: Suspicious Activity Detected - Verify Now
+   Time: 2025-11-13 04:43:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 2
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: no-reply@verify-now.com
+      Subject: Suspicious Activity Detected - Verify Now...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #3 - NEGLIGIBLE RISK (Score: 0.105)
+   From: it-support@security-update.org
+   Subject: Password Reset Request
+   Time: 2025-10-31 13:29:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.105)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 3
+      Key Indicators:
+      - link_suspicious 0.5 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚡ MODERATE RISK INDICATORS:
+        • Contains suspicious or potentially malicious links (confidence: 50.0%)
+      Email from: it-support@security-update.org
+      Subject: Password Reset Request...
+   🎯 Confidence: 0.0%
+   🔑 Keywords: password
+--------------------------------------------------------------------------------
+
+✅ RESULT #4 - NEGLIGIBLE RISK (Score: 0.105)
+   From: system@verify-now.com
+   Subject: Password Reset Request
+   Time: 2025-11-07 22:04:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.105)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 4
+      Key Indicators:
+      - link_suspicious 0.5 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚡ MODERATE RISK INDICATORS:
+        • Contains suspicious or potentially malicious links (confidence: 50.0%)
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: system@verify-now.com
+      Subject: Password Reset Request...
+   🎯 Confidence: 0.0%
+   🔑 Keywords: password
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #5 - HIGH RISK (Score: 0.680)
+   From: account-security@account-alert.net
+   Subject: Account Security Alert - Action Required
+   Time: 2025-10-24 16:53:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 5
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@account-alert.net
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #6 - LOW RISK (Score: 0.260)
+   From: it-security@corporrate.com
+   Subject: Account Security Alert - Action Required
+   Time: 2025-11-11 04:41:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.26)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 6
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: it-security@corporrate.com
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #7 - LOW RISK (Score: 0.242)
+   From: account-security@account-alert.net
+   Subject: Suspicious Activity Detected - Verify Now
+   Time: 2025-10-24 05:15:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.242)
+      - Similarity=0.0 | Confidence: 0.39 | Rank: 7
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: account-security@account-alert.net
+      Subject: Suspicious Activity Detected - Verify Now...
+   🎯 Confidence: 39.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #8 - HIGH RISK (Score: 0.680)
+   From: it-security@enterprize.org
+   Subject: Security Breach Detected - Immediate Action Required
+   Time: 2025-11-06 09:46:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 8
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: it-security@enterprize.org
+      Subject: Security Breach Detected - Immediate Action Required...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.680)
+   From: account-security@enterprize.org
+   Subject: Security Breach Detected - Immediate Action Required
+   Time: 2025-11-04 22:55:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 9
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: account-security@enterprize.org
+      Subject: Security Breach Detected - Immediate Action Required...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #10 - HIGH RISK (Score: 0.680)
+   From: it-security@payment-urgent.com
+   Subject: Security Breach Detected - Immediate Action Required
+   Time: 2025-10-31 11:43:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 10
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: it-security@payment-urgent.com
+      Subject: Security Breach Detected - Immediate Action Required...
+   🎯 Confidence: 65.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Show me emails where the sender’s address doesn’t match the display name.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.025s | Found 10 results
+================================================================================
+
+⚡ RESULT #1 - MEDIUM RISK (Score: 0.561)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.561)
+      - Similarity=0.0 | Confidence: 0.61 | Rank: 1
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 61.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #2 - LOW RISK (Score: 0.389)
+   From: ceo@c0mpany.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-24 14:03:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.389)
+      - Similarity=0.0 | Confidence: 0.5 | Rank: 2
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 50.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #3 - LOW RISK (Score: 0.242)
+   From: account-security@enterprize.org
+   Subject: Account Compromise Alert
+   Time: 2025-10-24 17:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.242)
+      - Similarity=0.0 | Confidence: 0.39 | Rank: 3
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@enterprize.org
+      Subject: Account Compromise Alert...
+   🎯 Confidence: 39.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.680)
+   From: no-reply@urgent-action.com
+   Subject: Account Compromise Alert
+   Time: 2025-10-23 21:02:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 4
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: no-reply@urgent-action.com
+      Subject: Account Compromise Alert...
+   🎯 Confidence: 65.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #5 - NEGLIGIBLE RISK (Score: 0.000)
+   From: john@corporate.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-03 16:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 5
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.697)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.697)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 67.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #7 - LOW RISK (Score: 0.260)
+   From: it-security@corporrate.com
+   Subject: Account Security Alert - Action Required
+   Time: 2025-11-11 04:41:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.26)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 7
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: it-security@corporrate.com
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #8 - NEGLIGIBLE RISK (Score: 0.000)
+   From: heather.cross@enterprise.org
+   Subject: Monthly Newsletter - August
+   Time: 2025-10-23 16:13:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 8
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.680)
+   From: no-reply@verify-now.com
+   Subject: Suspicious Activity Detected - Verify Now
+   Time: 2025-11-13 04:43:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 9
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: no-reply@verify-now.com
+      Subject: Suspicious Activity Detected - Verify Now...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #10 - HIGH RISK (Score: 0.680)
+   From: account-security@account-alert.net
+   Subject: Account Security Alert - Action Required
+   Time: 2025-10-24 16:53:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 10
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@account-alert.net
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Find emails containing invoices or payment instructions from first-time contacts.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.026s | Found 10 results
+================================================================================
+
+⚡ RESULT #1 - MEDIUM RISK (Score: 0.419)
+   From: ceo@c0mpany.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-24 14:03:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.419)
+      - Similarity=0.0 | Confidence: 0.5 | Rank: 1
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 50.0%
+   🔑 Keywords: payment, time
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #2 - HIGH RISK (Score: 0.654)
+   From: robert@verify-now.com
+   Subject: Emergency Request from David Martinez
+   Time: 2025-11-06 15:21:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.654)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 2
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: robert@verify-now.com
+      Subject: Emergency Request from David Martinez...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: from, payment
+--------------------------------------------------------------------------------
+
+⚡ RESULT #3 - MEDIUM RISK (Score: 0.467)
+   From: emily.rodriguez@busines.net
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-11-13 11:26:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.467)
+      - Similarity=0.0 | Confidence: 0.56 | Rank: 3
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: emily.rodriguez@busines.net
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 56.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.695)
+   From: final-notice@c0mpany.com
+   Subject: CRITICAL: Invoice Payment Due in 24 Hours
+   Time: 2025-10-17 15:55:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.695)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 4
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: final-notice@c0mpany.com
+      Subject: CRITICAL: Invoice Payment Due in 24 Hours...
+   🎯 Confidence: 58.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #5 - HIGH RISK (Score: 0.727)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.727)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 5
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: from, payment
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.712)
+   From: cfo@c0mpany.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 17:23:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.712)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: cfo@c0mpany.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #7 - HIGH RISK (Score: 0.695)
+   From: urgent-billing@security-update.org
+   Subject: CRITICAL: Invoice Payment Due in 24 Hours
+   Time: 2025-10-24 15:17:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.695)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 7
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: urgent-billing@security-update.org
+      Subject: CRITICAL: Invoice Payment Due in 24 Hours...
+   🎯 Confidence: 58.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+
+⚡ RESULT #8 - MEDIUM RISK (Score: 0.440)
+   From: billing-urgent@account-alert.net
+   Subject: FINAL NOTICE: Outstanding Invoice #24871
+   Time: 2025-10-22 13:32:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.44)
+      - Similarity=0.0 | Confidence: 0.52 | Rank: 8
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.6 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious attachment types (confidence: 60.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: billing-urgent@account-alert.net
+      Subject: FINAL NOTICE: Outstanding Invoice #24871...
+   🎯 Confidence: 52.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+
+✅ RESULT #9 - NEGLIGIBLE RISK (Score: 0.015)
+   From: heather.cross@enterprise.org
+   Subject: Monthly Newsletter - August
+   Time: 2025-10-23 16:13:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.015)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 9
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+   🔑 Keywords: find
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #10 - LOW RISK (Score: 0.292)
+   From: payment-required@security-update.org
+   Subject: FINAL NOTICE: Outstanding Invoice #43681
+   Time: 2025-10-30 10:09:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.292)
+      - Similarity=0.0 | Confidence: 0.47 | Rank: 10
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: payment-required@security-update.org
+      Subject: FINAL NOTICE: Outstanding Invoice #43681...
+   🎯 Confidence: 47.0%
+   🔑 Keywords: payment
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Highlight emails with suspicious-looking PDF or ZIP attachments.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.022s | Found 10 results
+================================================================================
+
+✅ RESULT #1 - NEGLIGIBLE RISK (Score: 0.045)
+   From: mark@acme-corp.com
+   Subject: Monthly Newsletter - June
+   Time: 2025-11-04 11:28:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 1
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #2 - NEGLIGIBLE RISK (Score: 0.045)
+   From: heather.cross@enterprise.org
+   Subject: Monthly Newsletter - August
+   Time: 2025-10-23 16:13:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 2
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #3 - NEGLIGIBLE RISK (Score: 0.045)
+   From: admin@company.com
+   Subject: Monthly Newsletter - September
+   Time: 2025-10-15 11:39:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 3
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #4 - LOW RISK (Score: 0.185)
+   From: angel@acme-corp.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-07 13:29:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.185)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 4
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+      Email from: angel@acme-corp.com
+      Subject: Monthly Newsletter - April...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #5 - LOW RISK (Score: 0.185)
+   From: it-support@acme-corp.com
+   Subject: Office Policy Update
+   Time: 2025-10-22 13:35:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.185)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 5
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+      Email from: it-support@acme-corp.com
+      Subject: Office Policy Update...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #6 - NEGLIGIBLE RISK (Score: 0.000)
+   From: john@corporate.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-03 16:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.0)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 6
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #7 - NEGLIGIBLE RISK (Score: 0.045)
+   From: danielle.johnson@enterprise.org
+   Subject: Office Policy Update
+   Time: 2025-10-21 10:43:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 7
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #8 - NEGLIGIBLE RISK (Score: 0.045)
+   From: hr@enterprise.org
+   Subject: Office Policy Update
+   Time: 2025-10-16 10:05:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 8
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #9 - NEGLIGIBLE RISK (Score: 0.045)
+   From: angela@innovation-hub.com
+   Subject: Office Policy Update
+   Time: 2025-11-06 13:21:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 9
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+
+✅ RESULT #10 - NEGLIGIBLE RISK (Score: 0.045)
+   From: sarah.campos@innovation-hub.com
+   Subject: Office Policy Update
+   Time: 2025-10-17 17:38:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.045)
+      - Similarity=0.0 | Confidence: 0.0 | Rank: 10
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      No significant threat indicators detected.
+   🎯 Confidence: 0.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Locate emails referencing overdue payments or account suspension warnings.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.022s | Found 10 results
+================================================================================
+
+⚠️ RESULT #1 - HIGH RISK (Score: 0.719)
+   From: urgent-billing@enterprize.org
+   Subject: URGENT: Payment Required - Account Suspension Imminent
+   Time: 2025-11-04 00:18:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.719)
+      - Similarity=0.051 | Confidence: 0.61 | Rank: 1
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.9 – Attachment with potential risk
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      - financial_request 0.5 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious attachment types (confidence: 90.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Requests financial information or transactions (confidence: 50.0%)
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: urgent-billing@enterprize.org
+      Subject: URGENT: Payment Required - Account Suspension Imminent...
+   🎯 Confidence: 61.0%
+   🔑 Keywords: account, suspension
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #2 - LOW RISK (Score: 0.315)
+   From: final-notice@corporrate.com
+   Subject: IMMEDIATE: Payment Overdue - Legal Action Pending
+   Time: 2025-10-22 15:24:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.315)
+      - Similarity=0.044 | Confidence: 0.497 | Rank: 2
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: final-notice@corporrate.com
+      Subject: IMMEDIATE: Payment Overdue - Legal Action Pending...
+   🎯 Confidence: 49.7%
+   🔑 Keywords: account, overdue
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #3 - HIGH RISK (Score: 0.710)
+   From: billing-urgent@payment-urgent.com
+   Subject: URGENT: Payment Required - Account Suspension Imminent
+   Time: 2025-10-24 21:24:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.71)
+      - Similarity=0.002 | Confidence: 0.671 | Rank: 3
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      - financial_request 0.5 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Requests financial information or transactions (confidence: 50.0%)
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: billing-urgent@payment-urgent.com
+      Subject: URGENT: Payment Required - Account Suspension Imminent...
+   🎯 Confidence: 67.1%
+   🔑 Keywords: account, suspension
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.710)
+   From: final-notice@c0mpany.com
+   Subject: CRITICAL: Invoice Payment Due in 24 Hours
+   Time: 2025-10-17 15:55:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.71)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 4
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: final-notice@c0mpany.com
+      Subject: CRITICAL: Invoice Payment Due in 24 Hours...
+   🎯 Confidence: 58.0%
+   🔑 Keywords: account, overdue
+--------------------------------------------------------------------------------
+
+⚡ RESULT #5 - MEDIUM RISK (Score: 0.455)
+   From: billing-urgent@account-alert.net
+   Subject: FINAL NOTICE: Outstanding Invoice #24871
+   Time: 2025-10-22 13:32:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.455)
+      - Similarity=0.0 | Confidence: 0.52 | Rank: 5
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.6 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious attachment types (confidence: 60.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: billing-urgent@account-alert.net
+      Subject: FINAL NOTICE: Outstanding Invoice #24871...
+   🎯 Confidence: 52.0%
+   🔑 Keywords: account, overdue
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #6 - LOW RISK (Score: 0.307)
+   From: payment-required@security-update.org
+   Subject: FINAL NOTICE: Outstanding Invoice #43681
+   Time: 2025-10-30 10:09:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.307)
+      - Similarity=0.0 | Confidence: 0.47 | Rank: 6
+      Key Indicators:
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: payment-required@security-update.org
+      Subject: FINAL NOTICE: Outstanding Invoice #43681...
+   🎯 Confidence: 47.0%
+   🔑 Keywords: account, overdue
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #7 - HIGH RISK (Score: 0.710)
+   From: urgent-billing@security-update.org
+   Subject: CRITICAL: Invoice Payment Due in 24 Hours
+   Time: 2025-10-24 15:17:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.71)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 7
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: urgent-billing@security-update.org
+      Subject: CRITICAL: Invoice Payment Due in 24 Hours...
+   🎯 Confidence: 58.0%
+   🔑 Keywords: account, overdue
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #8 - LOW RISK (Score: 0.290)
+   From: final-notice@busines.net
+   Subject: URGENT: Payment Required - Account Suspension Imminent
+   Time: 2025-11-10 09:08:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.29)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 8
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      - financial_request 0.5 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Requests financial information or transactions (confidence: 50.0%)
+      Email from: final-notice@busines.net
+      Subject: URGENT: Payment Required - Account Suspension Imminent...
+   🎯 Confidence: 43.0%
+   🔑 Keywords: account, suspension
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.710)
+   From: billing-urgent@busines.net
+   Subject: URGENT: Payment Required - Account Suspension Imminent
+   Time: 2025-11-07 14:19:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.71)
+      - Similarity=0.0 | Confidence: 0.56 | Rank: 9
+      Key Indicators:
+      - suspicious_attachment 0.9 – Attachment with potential risk
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      - financial_request 0.5 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 90.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Requests financial information or transactions (confidence: 50.0%)
+      Email from: billing-urgent@busines.net
+      Subject: URGENT: Payment Required - Account Suspension Imminent...
+   🎯 Confidence: 56.0%
+   🔑 Keywords: account, suspension
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #10 - HIGH RISK (Score: 0.725)
+   From: collections@urgent-action.com
+   Subject: IMMEDIATE: Payment Overdue - Legal Action Pending
+   Time: 2025-10-24 13:44:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.725)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 10
+      Key Indicators:
+      - suspicious_attachment 0.9 – Attachment with potential risk
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      - financial_request 0.5 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 90.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Requests financial information or transactions (confidence: 50.0%)
+      Email from: collections@urgent-action.com
+      Subject: IMMEDIATE: Payment Overdue - Legal Action Pending...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: account, overdue, suspension
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Show me messages claiming to be from well-known vendors but using personal email addresses.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.023s | Found 10 results
+================================================================================
+
+⚡ RESULT #1 - MEDIUM RISK (Score: 0.404)
+   From: ceo@c0mpany.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-24 14:03:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.404)
+      - Similarity=0.0 | Confidence: 0.5 | Rank: 1
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 50.0%
+   🔑 Keywords: email
+--------------------------------------------------------------------------------
+
+⚡ RESULT #2 - MEDIUM RISK (Score: 0.576)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.576)
+      - Similarity=0.0 | Confidence: 0.61 | Rank: 2
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 61.0%
+   🔑 Keywords: email
+--------------------------------------------------------------------------------
+
+✅ RESULT #3 - NEGLIGIBLE RISK (Score: 0.140)
+   From: angel@acme-corp.com
+   Subject: Monthly Newsletter - April
+   Time: 2025-11-07 13:29:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.14)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 3
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+      Email from: angel@acme-corp.com
+      Subject: Monthly Newsletter - April...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #4 - LOW RISK (Score: 0.242)
+   From: account-security@enterprize.org
+   Subject: Account Compromise Alert
+   Time: 2025-10-24 17:01:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.242)
+      - Similarity=0.0 | Confidence: 0.39 | Rank: 4
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@enterprize.org
+      Subject: Account Compromise Alert...
+   🎯 Confidence: 39.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #5 - HIGH RISK (Score: 0.680)
+   From: no-reply@urgent-action.com
+   Subject: Account Compromise Alert
+   Time: 2025-10-23 21:02:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 5
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - new_sender 0.7 – Sender not previously recognized
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Email from unknown or rarely-contacted sender (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: no-reply@urgent-action.com
+      Subject: Account Compromise Alert...
+   🎯 Confidence: 65.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.680)
+   From: no-reply@verify-now.com
+   Subject: Suspicious Activity Detected - Verify Now
+   Time: 2025-11-13 04:43:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 6
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: no-reply@verify-now.com
+      Subject: Suspicious Activity Detected - Verify Now...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #7 - HIGH RISK (Score: 0.680)
+   From: account-security@account-alert.net
+   Subject: Account Security Alert - Action Required
+   Time: 2025-10-24 16:53:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.68)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 7
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@account-alert.net
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 58.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #8 - LOW RISK (Score: 0.260)
+   From: it-security@corporrate.com
+   Subject: Account Security Alert - Action Required
+   Time: 2025-11-11 04:41:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.26)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 8
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: it-security@corporrate.com
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 43.0%
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #9 - LOW RISK (Score: 0.242)
+   From: account-security@account-alert.net
+   Subject: Suspicious Activity Detected - Verify Now
+   Time: 2025-10-24 05:15:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.242)
+      - Similarity=0.0 | Confidence: 0.39 | Rank: 9
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: account-security@account-alert.net
+      Subject: Suspicious Activity Detected - Verify Now...
+   🎯 Confidence: 39.0%
+--------------------------------------------------------------------------------
+
+⚡ RESULT #10 - MEDIUM RISK (Score: 0.452)
+   From: emily.rodriguez@busines.net
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-11-13 11:26:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.452)
+      - Similarity=0.0 | Confidence: 0.56 | Rank: 10
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: emily.rodriguez@busines.net
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 56.0%
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 🔍 Processing query: 'Find emails sent outside business hours requesting urgent approval or action.'
+   Method: hybrid, Max results: 10
+
+⏱️  Processed in 0.021s | Found 10 results
+================================================================================
+
+⚠️ RESULT #1 - HIGH RISK (Score: 0.639)
+   From: robert@verify-now.com
+   Subject: Emergency Request from David Martinez
+   Time: 2025-11-06 15:21:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.639)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 1
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: robert@verify-now.com
+      Subject: Emergency Request from David Martinez...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚡ RESULT #2 - MEDIUM RISK (Score: 0.467)
+   From: emily.rodriguez@busines.net
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-11-13 11:26:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.467)
+      - Similarity=0.0 | Confidence: 0.56 | Rank: 2
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: emily.rodriguez@busines.net
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 56.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚡ RESULT #3 - MEDIUM RISK (Score: 0.576)
+   From: cfo@corporrate.com
+   Subject: Re: Urgent Wire Transfer Request
+   Time: 2025-10-21 21:06:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.576)
+      - Similarity=0.0 | Confidence: 0.61 | Rank: 3
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: cfo@corporrate.com
+      Subject: Re: Urgent Wire Transfer Request...
+   🎯 Confidence: 61.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #4 - HIGH RISK (Score: 0.712)
+   From: ceo@c0mpany.com
+   Subject: Emergency Request from John Smith
+   Time: 2025-10-28 10:47:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.712)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 4
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Emergency Request from John Smith...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #5 - HIGH RISK (Score: 0.639)
+   From: sarah@secure-verify.org
+   Subject: ASAP: Wire Transfer Authorization
+   Time: 2025-10-24 15:45:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: HIGH (0.639)
+      - Similarity=0.0 | Confidence: 0.65 | Rank: 5
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - suspicious_attachment 0.7 – Attachment with potential risk
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Contains suspicious attachment types (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: sarah@secure-verify.org
+      Subject: ASAP: Wire Transfer Authorization...
+   🎯 Confidence: 65.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #6 - HIGH RISK (Score: 0.712)
+   From: cfo@c0mpany.com
+   Subject: Quick Favor - Wire Transfer Needed
+   Time: 2025-10-31 17:23:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.712)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 6
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.7 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 70.0%)
+      Email from: cfo@c0mpany.com
+      Subject: Quick Favor - Wire Transfer Needed...
+   🎯 Confidence: 67.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #7 - HIGH RISK (Score: 0.667)
+   From: jennifer@secure-verify.org
+   Subject: CONFIDENTIAL: Emergency Payment Required
+   Time: 2025-10-24 20:31:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.667)
+      - Similarity=0.0 | Confidence: 0.67 | Rank: 7
+      Key Indicators:
+      - executive_impersonation 1.0 – Appears to mimic an executive or authority
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - financial_request 0.6 – Payment / transfer instructions present
+      - outside_hours 0.4 – Sent outside typical business hours
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Potential executive impersonation detected (confidence: 100.0%)
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 40.0%)
+      Email from: jennifer@secure-verify.org
+      Subject: CONFIDENTIAL: Emergency Payment Required...
+   🎯 Confidence: 67.0%
+--------------------------------------------------------------------------------
+
+⚡ RESULT #8 - MEDIUM RISK (Score: 0.404)
+   From: ceo@c0mpany.com
+   Subject: Urgent: Client Payment Due Today
+   Time: 2025-10-24 14:03:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: MEDIUM (0.404)
+      - Similarity=0.0 | Confidence: 0.5 | Rank: 8
+      Key Indicators:
+      - urgent_language 0.7 – Urgent wording requesting immediate action
+      - executive_impersonation 0.7 – Appears to mimic an executive or authority
+      - financial_request 0.6 – Payment / transfer instructions present
+      Risk Summary:
+      - Financial request coupled with urgency signals potential payment fraud; Possible executive impersonation (business email compromise pattern)
+      Recommended Action:
+      - Verify sender authenticity and scrutinize any financial or credential requests.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 70.0%)
+        • Potential executive impersonation detected (confidence: 70.0%)
+        • Requests financial information or transactions (confidence: 60.0%)
+      Email from: ceo@c0mpany.com
+      Subject: Urgent: Client Payment Due Today...
+   🎯 Confidence: 50.0%
+   🔑 Keywords: urgent
+--------------------------------------------------------------------------------
+
+⚠️ RESULT #9 - HIGH RISK (Score: 0.710)
+   From: account-security@account-alert.net
+   Subject: Account Security Alert - Action Required
+   Time: 2025-10-24 16:53:00
+   📎 Attachments: 1
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: CRITICAL (0.71)
+      - Similarity=0.0 | Confidence: 0.58 | Rank: 9
+      Key Indicators:
+      - suspicious_attachment 1.0 – Attachment with potential risk
+      - executable_attachment 1.0 – Executable / script attachment detected
+      - urgent_language 0.9 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Escalate: Validate sender and instructions out-of-band before acting; scan attachments.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains suspicious attachment types (confidence: 100.0%)
+        • Contains potentially dangerous executable files (confidence: 100.0%)
+        • Contains urgent language requiring immediate action (confidence: 90.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      Email from: account-security@account-alert.net
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 58.0%
+   🔑 Keywords: action, hours
+--------------------------------------------------------------------------------
+
+ℹ️ RESULT #10 - LOW RISK (Score: 0.290)
+   From: it-security@corporrate.com
+   Subject: Account Security Alert - Action Required
+   Time: 2025-11-11 04:41:00
+
+   💡 Analysis:
+      Overview:
+      - Threat Level: LOW (0.29)
+      - Similarity=0.0 | Confidence: 0.43 | Rank: 10
+      Key Indicators:
+      - urgent_language 0.8 – Urgent wording requesting immediate action
+      - link_suspicious 0.6 – Link appears obfuscated or mismatched
+      Risk Summary:
+      - Multiple moderate indicators; monitor and verify via trusted channel
+      Recommended Action:
+      - Low immediate risk; continue monitoring for patterns.
+      Analysis Detail:
+      ⚠️ HIGH RISK INDICATORS:
+        • Contains urgent language requiring immediate action (confidence: 80.0%)
+        • Contains suspicious or potentially malicious links (confidence: 60.0%)
+      ⚡ MODERATE RISK INDICATORS:
+        • Sent outside typical business hours (confidence: 30.0%)
+      Email from: it-security@corporrate.com
+      Subject: Account Security Alert - Action Required...
+   🎯 Confidence: 43.0%
+   🔑 Keywords: action, hours
+--------------------------------------------------------------------------------
+🔍 threat-hunt> 
+👋 Session complete! Total time: 0.3s, Queries: 10
