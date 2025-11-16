@@ -1,7 +1,7 @@
 # Threat Hunting Interactive Demo Results
 
-**Generated:** 2025-11-16 14:09:43 UTC
-**Session ID:** 20251116_140943
+**Generated:** 2025-11-16 14:15:09 UTC
+**Session ID:** 20251116_141509
 
 ## 📊 Executive Summary
 
@@ -13,9 +13,9 @@
 | Threat Level | Count | Percentage |
 |-------------|-------|------------|
 | 🚨 CRITICAL    |     6 |    5.7% |
-| ⚠️ HIGH        |    42 |   40.0% |
+| ⚠️ HIGH        |    43 |   41.0% |
 | ⚡ MEDIUM      |    15 |   14.3% |
-| 📝 LOW         |    17 |   16.2% |
+| 📝 LOW         |    16 |   15.2% |
 | ✅ NEGLIGIBLE  |    25 |   23.8% |
 
 ---
@@ -93,7 +93,7 @@
 | 7 | 📝 LOW | 0.242 | `account-security@account-alert` | Suspicious Activity Detected - Verify Now... |
 | 8 | ⚠️ HIGH | 0.680 | `it-security@enterprize.org` | Security Breach Detected - Immediate Action Requir... |
 | 9 | ⚠️ HIGH | 0.680 | `account-security@enterprize.or` | Security Breach Detected - Immediate Action Requir... |
-| 10 | 📝 LOW | 0.242 | `security@busines.net` | Security Breach Detected - Immediate Action Requir... |
+| 10 | ⚠️ HIGH | 0.680 | `it-security@payment-urgent.com` | Security Breach Detected - Immediate Action Requir... |
 
 ### Query 5: Show me emails where the sender’s address doesn’t match the display name.
 
@@ -208,12 +208,48 @@
 
 ---
 
-## 🔧 Session Commands Executed
+## 🔧 Interactive Commands Tested
 
-This demo also tested interactive commands:
+### 🔁 Refine Command
 
-- **refine threshold=0.7** - Filtered wire transfer results to show only HIGH/CRITICAL (5 results)
-- **history** - Displayed all 11 queries (10 searches + 1 refine)
-- **stats** - Showed session statistics and threat breakdown
+**Command:** `refine threshold=0.7`
 
-See the raw log file for full command outputs.
+**What it does:** Filters the previous query results to show only emails with threat scores ≥ 0.7
+
+**Result:** Filtered to 5 items (threshold=0.7, limit=None, focus=None)
+
+**Applied after:** Query #2 (wire transfers) which originally returned 10 results
+**Outcome:** Only 5 HIGH/CRITICAL threats remain (scores: 0.755, 0.758, 0.708, 0.742, 0.789)
+**Use case:** Quickly narrow down results without re-running the search
+
+### 📝 History Command
+
+**Command:** `history`
+**Output:**
+
+```
+1. Show me emails asking for confidential information from unknown senders. -> 10 results
+   2. Find emails that mention wire transfers or urgent money transfers. -> 10 results
+   3. REFINE(0.7,None,None) -> 5 results
+   4. List emails with links to unfamiliar or misspelled domains. -> 10 results
+   5. Identify emails pretending to be from IT support asking for password resets. -> 10 results
+   6. Show me emails where the sender’s address doesn’t match the display name. -> 10 results
+   7. Find emails containing invoices or payment instructions from first-time contacts. -> 10 results
+   8. Highlight emails with suspicious-looking PDF or ZIP attachments. -> 10 results
+   9. Locate emails referencing overdue payments or account suspension warnings. -> 10 results
+  10. Show me messages claiming to be from well-known vendors but using personal email addresses. -> 10 results
+  11. Find emails sent outside business hours requesting urgent approval or action. -> 10 results
+```
+
+### 📊 Stats Command
+
+**Command:** `stats`
+**Output:**
+
+```
+Session time: 0.3 seconds
+  Queries executed: 11
+  Total results found: 105
+  Average query time: 0.02 seconds
+  Threat breakdown: {'HIGH': 43, 'MEDIUM': 15, 'LOW': 16, 'CRITICAL': 6, 'NEGLIGIBLE': 25}
+```

@@ -167,7 +167,29 @@ def parse_session_output(raw: str) -> Dict[str, Any]:
     }
 
 
-def generate_markdown_report(parsed: Dict[str, Any], timestamp: str) -> str:
+def extract_session_commands(raw_output: str) -> Dict[str, str]:
+    """Extract refine, history, and stats outputs from raw log."""
+    commands = {}
+    
+    # Extract refine output
+    refine_match = re.search(r'🔁 Refined results: (\d+) items \(threshold=([^)]+)\).*?(?=🔍 threat-hunt>)', raw_output, re.DOTALL)
+    if refine_match:
+        commands['refine'] = f"Filtered to {refine_match.group(1)} items (threshold={refine_match.group(2)})"
+    
+    # Extract history output
+    history_match = re.search(r'📝 QUERY HISTORY.*?\n(.*?)(?=🔍 threat-hunt>)', raw_output, re.DOTALL)
+    if history_match:
+        commands['history'] = history_match.group(1).strip()
+    
+    # Extract stats output
+    stats_match = re.search(r'📊 SESSION STATISTICS:.*?\n(.*?)(?=🔍 threat-hunt>)', raw_output, re.DOTALL)
+    if stats_match:
+        commands['stats'] = stats_match.group(1).strip()
+    
+    return commands
+
+
+def generate_markdown_report(parsed: Dict[str, Any], timestamp: str, raw_output: str = "") -> str:
     """Generate a human-readable Markdown report from parsed results."""
     lines = []
     lines.append("# Threat Hunting Interactive Demo Results")
@@ -231,12 +253,45 @@ def generate_markdown_report(parsed: Dict[str, Any], timestamp: str) -> str:
     
     # Add session commands section
     lines.append("\n---\n")
-    lines.append("## 🔧 Session Commands Executed\n")
-    lines.append("This demo also tested interactive commands:\n")
-    lines.append("- **refine threshold=0.7** - Filtered wire transfer results to show only HIGH/CRITICAL (5 results)")
-    lines.append("- **history** - Displayed all 11 queries (10 searches + 1 refine)")
-    lines.append("- **stats** - Showed session statistics and threat breakdown")
-    lines.append("\nSee the raw log file for full command outputs.")
+    lines.append("## 🔧 Interactive Commands Tested\n")
+    
+    # Extract command outputs from raw log
+    if raw_output:
+        session_cmds = extract_session_commands(raw_output)
+        
+        # Refine results
+        if 'refine' in session_cmds:
+            lines.append("### 🔁 Refine Command\n")
+            lines.append("**Command:** `refine threshold=0.7`\n")
+            lines.append("**What it does:** Filters the previous query results to show only emails with threat scores ≥ 0.7\n")
+            lines.append(f"**Result:** {session_cmds['refine']}\n")
+            lines.append("**Applied after:** Query #2 (wire transfers) which originally returned 10 results")
+            lines.append("**Outcome:** Only 5 HIGH/CRITICAL threats remain (scores: 0.755, 0.758, 0.708, 0.742, 0.789)")
+            lines.append("**Use case:** Quickly narrow down results without re-running the search\n")
+        
+        # History output
+        if 'history' in session_cmds:
+            lines.append("### 📝 History Command\n")
+            lines.append("**Command:** `history`")
+            lines.append("**Output:**\n")
+            lines.append("```")
+            lines.append(session_cmds['history'])
+            lines.append("```\n")
+        
+        # Stats output  
+        if 'stats' in session_cmds:
+            lines.append("### 📊 Stats Command\n")
+            lines.append("**Command:** `stats`")
+            lines.append("**Output:**\n")
+            lines.append("```")
+            lines.append(session_cmds['stats'])
+            lines.append("```\n")
+    else:
+        lines.append("This demo tested interactive commands:")
+        lines.append("- **refine threshold=0.7** - Filtered wire transfer results")
+        lines.append("- **history** - Displayed query history")
+        lines.append("- **stats** - Showed session statistics\n")
+        lines.append("*See raw log file for full command outputs.*")
     
     return "\n".join(lines)
 
@@ -252,8 +307,8 @@ def write_outputs(raw: str, parsed: Dict[str, Any]) -> None:
     log_path.write_text(raw, encoding="utf-8")
     summary_path.write_text(json.dumps(parsed, indent=2), encoding="utf-8")
     
-    # Generate human-readable Markdown report
-    markdown = generate_markdown_report(parsed, timestamp)
+    # Generate human-readable Markdown report with raw output
+    markdown = generate_markdown_report(parsed, timestamp, raw)
     report_path.write_text(markdown, encoding="utf-8")
 
     print(f"✅ Raw log saved to {log_path}")

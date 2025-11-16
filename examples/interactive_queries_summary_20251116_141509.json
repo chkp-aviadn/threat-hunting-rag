@@ -452,11 +452,11 @@
       },
       {
         "rank": 10,
-        "threat_level": "LOW",
-        "threat_score": 0.242,
-        "sender": "security@busines.net",
+        "threat_level": "HIGH",
+        "threat_score": 0.68,
+        "sender": "it-security@payment-urgent.com",
         "subject": "Security Breach Detected - Immediate Action Required...",
-        "confidence_pct": 39.0
+        "confidence_pct": 65.0
       }
     ],
     "Show me emails where the sender\u2019s address doesn\u2019t match the display name.": [
