@@ -155,12 +155,13 @@ For full Docker documentation, see [`DOCKER.md`](DOCKER.md).
 | `make coverage` | Run tests w/ coverage report |
 | `make quick-api` | One-step: ensure venv + deps + dataset then start API |
 | `make quick-cli` | One-step: ensure venv + deps + dataset then start interactive CLI |
-| `make demo-interactive` | Run automated interactive CLI session with example queries |
+| `make demo-interactive` | Run automated interactive CLI session with 10 example queries, generates report |
 
 Tips:
 - Use `full-reset` only when you want a fresh dataset & vectors.
 - `rebuild-index` is faster (reuse dataset, rebuild vectors).
 - All commands assume you activated the venv (`source .venv/bin/activate`).
+- `demo-interactive` runs 10 predefined queries and generates JSON/Markdown reports in `examples/`
 
 ### 3.1 Setup Command Differences
 
@@ -418,15 +419,18 @@ Levels:
 | CRITICAL | 0.8 |
 
 ---
-## 9. Where to Look Next (Advanced Docs – Coming Soon)
-| Topic | Future File |
-|-------|-------------|
-| Detailed architecture & data flow | `docs/architecture.md` |
-| Scoring math & feature weighting | `docs/scoring.md` |
-| Caching strategy & performance | `docs/performance.md` |
-| Security & hardening checklist | `docs/security.md` |
+## 9. Advanced Documentation
+| Topic | File |
+|-------|------|
+| Detailed architecture & data flow | [`docs/architecture.md`](docs/architecture.md) |
+| Scoring math & feature weighting | [`docs/scoring.md`](docs/scoring.md) |
+| Caching strategy & performance | [`docs/performance.md`](docs/performance.md) |
+| Cache implementation details | [`docs/cache.md`](docs/cache.md) |
+| Interfaces (CLI/API) guide | [`docs/interfaces.md`](docs/interfaces.md) |
+| Security & hardening checklist | [`docs/security.md`](docs/security.md) |
+| Test suite overview | [`tests/README.md`](tests/README.md) |
 
-Existing planning references: `docs/planning/task.txt`, `docs/planning/plan.md`, `diagrams/architecture.mmd`.
+Planning references: `docs/planning/task.txt`, `docs/planning/plan.md`, `diagrams/architecture.mmd`.
 
 ---
 ## 10. Troubleshooting Quick List
@@ -443,6 +447,3 @@ Synthetic dataset & system are for demonstration / evaluation only. Do not rely 
 
 ---
 Happy Hunting! 🔍
-| POST | `/api/v1/search` | Primary threat hunting query |
-
-| POST | `/api/v1/search/refine` | Refine previous search context |
