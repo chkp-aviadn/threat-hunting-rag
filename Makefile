@@ -98,7 +98,12 @@ quick-api:
 	@echo "[quick-api] Installing dependencies (idempotent)"
 	@$(VENV_PY) -m pip install -r requirements.txt >/dev/null 2>&1 || true
 	@echo "[quick-api] Checking dataset/index"
-	@if [ ! -f data/emails.csv ]; then echo "[quick-api] Dataset missing -> running setup"; $(VENV_PY) app.py --setup; else echo "[quick-api] Dataset present"; fi
+	@if [ ! -f data/emails.csv ] || ! $(VENV_PY) scripts/check_index.py >/dev/null 2>&1; then \
+		echo "[quick-api] Dataset or index missing -> running setup"; \
+		$(VENV_PY) app.py --setup; \
+	else \
+		echo "[quick-api] Dataset and index present"; \
+	fi
 	@echo "[quick-api] Starting API server"
 	$(VENV_PY) app.py --api
 
@@ -108,7 +113,12 @@ quick-cli:
 	@echo "[quick-cli] Installing dependencies (idempotent)"
 	@$(VENV_PY) -m pip install -r requirements.txt >/dev/null 2>&1 || true
 	@echo "[quick-cli] Checking dataset/index"
-	@if [ ! -f data/emails.csv ]; then echo "[quick-cli] Dataset missing -> running setup"; $(VENV_PY) app.py --setup; else echo "[quick-cli] Dataset present"; fi
+	@if [ ! -f data/emails.csv ] || ! $(VENV_PY) scripts/check_index.py >/dev/null 2>&1; then \
+		echo "[quick-cli] Dataset or index missing -> running setup"; \
+		$(VENV_PY) app.py --setup; \
+	else \
+		echo "[quick-cli] Dataset and index present"; \
+	fi
 	@echo "[quick-cli] Launching interactive CLI"
 	$(VENV_PY) -m src.interfaces.cli.app --interactive
 
