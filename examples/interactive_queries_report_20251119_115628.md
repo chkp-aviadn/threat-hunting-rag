@@ -1,7 +1,7 @@
 # Threat Hunting Interactive Demo Results
 
-**Generated:** 2025-11-16 14:18:47 UTC
-**Session ID:** 20251116_141847
+**Generated:** 2025-11-19 11:56:28 UTC
+**Session ID:** 20251119_115628
 
 ## 📊 Executive Summary
 
@@ -13,9 +13,9 @@
 | Threat Level | Count | Percentage |
 |-------------|-------|------------|
 | 🚨 CRITICAL    |     3 |    3.0% |
-| ⚠️ HIGH        |    41 |   41.0% |
+| ⚠️ HIGH        |    40 |   40.0% |
 | ⚡ MEDIUM      |    15 |   15.0% |
-| 📝 LOW         |    16 |   16.0% |
+| 📝 LOW         |    17 |   17.0% |
 | ✅ NEGLIGIBLE  |    25 |   25.0% |
 
 ---
@@ -88,7 +88,7 @@
 | 7 | 📝 LOW | 0.242 | `account-security@account-alert` | Suspicious Activity Detected - Verify Now... |
 | 8 | ⚠️ HIGH | 0.680 | `it-security@enterprize.org` | Security Breach Detected - Immediate Action Requir... |
 | 9 | ⚠️ HIGH | 0.680 | `account-security@enterprize.or` | Security Breach Detected - Immediate Action Requir... |
-| 10 | ⚠️ HIGH | 0.680 | `it-security@payment-urgent.com` | Security Breach Detected - Immediate Action Requir... |
+| 10 | 📝 LOW | 0.242 | `security@busines.net` | Security Breach Detected - Immediate Action Requir... |
 
 ### Query 5: Show me emails where the sender’s address doesn’t match the display name.
 
@@ -242,9 +242,9 @@
 **Output:**
 
 ```
-Session time: 0.3 seconds
+Session time: 0.2 seconds
   Queries executed: 11
   Total results found: 105
   Average query time: 0.02 seconds
-  Threat breakdown: {'HIGH': 43, 'MEDIUM': 15, 'LOW': 16, 'CRITICAL': 6, 'NEGLIGIBLE': 25}
+  Threat breakdown: {'HIGH': 42, 'MEDIUM': 15, 'LOW': 17, 'CRITICAL': 6, 'NEGLIGIBLE': 25}
 ```
