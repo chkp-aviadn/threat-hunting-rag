@@ -13,7 +13,6 @@ Requirements from plan.md:
 """
 
 import random
-import csv
 import uuid
 import logging
 from datetime import datetime, timedelta
