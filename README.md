@@ -269,11 +269,11 @@ What "iterative" means here: each `refine` stacks on the latest displayed set. I
 
 | Score Range | Level | Action |
 |-------------|-------|--------|
-| <0.20 | NEGLIGIBLE | Usually ignore |
-| 0.20–0.39 | LOW | Monitor, maybe refine by feature |
+| 0.00–0.14 | NEGLIGIBLE | Usually ignore |
+| 0.15–0.39 | LOW | Monitor, maybe refine by feature |
 | 0.40–0.59 | MEDIUM | Investigate context, verify sender |
-| 0.60–0.79 | HIGH | Validate out-of-band, treat as suspicious |
-| ≥0.80 | CRITICAL | Escalate immediately |
+| 0.60–0.74 | HIGH | Validate out-of-band, treat as suspicious |
+| ≥0.75 | CRITICAL | Escalate immediately |
 
 Raising `threshold` filters quickly toward HIGH/CRITICAL signals; lowering it broadens context.
 
@@ -413,10 +413,11 @@ Scores blend:
 Levels:
 | Level | Score ≥ |
 |-------|---------|
-| LOW | 0.2 |
+| NEGLIGIBLE | 0.0 |
+| LOW | 0.15 |
 | MEDIUM | 0.4 |
 | HIGH | 0.6 |
-| CRITICAL | 0.8 |
+| CRITICAL | 0.75 |
 
 ---
 ## 9. Advanced Documentation
